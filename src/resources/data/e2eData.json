@@ -1,0 +1,318 @@
+{
+  "Guest user should able to post question on pip page and place order on boss item using paypal in french": {
+    "QP": {
+      "sku": "1000692280",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "SignedIn user should able to post question and place boss item using paypal": {
+    "QP": {
+      "sku": "1000101823",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to review on pip page and place order on bopis item with paypal": {
+    "QP": {
+      "sku": "1000100148",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to buy a bodfs item with a saved payment method in english": {
+    "QP": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "New registered user should able to write a review on pip page and place order on bopis item using paypal in french": {
+    "QP": {
+      "sku": "1000676066",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest user should able to post question on pip page and place order on boss item using paypal in english": {
+    "QP": {
+      "sku": "1000720454",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "New registered user post question on pip page and place order on boss item using paypal in french": {
+    "QP": {
+      "sku": "1000720454",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to write and buy a bopis item with an amex card in french": {
+    "QP": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "SignedIn user should able to post question and place boss order using buyNow in french": {
+    "QP": {
+      "sku": "1001221502",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to write and buy a bopis item with an amex card in english": {
+    "QP": {
+      "sku": "1000740986",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to buy a bodfs item with a unsaved payment method in french": {
+    "QP": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "New registered user post question on pip page and place order on boss item using paypal in english": {
+    "QP": {
+      "sku": "1000720454",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to add multiple items from fbt in english": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to add multiple items from fbt and check them out via hd card in french": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to add multiple items to wishlist": {
+    "QP": {
+      "sku": "1001238365",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest user should able to add multiple quantity in pip and remove few before checkout in english": {
+    "QP": {
+      "sku": "1001088066",
+      "postalCode": "M1R 4E6"
+    },
+    "QA": {
+      "sku": "1000100114",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest user should able to write and buy a BOPIS item with an Amex card FR": {
+    "QP": {
+      "sku": "1000790632",
+      "postalCode": "M1R 4E6"
+    },
+    "QA": {
+      "sku": "1001160446",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest user should able to write and buy a BOPIS item with an Amex card EN": {
+    "QP": {
+      "sku": "1000790632",
+      "postalCode": "M1R 4E6"
+    },
+    "QA": {
+      "sku": "1000790632",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest user should able to add multiple quantity in pip and remove few before checkout in french": {
+    "QP": {
+      "sku": "1000720454",
+      "postalCode": "M1R 4E6"
+    },
+    "QA": {
+      "sku": "1000151768",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to add multiple items from fbt and check them out via hd card in english": {
+    "QP": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    },
+    "QA": {
+      "sku": "1001045206",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest user should able to buy a bodfs scheduled with ctlp hd card in english": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000481251",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest user should able to buy a bodfs scheduled with ctlp hd card in french": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000481251",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "SignedIn registered user should be able to place appliance order with parts and service with mastercard": {
+    "QP": {
+      "sku": "1000727847",
+      "postalCode": "M1R 4E6"
+    },
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to place order on appliance with plcc commercial card": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001189803",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "New registered user should be able to place bodfs order with ctlp with hd card": {
+    "QP": {
+      "sku": "1000481251",
+      "postalCode": "M1R 4E6"
+    },
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Pro user should be able to add multiple sth items and place order with amex": {
+    "QP": {
+      "sku": "1000810498",
+      "postalCode": "M1R 4E6"
+    },
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "New registered user should be able to place order on appliance with amex card in french":{
+    "QP": {
+      "sku": "1001024820",
+      "postalCode": "M1R 4E6"
+    },
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "New registered user should be able to place order on appliance with amex card in english": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001024820",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "New registered user should able to add multiple items from fbt": {
+    "QP": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    },
+    "QA": {
+      "sku": "1001045206",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "New registered user should able to add multiple appliances from fbt using amex card": {
+    "QP": {
+      "sku": "1001002197",
+      "postalCode": "M1R 4E6"
+    },
+    "QA": {
+      "sku": "1001002197",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest user login as registered user should able to buy bopis from buy now modal":{
+    "QP": {
+      "sku": "1001221502",
+      "postalCode": "M1R 4E6"
+    },
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "New registered user should able to add multiple quantity in pip and remove few before checkout in english": {
+    "QP": {
+      "sku": "1001088066",
+      "postalCode": "M1R 4E6"
+    },
+    "QA": {
+      "sku": "1000100114",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "New registered user should able to add multiple quantity in pip and remove few before checkout in french": {
+    "QP": {
+      "sku": "1001088066",
+      "postalCode": "M1R 4E6"
+    },
+    "QA": {
+      "sku": "1000100114",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest user should able to buy a bodfs same day with hd card": {
+    "QP": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest user should able to add multiple appliances from fbt using paypal card": {
+    "QP": {
+      "sku": "1001002197",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to add multiple appliances from fbt": {
+    "QP": {
+      "sku": "1001002197",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to add multiple quantity in pip and remove few before checkout": {
+    "QP": {
+      "sku": "1001088066",
+      "postalCode": "M1R 4E6"
+    },
+    "QA": {
+      "sku": "1000100114",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to buy a bodfs scheduled with ctlp and verify preserved search": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000481251",
+      "postalCode": "M1R 4E6"
+    }
+  }
+}

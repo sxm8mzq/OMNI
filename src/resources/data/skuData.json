@@ -1,0 +1,4492 @@
+{
+  "User should able to verify Appliance postalCode change, ATC Overlay, OrderSummary and Cart Page in EN": {
+    "QA": {
+      "sku": "1000727847",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000727847",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1001188017",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to remove appliance from shopping cart": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000727847",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify pickup in store is not changed when store is change and addtional BOPIS product is added in SWE cart": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001181402",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify pickup in store is not changed when store is change FR": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001160446",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to add non-appliance to shopping cart": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000810498",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000421796",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest User should able to verify CSWE Cart page, ordersummary, storeoverlay, pagination in EN": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001088036",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify order summary,change in quantity and pickup in store is not changed when store is change in CSWE FR": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001120737",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify BOSS no shipping fee in ATC overlay, ordersummary on cart page and change in quantity in EN": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000692280",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000421796",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify change in quantity on Cart page and store name not change in french": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000692280",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000421796",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to add non-appliance cti to shopping cart": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001029380",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000421796",
+      "postalCode": "M4G 4H9"
+    }
+  },
+  "User should able to verify the flat fee and cutoff time is displayed for same day delivery": {
+    "QA": {
+      "sku": "1000100110",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001076362",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000421796",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify the Order Summary Section for STH_FlatRate in EN": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001214517",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to Validate ship to you Cart header count in EN": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001226868",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest user should able to verify Ship to You E2E EN": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001226868",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to Verify Empty Cart Page And UI Elements in EN": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100248",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to Validate ship to you Cart Merge Message EN": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001226868",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to Validate ship to you Cart Merge Message French": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001226868",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to verify postal code button disabled and enabled on Cart page": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000727847",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to verify appliance delivery details, order summary and appliance image and other details": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001024820",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to verify store overlay, ordersummary on cart page, change in quantity and fullfillment in EN": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001160446",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to verify store overlay, change in quantity and fullfillment in FR": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000135185",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to verify store overlay, ordersummary on cart page and change in quantity in EN": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000720454",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to verify store overlay, ordersummary on cart page and change in quantity in FR": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000720454",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to Verify Empty Cart Page And UI Elements in EN": {
+    "QA": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001160446",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to Verify Empty Cart Page And UI Elements in Fr": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001160446",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to verify the Order Summary Section for STH in FR": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001226868",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to verify Ship to You E2E EN": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001124942",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to verify PIP page is disaplayed by Click on product EN": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001226868",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to verify not Free shipping and Estimated Delivery in Cart page EN": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000106202",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to verify Ship to You E2E FR": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to verify the flat fee and cutoff time is displayed for same day delivery": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000101823",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to Verify Empty Cart Page And UI Elements in French": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100248",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify login Pro Cart pvp Cart Merge": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000836027",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to Verify error message on adding more stock of a limited stock item in English and French": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000834262",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest user should able to verify Ship to You E2E FR": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001160446",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to update provolume pricing tier in cart page": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000836027",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify cart page on removing PVP item": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001226868",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify Cart Page and FSA banner on uptating to hight tier quantity": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000836027",
+      "postalCode": "M1H 2N1"
+    }
+  },
+  "User should able to verify login pro and update pvp second user": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000836027",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to login ProDirect and verify provolume message in cart page and update quantiy EN": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000836027",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify Bopis pro Available and removal to remove CTLP": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000666163",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify Bopis Select unSelect CTLP and verify visual cues": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000666163",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify shipToYou pro Not Available select CTLP Option verify NoMessage in ATC": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001120748",
+      "postalCode": "M4G 4H9"
+    }
+  },
+  "User should able to verify BOPIS pro available CTLP selected in PIP and verify cart in FR": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000666163",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Pro User should able to verify Pro Volume pricing info and message Quantity not in PVP tier in FR": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000159630",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Pro User should able to verify Pro Volume pricing info and message Quantity in and Qty not in PVP tier in EN": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000159630",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Pro User should able to verify Pro Volume pricing fulfillment change message Quantity in PVP tier in EN": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000857104",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Pro User should able to verify Pro Volume pricing fulfillment change message Quantity not in PVP tier in EN": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000857104",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Pro User should able to verify Pro Volume Quantity change and refresh in Cart page in EN": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000857104",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Pro User should able to Verify Pro Volume pricing detail and update Quantity to deafult PVP tier from Pip in EN": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000159630",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Pro User should able to Verify Pro Volume pricing detail and update Quantity to PVP tier 2 from Pip in EN": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000857104",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to validate MOQ dropdown in cart when MOQ limit is more than ten EN": {
+    "QA": {
+      "sku": "1000100110",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001036787",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify article maxlimit restriction message on ATC overLay when adding item from FBT EN": {
+    "QA": {
+      "sku": "1000100110",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001036787",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should be able to verify Add CTM to Cart English": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000655668",
+      "postalCode": "M1R 4E5"
+    }
+  },
+  "User should be able to verify Add STH and CTM to Cart English": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001124942",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify Moq Guest, ATC Non PIP Page Level, MOQ Error Message When Cart Has Max Qty Already Eng": {
+    "QA": {
+      "sku": "1000100110",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001036787",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify Moq Guest, MOQ Messaging On ATC OverLay Eng": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001036787",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify Moq Guest, MOQ Messaging On Cart Eng": {
+    "QA": {
+      "sku": "1000100110",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001036787",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able verify order summary with and without CTI": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000810498",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000421796",
+      "postalCode": "M4G 4H9"
+    }
+  },
+  "User should able to verify verify CTI components with haulaway": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000765441",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify STH GDO Without Pills and CTI Selected, Haulaway En": {
+    "QA": {
+      "sku": "1000182671",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000810498",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000421796",
+      "postalCode": "M4G 4H9"
+    }
+  },
+  "User should able to verify cti STH CTI Not selected In PIP, CTI Components InCart En": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000421796",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000421796",
+      "postalCode": "M4G 4H9"
+    }
+  },
+  "User should able to verify Appliance Cti With Pills Cti Components En": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000765441",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify Register User Cart Merge Msgs With MOQ Items With Its Max Qty On Cart Eng": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify promotion message and detail desc in PIP for single promotion in English and French": {
+    "QA": {
+      "sku": "1000739619",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000406286",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify clicking on button closes the promotion section in french and english": {
+    "QA": {
+      "sku": "1001080275",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001062803",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify saving and was price calculation in french": {
+    "QA": {
+      "sku": "1001184098",
+      "postalCode": "M4G 4H9"
+    },
+    "QP": {
+      "sku": "1000708642",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to validate saving and offers section": {
+    "QA": {
+      "sku": "1001080275",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001020776",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify promotion message and detail desc in PIP for more than one promotion": {
+    "QA": {
+      "sku": "1000739619",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001062803",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to validate saving and offers section not visible": {
+    "QA": {
+      "sku": "1000155123",
+      "postalCode": "G9N 7N9"
+    },
+    "QP": {
+      "sku": "1001053348",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to validate Appliance validate Delivery Fee PIP Non Quebec Postal Code Eng": {
+    "QA": {
+      "sku": "1000807737",
+      "postalCode": "M1J 2E5"
+    },
+    "QP": {
+      "sku": "1001020776",
+      "postalCode": "M2J 2K2"
+    }
+  },
+  "User should able to validate Appliance validate Delivery Fee PIP Quebec Postal Code Eng": {
+    "QA": {
+      "sku": "1000807737",
+      "postalCode": "M1J 2E5"
+    },
+    "QP": {
+      "sku": "1001020776",
+      "postalCode": "H1A 0A1"
+    }
+  },
+  "User should able to validate Appliance validate Delivery Fee PIP Non Quebec Postal Code Fre": {
+    "QA": {
+      "sku": "1000807737",
+      "postalCode": "M1J 2E5"
+    },
+    "QP": {
+      "sku": "1001020776",
+      "postalCode": "M2J 2K2"
+    }
+  },
+  "User should able to validate Appliance validate Delivery Fee PIP Quebec Postal Code Fre": {
+    "QA": {
+      "sku": "1000807737",
+      "postalCode": "M1J 2E5"
+    },
+    "QP": {
+      "sku": "1001020776",
+      "postalCode": "H1A 0A1"
+    }
+  },
+  "User should able to verify Hdpp Section in PIP and more details page in Fr": {
+    "QA": {
+      "sku": "1000795118",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001075809",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify Hdpp Section in PIP and more details page in En": {
+    "QA": {
+      "sku": "1000795118",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000812977",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to validate STH Text Desclaimer ATC OverLay Certona Eng": {
+    "QA": {
+      "sku": "1000413087",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001238365",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000100114",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to validate STH Text Desclaimer ATC OverLay Certona Fre": {
+    "QA": {
+      "sku": "1000413087",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001238365",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000100114",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should be able to valdiate BOPIS Add To Cart Store Inventory Overlay Increase Inventory Eng": {
+    "QA": {
+      "sku": "1000100127",
+      "postalCode": "M4G 4H9"
+    },
+    "QP": {
+      "sku": "1001072116",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000403516",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should be able to validate Boss Verify Fulfillment Desc Delivery Days Change Store Link En": {
+    "QA": {
+      "sku": "1001011628",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000692280",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000662409",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should be able to validate product image and expanded image viewer": {
+    "QA": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should be able to valdiate Product Image Product Details En": {
+    "QA": {
+      "sku": "1000100127",
+      "postalCode": "M4G 4H9"
+    },
+    "QP": {
+      "sku": "1001020776",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000100127",
+      "postalCode": "M4G 4H9"
+    }
+  },
+  "User should be able to validate Product Image Product Details Fr": {
+    "QA": {
+      "sku": "1000100127",
+      "postalCode": "M4G 4H9"
+    },
+    "QP": {
+      "sku": "1001020776",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000100127",
+      "postalCode": "M4G 4H9"
+    }
+  },
+  "User should be able to validate Current Price In Pip Page En": {
+    "QA": {
+      "sku": "1000413087",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001226868",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000413087",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should be able to validate social icons en": {
+    "QA": {
+      "sku": "1000155123",
+      "postalCode": "G9N 7N9"
+    },
+    "QP": {
+      "sku": "1001053348",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should be able to verify Manual List In PIP Page En": {
+    "QA": {
+      "sku": "1000504978",
+      "postalCode": "M4G 4H9"
+    },
+    "QP": {
+      "sku": "1000657245",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should be able to verify Product Overview Bullet in Points Are Displayed Properly En": {
+    "QA": {
+      "sku": "1000413087",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001226868",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should be able to verify Related Products Widget in PIP Product Details En": {
+    "QA": {
+      "sku": "1000834473",
+      "postalCode": "M4G 4H9"
+    },
+    "QP": {
+      "sku": "1000860113",
+      "postalCode": "M1R 4E6"
+    },
+    "PROD": {
+      "sku": "1000804897",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify Breadcrumbs in PIP in En": {
+    "QA": {
+      "sku": "1000413087",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001226868",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should be able to verify list of stores with required quantity upon selecting checkBox store name in cart": {
+    "QA": {
+      "sku": "1001109905",
+      "postalCode": "M4G 4H9"
+    },
+    "QP": {
+      "sku": "1000475744",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should be able to verify map is displayed in inventory store overlay": {
+    "QA": {
+      "sku": "1000100127",
+      "postalCode": "M4G 4H9"
+    },
+    "QP": {
+      "sku": "1001160446",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should be able to validate customer able to change qty in store overlay verify qty in ATC French": {
+    "QA": {
+      "sku": "1001011628",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000692280",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should be able to Validate Store Search by PostalCode CityName StoreName StoreNumber": {
+    "QA": {
+      "sku": "1000663257",
+      "postalCode": "G9N 7N9"
+    },
+    "QP": {
+      "sku": "1001203826",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should be able to verify inventory overlay having all required details clicking change store link": {
+    "QA": {
+      "sku": "1001011628",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000692280",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should be able to validate all stores displayed regardless of stock in inventory overlay French": {
+    "QA": {
+      "sku": "1001237140",
+      "postalCode": "M4G 4H9"
+    },
+    "QP": {
+      "sku": "1001072116",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should be able to validate selected store in home page and PIP page French": {
+    "QA": {
+      "sku": "1001237140",
+      "postalCode": "M4G 4H9"
+    },
+    "QP": {
+      "sku": "1001072116",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000182864",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should be able to validate all stores displayed regardless of stock in inventory overlay English": {
+    "QA": {
+      "sku": "1001237140",
+      "postalCode": "M4G 4H9"
+    },
+    "QP": {
+      "sku": "1001072116",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should be able to validate change store in Pip page opens inventory store overlay English": {
+    "QA": {
+      "sku": "1001221493",
+      "postalCode": "M4G 4H9"
+    },
+    "QP": {
+      "sku": "1001002378",
+      "postalCode": "M1R 4E6"
+    },
+    "PROD": {
+      "sku": "1001022651",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should be able to validate selected store in home page and PIP page English": {
+    "QA": {
+      "sku": "1001237140",
+      "postalCode": "M4G 4H9"
+    },
+    "QP": {
+      "sku": "1001002378",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000182864",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to validate shipping cost in pip page eng": {
+    "QA": {
+      "sku": "1000100123",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000741513",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000147137",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify FBT Component and ATC button Enabled and Disabled": {
+    "QA": {
+      "sku": "1001045206",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify FBT Continue Shopping Button UI Action": {
+    "QA": {
+      "sku": "1001045206",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify FBT ATC Overlay Modal and Items": {
+    "QA": {
+      "sku": "1001045206",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify FBT Cart Page and Fullfillment Section": {
+    "QA": {
+      "sku": "1001045206",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify CTI Component Details Without Pills": {
+    "QA": {
+      "sku": "1000807737",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001065878",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify CTI Component Details With Pills": {
+    "QA": {
+      "sku": "1000765441",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000765441",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify CTI Component Details With Pills Withouth Trip Fee French": {
+    "QA": {
+      "sku": "1000765441",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000765441",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should get Back In Stock Notification in En": {
+    "QA": {
+      "sku": "1000848717",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001034222",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should get Back In Stock Notification in FR": {
+    "QA": {
+      "sku": "1000848717",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001034222",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered User should get Back In Stock Notification in En": {
+    "QA": {
+      "sku": "1000848717",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001034222",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered User should get Back In Stock Notification in FR": {
+    "QA": {
+      "sku": "1000848717",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001034222",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify FBT Component Section": {
+    "QA": {
+      "sku": "1001045206",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify FBT Appliance Postal Code Error Msg": {
+    "QA": {
+      "sku": "1001003755",
+      "postalCode": "M2J 2K2"
+    },
+    "QP": {
+      "sku": "1001002197",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify FBT Appliance Component Section Select and Deselect Action": {
+    "QA": {
+      "sku": "1001003755",
+      "postalCode": "M2J 2K2"
+    },
+    "QP": {
+      "sku": "1001002197",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify bopis English pro Available": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify CTM service rail": {
+    "QA": {
+      "sku": "1000675119",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000182864",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify FBT Appliance Postal Code Panel Screen": {
+    "QA": {
+      "sku": "1001003755",
+      "postalCode": "M2J 2K2"
+    },
+    "QP": {
+      "sku": "1001002197",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify FBT Exit Panel On Click Close Button Of Availability Panel": {
+    "QA": {
+      "sku": "1001003755",
+      "postalCode": "M2J 2K2"
+    },
+    "QP": {
+      "sku": "1001002197",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify postal code update functionality and item added to cart": {
+    "QA": {
+      "sku": "1001003755",
+      "postalCode": "M2J 2K2"
+    },
+    "QP": {
+      "sku": "1001002197",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify CTI Component Details": {
+    "QA": {
+      "sku": "1000127672",
+      "postalCode": "M2H 0A1"
+    },
+    "QP": {
+      "sku": "1000689152",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000421796",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify PIP message when change installation postal code and verify delivery postalCode": {
+    "QA": {
+      "sku": "1000127672",
+      "postalCode": "M2H 0A1"
+    },
+    "QP": {
+      "sku": "1000421796",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000421796",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify without pills verify CTI components without trip fee": {
+    "QA": {
+      "sku": "1000182671",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000837133",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify STH Plumbing without Pills Verify CTI Component French": {
+    "QA": {
+      "sku": "1000182671",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000837133",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify recommendations carousel ATC En": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001021766",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify Customer Can Select Between Installation Types": {
+    "QA": {
+      "sku": "1000127672",
+      "postalCode": "M2H 0A1"
+    },
+    "QP": {
+      "sku": "1000421796",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000421796",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify sponsored carousel item click": {
+    "QA": {
+      "sku": "1000671297",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000671297",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify Recommendations Carousel ATC Fr": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001021766",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should be able to validate write review": {
+    "QA": {
+      "sku": "1001237140",
+      "postalCode": "M4G 4H9"
+    },
+    "QP": {
+      "sku": "1000836141",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify sponsored carousel ATC": {
+    "QA": {
+      "sku": "1000671297",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001234620",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify Guest Q&A Link and Sections": {
+    "QA": {
+      "sku": "1001237140",
+      "postalCode": "M4G 4H9"
+    },
+    "QP": {
+      "sku": "1001072116",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to verify Register Validate Cancel Q&A Sections": {
+    "QA": {
+      "sku": "1001237140",
+      "postalCode": "M4G 4H9"
+    },
+    "QP": {
+      "sku": "1001072116",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to verify Registered Verify Q&A Link And Sections": {
+    "QA": {
+      "sku": "1001237140",
+      "postalCode": "M4G 4H9"
+    },
+    "QP": {
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should be able to verify delivery date change link verify calender properties": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000836027",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify sign in modal on save to list click": {
+    "QA": {
+      "sku": "1000100127",
+      "postalCode": "G9N 7N9"
+    },
+    "QP": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify save and remove from list": {
+    "QA": {
+      "sku": "1000100127",
+      "postalCode": "G9N 7N9"
+    },
+    "QP": {
+      "sku": "1000668815",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify delivery date change link": {
+    "QA": {
+      "sku": "1000100110",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000421796",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000479100",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to validate product description attributes": {
+    "QA": {
+      "sku": "1000414077",
+      "postalCode": "G9N 7N9"
+    },
+    "QP": {
+      "sku": "1000836141",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify delivery date change link and calender properties FR": {
+    "QA": {
+      "sku": "1000100110",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001076362",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000421796",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to verify Curbside Item and Tooltip Text": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000101927",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify cart message for no service available postal code": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000810498",
+      "postalCode": "M4G 4H9"
+    },
+    "DEV": {
+      "sku": "1000421796",
+      "postalCode": "M4G 4H9"
+    }
+  },
+  "User should able to validate order fulfillment when items added with its max qty EN": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001036787",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify env change": {
+    "QA": {
+      "sku": "1000663257",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000692280",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to should able to buy bopis from buy now modal in EN": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100110",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify Place Order with AmexCard Pick Up in Store Sec": {
+    "QA": {
+      "sku": "1000663257",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000842600",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to buy STH with buy now button in EN": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000818853",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to buy STH with buy now button in FR": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000818853",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to buy STH ecofee with buy now button in EN": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000786903",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest User should able to verify place order parts and service with paypal": {
+    "QA": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001120737",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to buy STH ecofee with buy now button in FR": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000786903",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest User should able to verify pick up in store details in OPC and order confirmation page": {
+    "QA": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001120737",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered User should able to verify home page place order with HD commercial card": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to Place Order Parts And Service For With Paypal Verify Delivery Information In Confirmation Page": {
+    "QA": {
+      "sku": "1000807737",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001075809",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000807736",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to Place Order With Express Paypal": {
+    "QA": {
+      "sku": "1000663257",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001133752",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest user should able to buy bopis product with giftcard": {
+    "QA": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to place order with paypal for boss": {
+    "QA": {
+      "sku": "1000663257",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000842600",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000421796",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify home services checkout page and ocp page": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000655668",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000421796",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to buy STH as signIn user from OTC page placing order with Paypal in EN": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000791787",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered User should able to Place Order with Visa card for BODFS": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000741513",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to place order with amex": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001133752",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to buy bopis from buy now modal in EN": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000707946",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to Place Order With Visa Card": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to Place Order with Paypal": {
+    "QA": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000741513",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify Appliance Cti With Pills Cti Components on checkout": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000765441",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000727847",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered User should able to Place Order with Master card for BODFS": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000741513",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to Place Order with PLCC Card": {
+    "QA": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000741513",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to place order with master card for boss": {
+    "QA": {
+      "sku": "1000663257",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000842600",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000421796",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered User should able to order bopis with Master Card": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to buy bopis from buy now modal in FR": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000707946",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to buy now boss EN": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001221502",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to buy now boss FR": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001221502",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered User should able to order bopis with HD commercial Card": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to place order with hd commercial card": {
+    "QA": {
+      "sku": "1000807737",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001075809",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify error message during account creation from checkout page": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest User should able to verify PUD enables confirmation page": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify errors triggered on scheduled delivery section": {
+    "QA": {
+      "sku": "1000807737",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001189803",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000795118",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify error msg first last name special char guest english": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001110372",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to Place Order With Visa Card STH": {
+    "QA": {
+      "sku": "1000663257",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000791787",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000663257",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify greeting msg first second accordiance and billing address are not prepopulated with the saved addresses": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify error message for invalid email,password,extension": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001133752",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to Validate Paypal Token Realsed When Navigate To Other PagenError Msg For PO Add": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001133752",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to place order with amex card bopis": {
+    "QA": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to place donation order with visa card bopis": {
+    "QA": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to place order with paypal bodfs": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000741513",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should be able to verify paypal payment sec and click return to Paypal in OPC": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001133752",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest User should able to verify pickup in store details in OPC and order confirmation page in french": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to place order with hd commercial bodfs": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000741513",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify able to add prodct to card after sign up from opc sth en": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001133752",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to place order with master card sth": {
+    "QA": {
+      "sku": "1000663257",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000740986",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to place order with paypal user information not allowed to edit returning from paypal": {
+    "QA": {
+      "sku": "1000663257",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000740986",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to place order with express paypal bopis": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest User should be able to place bopis order with PayPal": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "New Registered User should be able to Place Bopis Order with HDCommercial Card": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to place order with plcc card BOSS": {
+    "QA": {
+      "sku": "1000663257",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000692280",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000663257",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User Should be able to place boss order with MasterCard": {
+    "QA": {
+      "sku": "1000663257",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000692280",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000663257",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify alternate pickup person details in order confirmation page": {
+    "QA": {
+      "sku": "1000663257",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000842600",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000421796",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Signed user should able to place order with paypal STH": {
+    "QA": {
+      "sku": "1000663257",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000740986",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "New registered user should be able to place Bopis and sth order with MasterCard": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001133752",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000657245",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify Order Summary Sec Shipping Cost Label If Estimated Shipping Cost Is In Cart Page": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001214517",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify checkout page SSS": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100110",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to verify greeting message and place order with hd commercial": {
+    "QP": {
+      "sku": "1001133752",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to place order with amex card and verify shipping details in order confirmation page": {
+    "QA": {
+      "sku": "1000663257",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001133752",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify paypal page pro user SSS FR": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100110",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify checkout page SSS FR": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001190579",
+      "postalCode": "M4G 4H9"
+    }
+  },
+  "User should able to verify paypal page SSS": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100110",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify estimated delivery time po box address cannot entered address in opc order confirmation page": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001214517",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest User should able to verify alternate pickup person details in order confirmation page and error msg without entering pickUpname in french": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000842600",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to place order with hd prox card": {
+    "QP": {
+      "sku": "1001075809",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000807736",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to Place order on BODFS SKU with LPT option using Visa Card": {
+    "QA": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001049130",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to place order with Master Card using LPT option": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100073",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Home page registered user should able to place order on boss with master card": {
+    "QA": {
+      "sku": "1000663257",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000842600",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000421796",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to see ctlp message when signin from checkout page": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000481251",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify order confirmation with ctlp selected in cart": {
+    "QA": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000666163",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest User should able to verify CTI service note with CTI details in shipping section and remove CIT option in card": {
+    "QA": {
+      "sku": "1000127672",
+      "postalCode": "M2H 0A1"
+    },
+    "QP": {
+      "sku": "1000810498",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000421796",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Home page registered user should able to place order on bodfs and appliance using visa": {
+    "QA": {
+      "sku": "1000100110",
+      "postalCode": "M2H 0A1"
+    },
+    "QP": {
+      "sku": "1001049130",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000421796",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should be able to verify special offer overlay and savings english": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M2H 0A1"
+    },
+    "QP": {
+      "sku": "1001020776",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should be able to verify special offer overlay and savings french": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M2H 0A1"
+    },
+    "QP": {
+      "sku": "1001020776",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to Place Order With CTI Opted In PIP For Visa Card": {
+    "QA": {
+      "sku": "1000727847",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000727847",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to place order with Paypal Appliance": {
+    "QA": {
+      "sku": "1000807959",
+      "postalCode": "M2J 2K2"
+    },
+    "QP": {
+      "sku": "1001189803",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should be able to place appliance order with mastercard": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001075809",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000795118",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered pro user should be able to place pvp appliance order with mastercard": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001187769",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000795118",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered pro user should be able to place pvp non appliance order with mastercard": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001049130",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000795118",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to buy BODFS as signIn user from OTC page placing order with Amex in EN": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000741513",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should place an order on bopis item with visa card by signing in from opc page": {
+    "QA": {
+      "sku": "1000421796",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100110",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to place order with hd consumer appliance": {
+    "QA": {
+      "sku": "1000807959",
+      "postalCode": "M2J 2K2"
+    },
+    "QP": {
+      "sku": "1001075809",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000795118",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to buy BODFS as signIn user from OTC page placing order with HD Commercial card in EN": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000741513",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should be able to place appliance order with visa": {
+    "QA": {
+      "sku": "1000807959",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001189803",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Signed in user should able to place order with hd consumer card": {
+    "QA": {
+      "sku": "1000663257",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000842600",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to add sth item in Save for later": {
+    "QA": {
+      "sku": "1000413087",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001226868",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify that bopis item is removed from Save for later": {
+    "QA": {
+      "sku": "1000100127",
+      "postalCode": "M4G 4H9"
+    },
+    "QP": {
+      "sku": "1001181402",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify notification on adding item to save for later": {
+    "QA": {
+      "sku": "1000807959",
+      "postalCode": "M2J 2K2"
+    },
+    "QP": {
+      "sku": "1001189803",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000807736",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify po address cannot be entered in schedule delivery section and delivery information in confirmation page in fr": {
+    "QA": {
+      "sku": "1000807959",
+      "postalCode": "M2J 2K2"
+    },
+    "QP": {
+      "sku": "1001075809",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Home Page Signed in User should able to place order with amex card on BOSS and STH items": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001133752",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify CTLP message in checkout page": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100073",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Signed in user should able to place order with plcc card": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000842600",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "New Home Page Registered user should able to Place Order on BODFS with HDCC": {
+    "QA": {
+      "sku": "1000479100",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000741513",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify cart merge message edit button other details in my cart section": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001238365",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify Item Move To Cart From Saved For Later": {
+    "QA": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100123",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to add boss item in Save for later and get notification when move to cart": {
+    "QA": {
+      "sku": "1001011628",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000720454",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000421796",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest user should able to verify order summary section place order with visa card french": {
+    "QA": {
+      "sku": "1000102770",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001133752",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify Items On Cart And Save for later": {
+    "QA": {
+      "sku": "1000413087",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001226868",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to Place Order With Amex Card": {
+    "QA": {
+      "sku": "1000421796",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100110",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Verify B article with BOPIS and BODFS both available": {
+    "QA": {
+      "sku": "1000100111",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001072116",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Verify the STH and BOSS fulfilment option": {
+    "QA": {
+      "sku": "1000100111",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000101927",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Verify B article with STH cheaper than BODFS": {
+    "QA": {
+      "sku": "1000100110",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000741513",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Verify BOPIS only": {
+    "QA": {
+      "sku": "1000676066",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001072116",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Verify the BOSS fulfilment option": {
+    "QA": {
+      "sku": "1000100162",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001043584",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Verify BODFS available and BOPIS unavailable fulfilment option": {
+    "QA": {
+      "sku": "1000100135",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000834262",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Verify ship to home fulfilment option": {
+    "QA": {
+      "sku": "1000848330",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000693881",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Verify B Article with STH and BOPIS/BOSS": {
+    "QP": {
+      "sku": "1000101252",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should be able to validate Cart page of a CBO product": {
+    "QA": {
+      "sku": "1001014508",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001779515",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should be able to validate PIP page of a CBO product": {
+    "QA": {
+      "sku": "1001014508",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001779417",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify hdpp decision panel accept EN": {
+    "QA": {
+      "sku": "1001024820",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001024820",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1001024820",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should be able to verify assertion on cart page for CBO flow": {
+    "QA": {
+      "sku": "1001014508",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001779515",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify hdpp decision panel accept FR": {
+    "QA": {
+      "sku": "1001024820",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001024820",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1001024820",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify hdpp decision panel decline EN": {
+    "QA": {
+      "sku": "1001024820",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001024820",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1001024820",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify CBO assertions on cart page": {
+    "QA": {
+      "sku": "1001014508",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001779515",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should be able to verify assertion on checkout page for CBO flow": {
+    "QA": {
+      "sku": "1001014508",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001779515",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest User should able to verify CBO details are displayed on order confirmation page": {
+    "QA": {
+      "sku": "1001014508",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001779515",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify hdpp decision panel quebec experience EN": {
+    "QA": {
+      "sku": "1001024820",
+      "postalCode": "G2K 2M4"
+    },
+    "QP": {
+      "sku": "1001024820",
+      "postalCode": "G2K 2M4"
+    },
+    "DEV": {
+      "sku": "1001024820",
+      "postalCode": "G2K 2M4"
+    }
+  },
+  "User should able to verify hdpp decision panel decline FR": {
+    "QA": {
+      "sku": "1001024820",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001024820",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1001024820",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to add to cart from sticky header": {
+    "QA": {
+      "sku": "1001014508",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000720454",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify hdpp decision panel quebec experience FR": {
+    "QA": {
+      "sku": "1001024820",
+      "postalCode": "G2K 2M4"
+    },
+    "QP": {
+      "sku": "1001024820",
+      "postalCode": "G2K 2M4"
+    },
+    "DEV": {
+      "sku": "1001024820",
+      "postalCode": "G2K 2M4"
+    }
+  },
+  "User should able to place order on BOSS sku using HD Prox card": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000842600",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000421796",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to select CTLP option and verify TandS": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000419473",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to place order on Bopis sku using HD Consumer Card": {
+    "QA": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100110",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "SignIn user should able to navigate from opc page to cart page clicking on edit in opc": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001024820",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify six virtual bundles with general merch EN": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000672700",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify response code on PIP and Cart Page": {
+    "QA": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000790632",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should Verify appliance parts OPC page navigate to cart with service edit link": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001075809",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000833931",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to Place Order With Gift Card Split Tender Visa Sth Guest": {
+    "QA": {
+      "sku": "1000663257",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000101927",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000660670",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Verify Bxsy promotion is applied on cart": {
+    "QA": {
+      "sku": "1000413087",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100110",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Verify Bxsy Selector panel on ATC Panel in EN": {
+    "QA": {
+      "sku": "1000413087",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100110",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Validate Y Articles Qty drop down updates dynamically based on the qty selection": {
+    "QA": {
+      "sku": "1000413087",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100110",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Validate back button navigates back to ATC panel from selector panel in French": {
+    "QA": {
+      "sku": "1000413087",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100110",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify six virtual bundles with general merch FR": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000672700",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to add multiple items from fbt in french": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to place order sth with hd commercial card": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001133752",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000657245",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify one virtual bundle with general merch EN": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001025401",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify six virtual bundles with appliances EN": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001120510",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify one virtual bundle with general merch FR": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001025401",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify six virtual bundles with appliances FR": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001120510",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify one virtual bundle with appliance EN": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001120519",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify one virtual bundle with appliance FR": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001120519",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Validate SFL Modal Popup when qty is more than one": {
+    "QA": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100110",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Validate BOPIS Delivery date range": {
+    "QA": {
+      "sku": "1000100110",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001120737",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Validate BOSS Delivery date range": {
+    "QA": {
+      "sku": "1000151768",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001221502",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000479100",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Validate postal code is applicable only for delivery fulfillment": {
+    "QA": {
+      "sku": "1000100110",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001049130",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000663257",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest user should able to verify express paypal payment": {
+    "QP": {
+      "sku": "1000818853",
+      "postalCode": "M1R 4E6"
+    },
+    "QA": {
+      "sku": "100100110",
+      "postalCode": "M1R 4E6"
+    },
+    "PROD": {
+      "sku": "1001528454",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to verify express paypal payment": {
+    "PROD": {
+      "sku": "1001528454",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100110",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Verify registered user is able setting default shipping address during checkout": {
+    "QA": {
+      "sku": "1000413087",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000791787",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000676081",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Verify Appliance delivery date change, ATC Overlay, OrderSummary and Cart Page in EN": {
+    "QA": {
+      "sku": "",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000727847",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000807736",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should be able to validates paypal page via express": {
+    "PROD": {
+      "sku": "1001528454",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001214517",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guets user should able to add product to cart": {
+    "PROD": {
+      "sku": "1001528454",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001214517",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to add product to cart": {
+    "PROD": {
+      "sku": "1000804897",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001214517",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able navigate to checkout page and verify shipping and payment section": {
+    "PROD": {
+      "sku": "1001238365",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100110",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest user should able to validate pip page from plp": {
+    "PROD": {
+      "sku": "1000804897",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify Appliance postalCode change, ATC Overlay, OrderSummary and Cart Page in FR": {
+    "QA": {
+      "sku": "1000727847",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000727847",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000807736",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify Order Summary and the flat fee and cutoff time not to display and Error Message on checkout for Scheduled delivery": {
+    "QA": {
+      "sku": "1000100110",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000421796",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000421796",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest user should able to edit in my cart section and payment section": {
+    "QA": {
+      "sku": "1000100110",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000818853",
+      "postalCode": "M1R 4E6"
+    },
+    "PROD": {
+      "sku": "1001238365",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest user should able to validate ATC panel disclaimer message FR": {
+    "QA": {
+      "sku": "1000504978",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000657245",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000729383",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest user should able to validate ATC Panel Backgroud State EN": {
+    "QA": {
+      "sku": "1000504978",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000657245",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000729383",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest user should able to validate ATC Panel Certona": {
+    "QA": {
+      "sku": "1000504978",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000657245",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000729383",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest user should able to validate ATC panel disclaimer message EN": {
+    "QA": {
+      "sku": "1000504978",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000657245",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000729383",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest user should able to Validate ATC Panel Closure From PIP": {
+    "QA": {
+      "sku": "1000504978",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000657245",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000729383",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest user should able to validate ATC panel from sticky header": {
+    "QA": {
+      "sku": "1001079932",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001238365",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1001169206",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest user should able to validate ATC panel with multiple items addition msg FR": {
+    "QA": {
+      "sku": "1000504978",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000657245",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000654727",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest user should able to validate ATC panel with multiple items addition msg EN": {
+    "QA": {
+      "sku": "1000504978",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000657245",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000729383",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest user should able to validate ATC panel order summary section": {
+    "QA": {
+      "sku": "1000504978",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000657245",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000729383",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest user should able to validate ATC Panel From FBT": {
+    "QA": {
+      "sku": "1000504978",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100127",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000654727",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest user should able to Validate ATC Panel Mini Cart Icon": {
+    "QA": {
+      "sku": "1000504978",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000657245",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000654727",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to validate certona carousal and certona images are present": {
+    "QA": {
+      "sku": "1001079932",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001238365",
+      "postalCode": "M1R 4E6"
+    },
+    "PROD": {
+      "sku": "1001238365",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest user should able to validate email page": {
+    "PROD": {
+      "sku": "1001552467",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest user should able to verify sth cti component section": {
+    "QA": {
+      "sku": "1000504978",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000810498",
+      "postalCode": "M1R 4E6"
+    },
+    "DEV": {
+      "sku": "1000654727",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest user should able to validate certona carousal": {
+    "PROD": {
+      "sku": "1001528454",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001214517",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Registered user should able to place order parts and service for Visa card": {
+    "QP": {
+      "sku": "1001075809",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Guest user should able to place order on sth sku using master card without selecting ctlp option": {
+    "QP": {
+      "sku": "1000481251",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify FDCA date change does not effect BODFS scheduled date": {
+    "QP": {
+      "sku": "1000100144",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify FDC/DFC sku and 4 digits in qty field": {
+    "QP": {
+      "sku": "1000481251",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify 'Fee Included' option for FDC": {
+    "QP": {
+      "sku": "1000122342",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify FDCA trigger value": {
+    "QP": {
+      "sku": "1000122342",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify FDCA only article": {
+    "QP": {
+      "sku": "1000100144",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify fdc only article which is oos online and store": {
+    "QP": {
+      "sku": "1000100144*",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify fdc shared article which is oos online and store": {
+    "QP": {
+      "sku": "1000100165",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should be able to valdiate adms lite article pip english": {
+    "QP": {
+      "sku": "1001390471",
+      "postalCodeON": "M1R 4E6",
+      "postalCodeQC": "G1A 0A2",
+      "outOfCoveragePostalCode" : "G2J 1R8" 
+    },
+    "QA": {
+      "sku": "1001390471",
+      "postalCodeON": "M1R 4E6",
+      "postalCodeQC": "G1A 0A2",
+      "outOfCoveragePostalCode" : "G2J 1R8" 
+    },
+    "DEV": {
+      "sku": "1001390471",
+      "postalCodeON": "M1R 4E6",
+      "postalCodeQC": "G1A 0A2",
+      "outOfCoveragePostalCode" : "G2J 1R8" 
+    }
+  },
+  "User should be able to valdiate adms lite article pip french": {
+    "QP": {
+      "sku": "1001390471",
+      "postalCodeON": "M1R 4E6",
+      "postalCodeQC": "G1A 0A2",
+      "outOfCoveragePostalCode" : "G2J 1R8" 
+    },
+    "QA": {
+      "sku": "1001390471",
+      "postalCodeON": "M1R 4E6",
+      "postalCodeQC": "G1A 0A2",
+      "outOfCoveragePostalCode" : "G2J 1R8" 
+    },
+    "DEV": {
+      "sku": "1001390471",
+      "postalCodeON": "M1R 4E6",
+      "postalCodeQC": "G1A 0A2",
+      "outOfCoveragePostalCode" : "G2J 1R8" 
+    }
+  },
+  "User should be able to valdiate admsl article add to cart eng": {
+    "QP": {
+      "sku": "1001390471",
+      "sku2": "1001390472",
+      "sthSku": "1000481251",
+      "postalCodeON": "M1R 4E6",
+      "postalCodeQC": "G1A 0A2"
+    },
+    "QA": {
+      "sku": "1001390471",
+      "sku2": "1001390472",
+      "sthSku": "1000100127",
+      "postalCodeON": "M1R 4E6",
+      "postalCodeQC": "G1A 0A2"
+    },
+    "DEV": {
+      "sku": "1001390471",
+      "sku2": "1001390472",
+      "sthSku": "1000100127",
+      "postalCodeON": "M1R 4E6",
+      "postalCodeQC": "G1A 0A2"
+    }
+  },
+  "User should be able to valdiate admsl article add to cart french": {
+    "QP": {
+      "sku": "1001390471",
+      "sku2": "1001390472",
+      "sthSku": "1000481251",
+      "postalCodeON": "M1R 4E6",
+      "postalCodeQC": "G1A 0A2"
+    },
+    "QA": {
+      "sku": "1001390471",
+      "sku2": "1001390472",
+      "sthSku": "1000100127",
+      "postalCodeON": "M1R 4E6",
+      "postalCodeQC": "G1A 0A2"
+    },
+    "DEV": {
+      "sku": "1001390471",
+      "sku2": "1001390472",
+      "sthSku": "1000100127",
+      "postalCodeON": "M1R 4E6",
+      "postalCodeQC": "G1A 0A2"
+    }
+  },
+  "User should be able to valdiate when admsl article is oos english": {
+    "QP": {
+      "sku": "1001188222"
+    },
+    "QA": {
+      "sku": "1001390468"
+    },
+    "DEV": {
+      "sku": "1001390468"
+    }
+  },
+  "User should be able to valdiate when admsl article is oos french": {
+    "QP": {
+      "sku": "1001188222"
+    },
+    "QA": {
+      "sku": "1001390468"
+    },
+    "DEV": {
+      "sku": "1001390468"
+    }
+  },
+  "User should be able to validate adms lite article pip has editable postal code when cart has appliance english": {
+    "QP": {
+      "sku": "1001390471",
+      "postalCode1": "M1R 4E6",
+      "postalCode2": "M2J 2K2"
+    },
+    "QA": {
+      "sku": "1001390471",
+      "postalCode1": "M1R 4E6",
+      "postalCode2": "M2J 2K2"
+    },
+    "DEV": {
+      "sku": "1001390471",
+      "postalCode1": "M1R 4E6",
+      "postalCode2": "M2J 2K2"
+    }
+  },
+  "User should be able to validate adms lite article pip has editable postal code when cart has appliance french": {
+    "QP": {
+      "sku": "1001390471",
+      "postalCode1": "M1R 4E6",
+      "postalCode2": "M2J 2K2"
+    },
+    "QA": {
+      "sku": "1001390471",
+      "postalCode1": "M1R 4E6",
+      "postalCode2": "M2J 2K2"
+    },
+    "DEV": {
+      "sku": "1001390471",
+      "postalCode1": "M1R 4E6",
+      "postalCode2": "M2J 2K2"
+    }
+  },
+  "User should be able to validate major appliance pip has editable postal code when cart has major appliance english": {
+    "QP": {
+      "sku": "1000807737",
+      "postalCode1": "M1R 4E6",
+      "postalCode2": "M2J 2K2"
+    },
+    "QA": {
+      "sku": "1000813104",
+      "postalCode1": "M1R 4E6",
+      "postalCode2": "M2J 2K2"
+    },
+    "DEV": {
+      "sku": "1000795118",
+      "postalCode1": "M1R 4E6",
+      "postalCode2": "M2J 2K2"
+    }
+  },
+  "User should be able to validate major appliance pip has editable postal code when cart has major appliance french": {
+    "QP": {
+      "sku": "1000807737",
+      "postalCode1": "M1R 4E6",
+      "postalCode2": "M2J 2K2"
+    },
+    "QA": {
+      "sku": "1000813104",
+      "postalCode1": "M1R 4E6",
+      "postalCode2": "M2J 2K2"
+    },
+    "DEV": {
+      "sku": "1000795118",
+      "postalCode1": "M1R 4E6",
+      "postalCode2": "M2J 2K2"
+    }
+  },
+  "User should be able to valdiate admsl virtual bundle pip english": {
+    "QP": {
+      "sku": "1001390471",
+      "postalCodeON": "M1R 4E6",
+      "postalCodeQC": "G1A 0A2",
+      "outOfCoveragePostalCode" : "G2J 1R8" 
+    },
+    "QA": {
+      "sku": "1001390471",
+      "postalCodeON": "M1R 4E6",
+      "postalCodeQC": "G1A 0A2",
+      "outOfCoveragePostalCode" : "G2J 1R8" 
+    },
+    "DEV": {
+      "sku": "1001390471",
+      "postalCodeON": "M1R 4E6",
+      "postalCodeQC": "G1A 0A2",
+      "outOfCoveragePostalCode" : "G2J 1R8" 
+    }
+  },
+  "User should be able to valdiate admsl virtual bundle pip french": {
+    "QP": {
+      "sku": "1001390471",
+      "postalCodeON": "M1R 4E6",
+      "postalCodeQC": "G1A 0A2",
+      "outOfCoveragePostalCode" : "G2J 1R8" 
+    },
+    "QA": {
+      "sku": "1001390471",
+      "postalCodeON": "M1R 4E6",
+      "postalCodeQC": "G1A 0A2",
+      "outOfCoveragePostalCode" : "G2J 1R8" 
+    },
+    "DEV": {
+      "sku": "1001390471",
+      "postalCodeON": "M1R 4E6",
+      "postalCodeQC": "G1A 0A2",
+      "outOfCoveragePostalCode" : "G2J 1R8" 
+    }
+  },
+  "Validate pro user event 8 test conditions for srp with products in english": {
+    "PROD": {
+      "sku": "1001569949",
+      "postalCode": "L4K 1Z5"
+    },
+    "QP": {
+      "sku": "1001121061",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate pro user event 8 test conditions for srp with products in french": {
+    "PROD": {
+      "sku": "1001569949",
+      "postalCode": "L4K 1Z5"
+    },
+    "QP": {
+      "sku": "1001121061",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate guest user event 8 test conditions for product view in english": {
+    "PROD": {
+      "sku": "1001569949",
+      "postalCode": "L4K 1Z5"
+    },
+    "QP": {
+      "sku": "1001121061",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate guest user event 8 test conditions for product view in french": {
+    "PROD": {
+      "sku": "1001569949",
+      "postalCode": "L4K 1Z5"
+    },
+    "QP": {
+      "sku": "1001121061",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate registered user event 8 test conditions for product view in english": {
+    "PROD": {
+      "sku": "1001569949",
+      "postalCode": "L4K 1Z5"
+    },
+    "QP": {
+      "sku": "1001121061"
+    }
+  },
+  "Validate registered user event 8 test conditions for product view in french": {
+    "PROD": {
+      "sku": "1001569949",
+      "postalCode": "L4K 1Z5"
+    },
+    "QP": {
+      "sku": "1001121061",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate guest user scremove test conditions for cart view in french": {
+    "PROD": {
+      "sku": "1000666129",
+      "postalCode": "L4K 1Z5"
+    },
+    "QP": {
+      "sku": "1000655934",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate guest user scremove test conditions for cart view in english": {
+    "PROD": {
+      "sku": "1000666129",
+      "postalCode": "L4K 1Z5"
+    },
+    "QP": {
+      "sku": "1000655934",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate pro user sc open test conditions for cart view in french": {
+    "PROD": {
+      "sku": "1000666129",
+      "postalCode": "L4K 1Z5"
+    },
+    "QP": {
+      "sku": "1000655934",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate pro user sc open test conditions for cart view in english": {
+    "PROD": {
+      "sku": "1000666129",
+      "postalCode": "L4K 1Z5"
+    },
+    "QP": {
+      "sku": "1000655934",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate registered user sc open test conditions for cart view in french": {
+    "PROD": {
+      "sku": "1000666129",
+      "postalCode": "L4K 1Z5"
+    },
+    "QP": {
+      "sku": "1000655934",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate registered user sc open test conditions for cart view in english": {
+    "PROD": {
+      "sku": "1000666129",
+      "postalCode": "L4K 1Z5"
+    },
+    "QP": {
+      "sku": "1000655934",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Verify bulk pricing promotion is applied for fdc only article as guest":{
+    "QA": {
+      "sku": "1000100144",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100144",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Verify bulk pricing promotion is applied for fdc shared bopis article as reg user":{
+    "QA": {
+      "sku": "1000109261",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000686028",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Verify bulk pricing promotion is applied for sth bodfs article as guest":{
+    "QA": {
+      "sku": "1000109261",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000122342",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Verify item removal notification popup on cart with single item as guest":{
+    "QA": {
+      "sku": "1000100144",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1000100144",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Validate guest user sc open test conditions for cart view in french": {
+    "PROD": {
+      "sku": "1000666129",
+      "postalCode": "L4K 1Z5"
+    },
+    "QP": {
+      "sku": "1000655934",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate guest user sc open test conditions for cart view in english": {
+    "PROD": {
+      "sku": "1000666129",
+      "postalCode": "L4K 1Z5"
+    },
+    "QP": {
+      "sku": "1000655934",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate guest user should able to verify scadd test condition for card addition in english": {
+    "PROD": {
+      "sku": "1001049864",
+      "postalCode": "L4K 1Z5"
+    },
+    "QP": {
+      "sku": "1001235958",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate guest user should able to verify scadd test condition for card addition in french": {
+    "PROD": {
+      "sku": "1001049864",
+      "postalCode": "L4K 1Z5"
+    },
+    "QP": {
+      "sku": "1001235958",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate registered user should able to verify scadd test condition for card addition in english": {
+    "PROD": {
+      "sku": "1000834261",
+      "postalCode": "L4K 1Z5"
+    },
+    "QP": {
+      "sku": "1000834721",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate registered user should able to verify scadd test condition for card addition in french": {
+    "PROD": {
+      "sku": "1000834261",
+      "postalCode": "L4K 1Z5"
+    },
+    "QP": {
+      "sku": "1000834721",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate pro user should able to verify scadd test condition for card addition in english": {
+    "PROD": {
+      "sku": "1000834261",
+      "postalCode": "L4K 1Z5"
+    },
+    "QP": {
+      "sku": "1000834721",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate pro user should able to verify scadd test condition for card addition in french": {
+    "PROD": {
+      "sku": "1000834261",
+      "postalCode": "L4K 1Z5"
+    },
+    "QP": {
+      "sku": "1000834721",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate registered user scremove test conditions for cart view in french": {
+    "PROD": {
+      "sku": "1000666129",
+      "postalCode": "L4K 1Z5"
+    },
+    "QP": {
+      "sku": "1000655934",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate registered user scremove test conditions for cart view in english": {
+    "PROD": {
+      "sku": "1000666129",
+      "postalCode": "L4K 1Z5"
+    },
+    "QP": {
+      "sku": "1000655934",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate pro user scremove test conditions for cart view in french": {
+    "PROD": {
+      "sku": "1000666129",
+      "postalCode": "L4K 1Z5"
+    },
+    "QP": {
+      "sku": "1000655934",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate pro user scremove test conditions for cart view in english":{
+    "PROD": {
+      "sku": "1000666129",
+      "postalCode": "L4K 1Z5"
+    },
+    "QP": {
+      "sku": "1000655934",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate guest user should able to verify purchase test condition for capturing successful purchase in english": {
+    "QP": {
+      "sku": "1000163345",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate guest user should able to verify purchase test condition for capturing successful purchase in french": {
+    "QP": {
+      "sku": "1000677742",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate registered user should able to verify purchase test condition for capturing successful purchase in english": {
+    "QP": {
+      "sku": "1001312713",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate registered user should able to verify purchase test condition for capturing successful purchase in french": {
+    "QP": {
+      "sku": "1001312713",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "User should able to verify admsl and sth fullfillments": {
+    "QA": {
+      "sku": "1000504978",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001390471",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify order summary for admsl mixed cart": {
+    "QA": {
+      "sku": "1000504978",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001390471",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Verify flat fee for customers in quebec for admsl articles": {
+    "QA": {
+      "sku": "1000504978",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001390471",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify admsl entries and sth quality dropdown": {
+    "QA": {
+      "sku": "1001390471",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001390471",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "User should able to verify admsl delivery fullfillment": {
+    "QA": {
+      "sku": "1001390471",
+      "postalCode": "M1R 4E6"
+    },
+    "QP": {
+      "sku": "1001390471",
+      "postalCode": "M1R 4E6"
+    }
+  },
+  "Validate pro user should able to verify purchase test condition for capturing successful purchase in english": {
+    "QP": {
+      "sku": "1000163345",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate pro user should able to verify purchase test condition for capturing successful purchase in french": {
+    "QP": {
+      "sku": "1000677742",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate guest user eVar33 test conditions for capturing click to measure block on pip in english": {
+    "PROD": {
+      "sku": "1001096209",
+      "postalCode": "L4K 1Z5"
+    },
+    "QP": {
+      "sku": "1001295732",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate guest user eVar33 test conditions for capturing click to measure block on pip in french": {
+    "PROD": {
+      "sku": "1001096209",
+      "postalCode": "L4K 1Z5"
+    },
+    "QP": {
+      "sku": "1001295732",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate registered user eVar33 test conditions for capturing click to measure block on pip in english": {
+    "PROD": {
+      "sku": "1001096209",
+      "postalCode": "L4K 1Z5"
+    },
+    "QP": {
+      "sku": "1001295732",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate registered user eVar33 test conditions for capturing click to measure block on pip in french": {
+    "PROD": {
+      "sku": "1001096209",
+      "postalCode": "L4K 1Z5"
+    },
+    "QP": {
+      "sku": "1001295732",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate pro user eVar33 test conditions for capturing click to measure block on pip in english": {
+    "PROD": {
+      "sku": "1001096209",
+      "postalCode": "L4K 1Z5"
+    },
+    "QP": {
+      "sku": "1001295732",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate pro user eVar33 test conditions for capturing click to measure block on pip in french": {
+    "PROD": {
+      "sku": "1001096209",
+      "postalCode": "L4K 1Z5"
+    },
+    "QP": {
+      "sku": "1001295732",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate guest user evar33 test conditions to capture click to measure block on cart in english": {
+    "QP": {
+      "sku": "1001361100",
+      "postalCode": "L4K 1Z5"
+    },
+    "PROD": {
+      "sku": "1001792743",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate guest user evar33 test conditions to capture click to measure block on cart in french": {
+    "QP": {
+      "sku": "1001361100",
+      "postalCode": "L4K 1Z5"
+    },
+    "PROD": {
+      "sku": "1001792743",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate registered user evar33 test conditions to capture click to measure block on cart in english": {
+    "QP": {
+      "sku": "1001361100",
+      "postalCode": "L4K 1Z5"
+    },
+    "PROD": {
+      "sku": "1001792743",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate registered user evar33 test conditions to capture click to measure block on cart in french": {
+    "QP": {
+      "sku": "1001361100",
+      "postalCode": "L4K 1Z5"
+    },
+    "PROD": {
+      "sku": "1001792743",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate pro user evar33 test conditions to capture click to measure block on cart in english": {
+    "QP": {
+      "sku": "1001361100",
+      "postalCode": "L4K 1Z5"
+    },
+    "PROD": {
+      "sku": "1001792743",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate pro user evar33 test conditions to capture click to measure block on cart in french": {
+    "QP": {
+      "sku": "1001361100",
+      "postalCode": "L4K 1Z5"
+    },
+    "PROD": {
+      "sku": "1001792743",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate guest user evar228 test conditions to capture product finding method pfm 2.0 in english": {
+    "QP": {
+      "sku": "1000520461",
+      "postalCode": "L4K 1Z5"
+    },
+    "PROD": {
+      "sku": "1001465014",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate guest user evar228 test conditions to capture product finding method pfm 2.0 in french": {
+    "QP": {
+      "sku": "1000520461",
+      "postalCode": "L4K 1Z5"
+    },
+    "PROD": {
+      "sku": "1001465014",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate registered user evar228 test conditions to capture product finding method pfm 2.0 in english": {
+    "QP": {
+      "sku": "1000520461",
+      "postalCode": "L4K 1Z5"
+    },
+    "PROD": {
+      "sku": "1001465014",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate registered user evar228 test conditions to capture product finding method pfm 2.0 in french": {
+    "QP": {
+      "sku": "1000520461",
+      "postalCode": "L4K 1Z5"
+    },
+    "PROD": {
+      "sku": "1001465014",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate pro user evar228 test conditions to capture product finding method pfm 2.0 in english": {
+    "QP": {
+      "sku": "1000520461",
+      "postalCode": "L4K 1Z5"
+    },
+    "PROD": {
+      "sku": "1001465014",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate pro user evar228 test conditions to capture product finding method pfm 2.0 in french": {
+    "QP": {
+      "sku": "1000520461",
+      "postalCode": "L4K 1Z5"
+    },
+    "PROD": {
+      "sku": "1001465014",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate guest user evar138 test conditions to capture shipping method in english": {
+    "QP": {
+      "sku": "1000520461",
+      "postalCode": "L4K 1Z5"
+    },
+    "PROD": {
+      "sku": "1000154555",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate guest user evar138 test conditions to capture shipping method in french": {
+    "QP": {
+      "sku": "1000520461",
+      "postalCode": "L4K 1Z5"
+    },
+    "PROD": {
+      "sku": "1000154555",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate registered user evar138 test conditions to capture shipping method in english": {
+    "QP": {
+      "sku": "1000520461",
+      "postalCode": "L4K 1Z5"
+    },
+    "PROD": {
+      "sku": "1000154555",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate registered user evar138 test conditions to capture shipping method in french": {
+    "QP": {
+      "sku": "1000520461",
+      "postalCode": "L4K 1Z5"
+    },
+    "PROD": {
+      "sku": "1000154555",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate pro user evar138 test conditions to capture shipping method in english": {
+    "QP": {
+      "sku": "1000520461",
+      "postalCode": "L4K 1Z5"
+    },
+    "PROD": {
+      "sku": "1000154555",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate pro user evar138 test conditions to capture shipping method in french": {
+    "QP": {
+      "sku": "1000520461",
+      "postalCode": "L4K 1Z5"
+    },
+    "PROD": {
+      "sku": "1000154555",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate registered user should able to verify evar35 test condition to capture order id in english": {
+    "QP": {
+      "sku": "1000708643",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate registered user should able to verify evar35 test condition to capture order id in french": {
+    "QP": {
+      "sku": "1000708643",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate guest user should able to verify evar35 test condition to capture order id in english": {
+    "QP": {
+      "sku": "1000708643",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate guest user should able to verify evar35 test condition to capture order id in french": {
+    "QP": {
+      "sku": "1000708643",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate pro user should able to verify evar35 test condition to capture order id in english": {
+    "QP": {
+      "sku": "1000708643",
+      "postalCode": "L4K 1Z5"
+    }
+  },
+  "Validate pro user should able to verify evar35 test condition to capture order id in french": {
+    "QP": {
+      "sku": "1000708643",
+      "postalCode": "L4K 1Z5"
+    }
+  }
+}

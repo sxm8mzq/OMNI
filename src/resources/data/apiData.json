@@ -1,0 +1,125 @@
+{
+  "searchStoreApi": {
+    "uri": "https://www.qp-gcp.homedepot.ca/homedepotcacommercewebservices/v2/homedepotca/stores",
+    "pageSize": 3,
+    "currentPage": 0,
+    "query": 7001,
+    "fields": "FULL_SPA",
+    "lang": "en"
+  },
+  "createCartApi": {
+    "uri":"https://www.qp-gcp.homedepot.ca/api/cartsvc/v1/carts",
+    "customerId": "john_doe@homedepot.com",
+    "jobDescription": "CART JOB DESCRIPTION",
+    "onlineOrderType": 3,
+    "orderBalanceDue": 100,
+    "orderId": 1234567890,
+    "orderIdLink": "string",
+    "orderLastUpdatedAt": "2020-03-26T14:36:32.478362921+00:00",
+    "repriced": false,
+    "source": "WEB",
+    "status": "NEW",
+    "storeId": 7001
+  },
+  "updateCartApi": {
+    "uri":"https://www.qp-gcp.homedepot.ca/api/cartsvc/v1/carts/",
+    "appliancePostalCode": "M1R4E6",
+    "shippingPostalCode": "M1R4E6",
+    "storeDeliveryPostalCode": "M1R4E6",
+    "storeId": 7001,
+    "updated": true
+  },
+  "addToCartSthApi": {
+    "uri":"https://www.qp-gcp.homedepot.ca/api/cartsvc/v1/carts/",
+    "fulfillment": {
+      "type": "SHIP_TO_HOME",
+      "typeId": 1
+    },
+    "sku": "1001226868",
+    "quantity": 1,
+    "store": 7001,
+    "uom": "EA",
+    "source": "WEB",
+    "postalCode": "M1R4E6"
+  },
+  "addToCartBossApi": {
+    "uri":"https://www.qp-gcp.homedepot.ca/api/cartsvc/v1/carts/",
+    "fulfillment": {
+      "type": "BOSS",
+      "typeId": 1
+    },
+    "sku": "1001389260",
+    "quantity": 1,
+    "store": 7001,
+    "uom": "EA",
+    "source": "WEB",
+    "postalCode": "M1R4E6"
+  },
+  "addToCartExpressSd4Api": {
+    "uri":"https://www.qp-gcp.homedepot.ca/api/cartsvc/v1/carts/",
+    "fulfillment": {
+      "type": "DELIVERY_SD4",
+      "typeId": 1
+    },
+    "sku": "1000100073",
+    "quantity": 1,
+    "store": 7001,
+    "uom": "EA",
+    "source": "WEB",
+    "postalCode": "M1R4E6"
+  },
+  "addToCartExpressScdApi": {
+    "uri":"https://www.qp-gcp.homedepot.ca/api/cartsvc/v1/carts/",
+    "fulfillment": {
+      "type": "DELIVERY_SCD",
+      "typeId": 1
+    },
+    "sku": "1000100110",
+    "quantity": 1,
+    "store": 7001,
+    "uom": "EA",
+    "source": "WEB",
+    "postalCode": "M1R4E6"
+  },
+  "addToCartBopisApi": {
+    "uri":"https://www.qp-gcp.homedepot.ca/api/cartsvc/v1/carts/",
+    "fulfillment": {
+      "type": "BOPIS",
+      "typeId": 1
+    },
+    "sku": "1001160446",
+    "quantity": 1,
+    "store": 7001,
+    "uom": "EA",
+    "source": "WEB",
+    "postalCode": "M1R4E6"
+  },
+  "addToCarApplianceApi": {
+    "uri":"https://www.qp-gcp.homedepot.ca/api/cartsvc/v1/carts/",
+    "fulfillment": {
+      "type": "APPLIANCE",
+      "typeId": 1
+    },
+    "sku": "1001020776",
+    "quantity": 1,
+    "store": 7001,
+    "uom": "EA",
+    "source": "WEB",
+    "postalCode": "M2J2K2"
+  },
+  "changeStorePopupApi":{
+    "uri": "https://www.qp-gcp.homedepot.ca/api/localization/v1/store",
+    "user":"anonymous",
+    "lang":"en"
+  },
+  "loginApi":{
+    "uri":"https://api.qp-gcp.homedepot.ca/auth/v1/login",
+   "data": "login.emailAddress=Seth_Stanton44%40hotmail.com&login.password=Test%40123&form.rememberMe=false&resetPassword.redirect=%2Fforgot-password%3Fupgrade%3Dtrue",
+   "header": {
+    "content":"application/x-www-form-urlencoded;charset=UTF-8"
+   }
+  },
+  "frenchApi":{
+    "uri": "https://www.qp-gcp.homedepot.ca/fr/accueil.html"
+  }
+}

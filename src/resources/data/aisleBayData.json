@@ -1,0 +1,170 @@
+{
+    "RC-XX":{
+        "Aisle":"^(RC)$",
+        "Bay":"^\\d+$",
+        "English":"Checkout counters",
+        "French":"Comptoirs de caisse"
+    },
+    "FS-XX":{
+        "Aisle":"^(FS)$",
+        "Bay":"^\\d+$",
+        "English":"Flooring showroom",
+        "French":"Revêtements de sol salle d’exposition"
+    },
+    "MS-XX":{
+        "Aisle":"^(MS)$",
+        "Bay":"^\\d+$",
+        "English":"Doors & Windows showroom",
+        "French":"Portes et fenêtres salle d’exposition"
+    },
+    "BL-XX":{
+        "Aisle":"^(BL)$",
+        "Bay":"^\\d+$",
+        "English":"Bath showroom",
+        "French":"Bain salle d’exposition"
+    },
+    "FL-XX":{
+        "Aisle":"^(FL)$",
+        "Bay":"^\\d+$",
+        "English":"Flooring showroom",
+        "French":"Revêtements de sol salle d’exposition"
+    },
+    "OG-XX":{
+        "Aisle":"^(OG)$",
+        "Bay":"^\\d+$",
+        "English":"Garden Centre",
+        "French":"Centre jardin"
+    },
+    "FE-XX":{
+        "Aisle":"^(FE)$",
+        "Bay":"^[^6]\\d{2}$",
+        "English":"Front end of the store",
+        "French":"Avant du magasin"
+    },
+    "FE-6X":{
+        "Aisle":"^(FE)$",
+        "Bay":"^6\\d{2}$",
+        "English":"Garden Centre front end, Bay 6",
+        "French":"Avant du Centre jardin, Rayon 6"
+    },
+    "BW-XX":{
+        "Aisle":"^(BW)$",
+        "Bay":"^[^6]\\d{2}$",
+        "English":"Back wall, Bay",
+        "French":"Mur arrière, Rayon"
+    },
+    "BW-6X":{
+        "Aisle":"^(BW)$",
+        "Bay":"^6\\d{2}$",
+        "English":"Garden Centre back wall, Bay 6",
+        "French":"Mur arrière du Centre jardin, Rayon 6"
+    },
+    "PR-XX":{
+        "Aisle":"^(PR)$",
+        "Bay":".*",
+        "English":"Pro Desk",
+        "French":"Comptoir Pro"
+    },
+    "PD-XX":{
+        "Aisle":"^(PD)$",
+        "Bay":".*",
+        "English":"Paint Desk",
+        "French":"Comptoir de la peinture"
+    },
+    "TR-XX":{
+        "Aisle":"^(TR)$",
+        "Bay":".*",
+        "English":"Tool Rental",
+        "French":"Location d’outils"
+    },
+    "SX-1X":{
+        "Aisle":"^(SS|SL)$",
+        "Bay":"1[0-9]{2}$",
+        "English":"Seasonal showroom (BBQs/Fireplaces)",
+        "French":"Saisonnier salle d’exposition (Barbecues/foyers)"
+    },
+    "SX-2X":{
+        "Aisle":"^(SS|SL)$",
+        "Bay":"2[0-9]{2}$",
+        "English":"Seasonal showroom (Outdoor Living)",
+        "French":"Saisonnier salle d’exposition (Aménagement extérieur)"
+    },
+    "SX-3X":{
+        "Aisle":"^(SS|SL)$",
+        "Bay":"3[0-9]{2}$",
+        "English":"Seasonal showroom (Mowers/Tractors)",
+        "French":"Saisonnier salle d’exposition (Tondeuses/Tracteurs)"
+    },
+    "SX-4X":{
+        "Aisle":"^(SS|SL)$",
+        "Bay":"4[0-9]{2}$",
+        "English":"Seasonal showroom (Snow Throwers)",
+        "French":"Saisonnier salle d’exposition (Souffleuses)"
+    },
+    "SX-5X":{
+        "Aisle":"^(SS|SL)$",
+        "Bay":"5[0-9]{2}$",
+        "English":"Seasonal showroom (Holiday)",
+        "French":"Saisonnier salle d’exposition (Fêtes)"
+    },
+    "SX-6X":{
+        "Aisle":"^(SS|SL)$",
+        "Bay":"6[0-9]{2}$",
+        "English":"Seasonal showroom (Fall)",
+        "French":"Saisonnier salle d’exposition (Automne)"
+    },
+    "SX-7X":{
+        "Aisle":"^(SS|SL)$",
+        "Bay":"7[0-9]{2}$",
+        "English":"Seasonal showroom (Halloween)",
+        "French":"Saisonnier salle d’exposition (Halloween)"
+    },
+    "SX-XX":{
+        "Aisle":"^(SS|SL)$",
+        "Bay":"^[089]\\d{2}$",
+        "English":"Seasonal",
+        "French":"Saisonnier"
+    },
+    "XX-189":{
+        "Aisle":"^\\d+$",
+        "Bay":"^189$",
+        "English":"Display in aisle",
+        "French":"Présentoir dans l’allée"
+    },
+    "XX-XX":{
+        "Aisle":"^\\d+$",
+        "Bay":"^(?!189$)\\d+$",
+        "English":"Aisle",
+        "French":"Allée"
+    },
+    "EC-XY1":{
+        "Aisle":"^(EC)$",
+        "Bay":"^(\\d)(\\d)1$",
+        "English":"Front of aisle",
+        "French":"Avant d’allée"
+    },
+    "SC-XY1":{
+        "Aisle":"^(SC)$",
+        "Bay":"^(\\d)(\\d)1$",
+        "English":"Front of aisle",
+        "French":"Avant d’allée"
+    },
+    "SC-XY2":{
+        "Aisle":"^(SC)$",
+        "Bay":"^^(\\d)(\\d)2$",
+        "English":"Front of aisle",
+        "French":"Avant d’allée"
+    }, 
+    "EC-XY!1":{
+        "Aisle":"^(EC)$",
+        "Bay":"^(\\d)(\\d)[2-9]$",
+        "English":"Back of aisle",
+        "French":"Arrière d’allée"
+    },  
+    "SC-XY!2":{
+        "Aisle":"^(SC)$",
+        "Bay":"^(\\d)(\\d)[3-9]$",
+        "English":"Back of aisle",
+        "French":"Arrière d’allée"
+    }
+}
