@@ -4,6 +4,7 @@ let environment: string;
 import {QASAPLOGIN } from '../pageRepository/pageFactory.js'
 import { Key } from "webdriverio";
 import fs from 'fs';
+import { waitForElement } from "../pageObjects/page.js";
 
 class sap {
   async launchSAPUrl() {
@@ -51,12 +52,12 @@ class sap {
 
     async enterTextInTextBox(selector,text) 
     {
-    await this.sleep(2000);
+    await browser.pause(2000);
     (await ($(`${selector}`))).click();
     await browser.action("key").down(Key.Ctrl).down("a").pause(2).up(Key.Ctrl).up("a").perform();
     (await ($(`${selector}`))).addValue(text);;
     //console.log(text);
-    await this.sleep(2000);
+    await browser.pause(2000);
     //console.log("username and pwd");     
     }
     sleep(ms) {
@@ -65,10 +66,9 @@ class sap {
 
   async clicktheBtnXpath(selector: string) 
     {
-    //console.log(selector)
-    await this.sleep(4000);
+      await browser.pause(2000);
     (await ($(`${selector}`))).click();
-    await this.sleep(2000);
+    await browser.pause(2000);
  
     }
     async getOrderNumber(){
@@ -98,6 +98,28 @@ class sap {
   
         }
       }
+
+      async getPONumber(){
+        let jsonData = [];
+        try {
+          const fileContents = fs.readFileSync('./src/resources/data/poDetails.json', 'utf8');
+          jsonData = JSON.parse(fileContents);
+        } catch (error) {
+          //console.error('Error reading JSON file:', error);
+        }
+        const CCDetails = [];
+        const valueSet1 = fs.readFileSync('./src/resources/data/poDetails.json', 'utf8');
+        const a = valueSet1.split('\n');      
+        for (let i = 0; i < a.length; i++) {
+          CCDetails.push(a[i]);
+        }
+        
+        const POnum= CCDetails[1];
+        const ponumtxt: string = POnum.toString();
+        return ponumtxt;
+        //console.log(order);
+         }
+       
       
   async displayDocumentFlow()
   {
@@ -133,6 +155,7 @@ class sap {
       let match;
       while ((match = regex.exec(ponum)) !== null) {
         numbers.push(parseInt(match[0], 10));
+       
         return numbers;
       }   
   }
@@ -141,11 +164,184 @@ class sap {
     
     console.log(extractedNumbers); 
     //write
-    fs.writeFileSync('./src/resources/data/poDetails.json', JSON.stringify('', null, 2));
-    fs.writeFileSync('./src/resources/data/poDetails.json', JSON.stringify(extractedNumbers, null, 2));
-
-    
+    //fs.writeFileSync('./src/resources/data/poDetails.json', JSON.stringify('', null, 2));
+    fs.writeFileSync('./src/resources/data/poDetails.json', JSON.stringify(extractedNumbers, null, 2))
 }
+          async checkZESC(Tcode)
+          {
+
+            await this.enterTextInTextBox(QASAPLOGIN.txtTcode,Tcode);
+            await this.keyboardActions('Enter');
+            const orderNum=await this.getOrderNumber();
+            //await sapLogin.getOrderNumber();
+            (await $(QASAPLOGIN.va03OrderNumtxtBox)).clearValue();
+              await this.enterTextInTextBox (QASAPLOGIN.va03OrderNumtxtBox,orderNum);
+            await this.keyboardActions('Enter');
+            //await sap.clicktheBtnXpath(QASAPLOGIN.va03ExecuteBtn2);
+            console.log("VA03 order opened");
+            (await $(QASAPLOGIN.va03ExecuteBtn2)).waitForDisplayed({ timeout: 60000 });
+            await waitForElement (await $(QASAPLOGIN.va03DisplayDocumentBtn));
+            await this.clicktheBtnXpath(QASAPLOGIN.va03DisplayDocumentBtn);
+            console.log("Document flow is opened!");
+            await browser.pause(2000);
+            const POnum=await $(QASAPLOGIN.va03DisplayDocPONum).getText();
+            console.log(POnum);
+            await (await $(QASAPLOGIN.va03DisplayDocPONum)).click();
+            console.log("POnumber is clicked");
+            (await $(QASAPLOGIN.va03PODisplyDoc)).waitForDisplayed({ timeout: 60000 });
+            await browser.pause(2000);
+            await (await $(QASAPLOGIN.va03PODisplyDoc)).click();
+            console.log("PO Document is opened!");
+            await browser.pause(6000);
+
+                // if ((await $(QASAPLOGIN.va03CollapseBtnItemOverview)).isDisplayed)
+                // {
+                //   await (await $(QASAPLOGIN.va03CollapseBtnItemOverview)).click();
+                //   await browser.pause(5000);
+                //   console.log("Item Details Collapsed..");
+          //       // }
+          // if ((await $(QASAPLOGIN.va03ItemDetailsExpand)).isDisplayed)
+          //       {
+          //         await $(QASAPLOGIN.va03ItemDetailsExpand).click();
+          //         await browser.pause(5000);
+          //         console.log("Item Details expand..");
+          //         await browser.pause(5000);
+          //       }
+
+          //       await $(QASAPLOGIN.va03DIntNumForGr).scrollIntoView({ block: "center" });
+          //   // await browser.pause(3000);
+          //         if ((await $(QASAPLOGIN.va03arrow)).isDisplayed)
+          //           {
+          //             await (await $(QASAPLOGIN.va03arrow)).click();
+          //             await browser.pause(5000);
+          //             console.log("Arrow button clicked..");
+                      
+          //           }
+
+              //  ((await $(QASAPLOGIN.va03PohistoryTab)).isDisplayed)
+              // await (await $(QASAPLOGIN. va03PohistoryTab)).click();
+              // await browser.pause(3000);
+              // console.log("PO history Clicked!");
+              
+            (await $(QASAPLOGIN.va03DIntNumForGr)).waitForDisplayed({ timeout: 60000 });
+            let dintNum=(await $(QASAPLOGIN.va03DIntNumForGr)).getText();
+            console.log(dintNum);
+            //await browser.debug();
+            await $(QASAPLOGIN.va03DIntNumForGr).doubleClick();
+            await browser.pause(4000);
+            console.log("DINT Clicked!");
+              
+            (await $(QASAPLOGIN.replinishDelMenu)).waitForDisplayed({ timeout: 60000 });
+            await (await $(QASAPLOGIN.replinishDelMenu)).click();
+            await browser.pause(4000);
+            console.log("Menu Clicked!");
+
+
+            (await $(QASAPLOGIN.replinishDelMenuExtras)).waitForDisplayed({ timeout: 60000 });
+            await (await $(QASAPLOGIN.replinishDelMenuExtras)).click();
+            await browser.pause(4000);
+            console.log("Extras Clicked!");
+
+
+            (await $(QASAPLOGIN.replinishDelDeliveryOuput)).waitForDisplayed({ timeout: 60000 });
+            await (await $(QASAPLOGIN.replinishDelDeliveryOuput)).click();
+            await browser.pause(4000);
+            console.log("Delivery Output is Clicked!");
+
+
+            (await $(QASAPLOGIN.replinishHeader)).waitForDisplayed({ timeout: 60000 });
+            await (await $(QASAPLOGIN.replinishHeader)).click();
+            await browser.pause(4000);
+            console.log("Header is clicked !");
+
+          }
+
+      async rsnastRun(odbNumber)
+      {
+
+        await this.enterTextInTextBox(QASAPLOGIN.txtTcode,'/nsa38');
+        await this.keyboardActions('Enter');
+        console.log("Before entering program name");
+        await browser.pause(2000);
+        //input[@title='ABAP Program Name']`));
+        await $(`//input[@title='ABAP Program Name']`).addValue('RSNAST00');
+        await waitForElement(await $(`//div[@title='Execute (F8)']`));
+        await $(`//div[@title='Execute (F8)']`).click();
+        await browser.pause(4000);
+  
+        (await $(QASAPLOGIN.rsnastOutputType)).waitForDisplayed({ timeout: 60000 });
+        await (await $(QASAPLOGIN.rsnastOutputType)).click();
+        await browser.pause(4000);
+        await (await $(QASAPLOGIN.rsnastOutputType)).addValue("V2");
+        console.log("Output Application entered!");
+
+        (await $(QASAPLOGIN.rsnastObjectKey)).waitForDisplayed({ timeout: 60000 });
+        await (await $(QASAPLOGIN.rsnastObjectKey)).click();
+        await browser.pause(4000);
+        await $(QASAPLOGIN.rsnastObjectKey).addValue(odbNumber);
+        console.log("Object Key entered!");
+
+        (await $(QASAPLOGIN.rsnastZESCOutputType)).waitForDisplayed({ timeout: 60000 });
+        await (await $(QASAPLOGIN.rsnastZESCOutputType)).click();
+        await browser.pause(4000);
+        await $(QASAPLOGIN.rsnastZESCOutputType).addValue('ZESC');
+        console.log("Output type is entered!");
+
+        await $(QASAPLOGIN.rsnastExecuteBtn).waitForDisplayed({ timeout: 60000 });
+        await (await $(QASAPLOGIN.rsnastExecuteBtn)).click();
+        await browser.pause(16000);
+        console.log("Execute Button is clicked!");
+
+
+        await $(QASAPLOGIN.rsnastSuccessPopupContinueBtn).waitForDisplayed({ timeout: 60000 });
+        await $(QASAPLOGIN.rsnastSuccessPopupContinueBtn).click();
+        await browser.pause(4000);
+        console.log("Continue Button clicked in RSNAST POP UP!");
+        await browser.pause(4000);
+        
+
+        await $(QASAPLOGIN.rsnastSuccessPopupContinueBtn).waitForDisplayed({ timeout: 60000 });
+        await $(QASAPLOGIN.rsnastSuccessPopupContinueBtn).click();
+        await browser.pause(4000);
+        console.log("Continue Button clicked in RSNAST POP UP second!");
+        await browser.pause(4000);
+        
+      }
+
+      async checkODb(Tcode: string)
+      {
+        await this.enterTextInTextBox(QASAPLOGIN.txtTcode,Tcode);
+        await this.keyboardActions('Enter');
+        const orderNum=await this.getOrderNumber();
+        //await sapLogin.getOrderNumber();
+        (await $(QASAPLOGIN.va03OrderNumtxtBox)).clearValue();
+          await this.enterTextInTextBox (QASAPLOGIN.va03OrderNumtxtBox,orderNum);
+        await this.keyboardActions('Enter');
+        //await sap.clicktheBtnXpath(QASAPLOGIN.va03ExecuteBtn2);
+        console.log("VA03 order opened");
+         (await $(QASAPLOGIN.va03ExecuteBtn2)).waitForDisplayed({ timeout: 60000 });
+        await waitForElement (await $(QASAPLOGIN.va03DisplayDocumentBtn));
+        await this.clicktheBtnXpath(QASAPLOGIN.va03DisplayDocumentBtn);
+        console.log("Document flow is opened!");
+        await browser.pause(2000);
+
+        (await $(QASAPLOGIN.va03ODB)).waitForDisplayed({ timeout: 60000 });
+        await waitForElement (await $(QASAPLOGIN.va03ODB));
+        let ob= await (await $(QASAPLOGIN.va03ODB)).getText();
+        console.log("ODB is created!",ob );
+        await browser.pause(2000);
+    
+      }
+
+      async getAttribute (eleName, selector, attribute) {
+        const ele = await $(selector);
+        try {
+          return ele.getAttribute(attribute);
+        } catch (e) {
+          await browser.takeScreenshot();
+          //expect.fail(0, 1, `${eleName} :: Failed to get ${attribute} of ${eleName} :: ${e}`);
+        }
+      }
 
 }
 export default new sap();

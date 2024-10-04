@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "types": [
+      "node",
+      "@wdio/cucumber-framework",
+      "expect-webdriverio",
+      "@wdio/devtools-service",
+    ],
+    "target": "ESNext",
+    "typeRoots": [".node_modules/@types"],
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "module": "ESNext",
+    "noImplicitAny": false,
+    "noEmit": true,
+    "baseUrl": "./src"
+  },
+  "include": ["./src/**/*.ts"]
+}

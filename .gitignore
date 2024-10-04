@@ -1,0 +1,11 @@
+node_modules/*
+src/reports/cucumber-results/json/*
+src/reports/allure-results/*
+src/reports/cucumber-results/report/*
+logs/*
+.env
+.vscode
+.DS_Store
+allure-report
+src/resources/images/*
+src/resources/data/orderDetails.json

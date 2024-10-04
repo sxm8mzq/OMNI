@@ -47,6 +47,8 @@ class Home {
       await browser.url(process.env.QA_APP_URL);
       await browser.maximizeWindow();
       await $('//*[text() = "OK"]').click();
+      await browser.pause(3000);
+      await $('//*[text() = "Change Store"]').click();
       environment = "QA";
       return environment;
     }
@@ -77,7 +79,9 @@ class Home {
       await $(`[placeholder = ${selector}]`).click();
       await browser.action("key").down(Key.Ctrl).down("a").pause(2).up(Key.Ctrl).up("a").perform();
       await browser.keys("Escape");
+      if (typeof skuData[scenarioName] !== "undefined") { 
       await $(`[placeholder = ${selector}]`).addValue(skuData[scenarioName].QA.sku);
+      }
     } else if (environment === "DEV") {
       await $(`[placeholder = ${selector}]`).click();
       await browser.action("key").down(Key.Ctrl).down("a").pause(2).up(Key.Ctrl).up("a").perform();
