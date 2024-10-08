@@ -37,7 +37,7 @@ class sap {
       
         await browser.maximizeWindow();
        // await $('//*[text() = "OK"]').click();
-        environment = "QA";
+        environment = "QP";
         return environment;
       }
       if (process.env.SAPENV.toUpperCase() === "DEV") {
@@ -93,6 +93,14 @@ class sap {
        async keyboardActions (_action) {
         try {
           await browser.action("key").down(Key.Enter).perform();
+         // await browser.keys(action);
+        } catch (e) {
+  
+        }
+      }
+      async keyboardActionsF8(_action) {
+        try {
+          await browser.action("key").down(Key.F8).perform();
          // await browser.keys(action);
         } catch (e) {
   
@@ -261,15 +269,20 @@ class sap {
 
         await this.enterTextInTextBox(QASAPLOGIN.txtTcode,'/nsa38');
         await this.keyboardActions('Enter');
-        console.log("Before entering program name");
         await browser.pause(2000);
+        console.log("Before entering program name");
+        //await browser.pause(6000);
         //input[@title='ABAP Program Name']`));
-        await $(`//input[@title='ABAP Program Name']`).addValue('RSNAST00');
+        (await $(QASAPLOGIN.txtProgram)).clearValue();
+        await this.enterTextInTextBox(QASAPLOGIN.txtProgram,'RSNAST00');
+        await browser.pause(2000);
+        await this.keyboardActions('Enter');
         await waitForElement(await $(`//div[@title='Execute (F8)']`));
         await $(`//div[@title='Execute (F8)']`).click();
-        await browser.pause(4000);
+        await browser.pause(6000);
+        
   
-        (await $(QASAPLOGIN.rsnastOutputType)).waitForDisplayed({ timeout: 60000 });
+       // (await $(QASAPLOGIN.rsnastOutputType)).waitForDisplayed({ timeout: 60000 });
         await (await $(QASAPLOGIN.rsnastOutputType)).click();
         await browser.pause(4000);
         await (await $(QASAPLOGIN.rsnastOutputType)).addValue("V2");
@@ -341,6 +354,17 @@ class sap {
           await browser.takeScreenshot();
           //expect.fail(0, 1, `${eleName} :: Failed to get ${attribute} of ${eleName} :: ${e}`);
         }
+      }
+     async  isNotVisibleByEle(eleName, selector) {
+        let status = true;
+        try {
+          status = await browser.isElementDisplayed(selector) ? false : true;
+        } catch (error) {
+          status = false;
+          //browser.saveScreenshot();
+          //expect.fail(0, 1, `Element is Visible :: ${eleName} :: ${error}`);
+        }
+        return status;
       }
 
 }

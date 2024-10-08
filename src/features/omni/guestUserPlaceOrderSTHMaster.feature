@@ -45,30 +45,42 @@ Feature: Place Order With Master Card STH
   #   Then the user validates if the webelement with html attribute "class" as "acl-col--12 acl-text-size--x-large" has text "Order Number"
 
       # Integration#
+                    ###Authorization 
+              Then the user check the order details with Tcode /nva03
+              Then the user do the authorization
+                      ###    PO Creation 
+            Then the user generate IDOC for creating PO
+             Then the user process the IDOC number to generate PO with Tcode /nBD87
+             Then the user checks the PO with Tcode /nva03
 
-          # Then the user check the order details with Tcode /nva03
-          # Then the user do the authorization
-            #  Then the user generate IDOC for creating PO
-            # Then the user process the IDOC number to generate PO with Tcode /nBD87
-            Then the user checks the PO with Tcode /nva03
+            #         ## Delivery Creation (Dint Delivery)
             Then the user execute delivery creation
-            # Then the user enter picked qty and mark the Picking /nva03
-          # Then the user enter Goods Receipt /nva03
-          # Then the user check the Outbound Delivery /nva03
+            Then the user check the delivery creation /nva03
+                    # Picking (POGI)Purchase order goods issue
+        #     Then the user enter picked qty and mark the Picking /nva03
+        #  Then the user clicks on post goods issue to generate GI /nva03
 
-         # -----------------Release PGI-------------------
+                  # Goods Receipt 
+              # Then the user enter Goods Receipt /nva03
+              # Then the user process with RSNSAT
+           
+            #  Then the user check the Outbound Delivery /nva03
+            #  Then the user do the MIGO 
+
+         #-----------------Release PGI-------------------
+
           # Then user go to OBD PGI for releasing the delivery /nsa38
           # Then user go to va03 to check status for OBD and GI COM stock /nva03
           # Then the user waits for text "Outbound Delivery-IR" to be visible
           # Then the user waits for text "GI COM Stock Item" to be visible
-          #     Then the user removes Billing Block
-#----------------F2 Invoice Steps-------------------
-      #     Then the user process F2 Invoice /nsa38
-      #     Then user verify Invoice doc created in /nva03
-      #     Then the user waits for text "Invoice" to be visible
-      # #  Then the user goto sa37 to veiry job scheduled release /nsm37
-      #     Then user goto invoice document to complete /nva03
-      #     Then the user waits for text "Journal Entry" to be visible
+          # Then the user removes Billing Block
+# #----------------F2 Invoice Steps-------------------
+#           Then the user process F2 Invoice /nsa38
+#           Then user verify Invoice doc created in /nva03
+#           Then the user waits for text "Invoice" to be visible
+#           Then the user goto SA37 to veiry job scheduled release /nSM37
+#           Then user goto invoice document to complete /nva03
+#           Then the user waits for text "Journal Entry" to be visible
 
     Examples:
       | firstName | lastName    | address       | city        | province | postalCode | phoneNum   | userName | password | sku |
