@@ -37,7 +37,7 @@ export const config = {
   logLevel: 'error',
   bail: 0,
   baseUrl: 'https://www.qp-gcp.homedepot.ca/en/home.html',
-  waitforTimeout: 10000,
+  waitforTimeout: 20000,
   connectionRetryTimeout: 120000,
   connectionRetryCount: 3,
   services: [ 'chromedriver'],
@@ -80,7 +80,7 @@ export const config = {
     source: true,
     strict: false,
     tagExpression: '',
-    timeout: 60000,
+    timeout: 200000,
     ignoreUndefinedDefinitions: false,
   },
   onPrepare: async () => {

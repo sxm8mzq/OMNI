@@ -5,6 +5,7 @@ import {QASAPLOGIN } from '../pageRepository/pageFactory.js'
 import { Key } from "webdriverio";
 import fs from 'fs';
 import { waitForElement } from "../pageObjects/page.js";
+import {expect1, assert } from 'chai';
 
 class sap {
   async launchSAPUrl() {
@@ -366,6 +367,17 @@ class sap {
         }
         return status;
       }
+      // async waitForPageLoad () {
+      //   const status = "complete";
+      //   try {
+      //     browser.waitUntil(() => browser.execute("return document.readyState").value === status, 15000, 'Page is loading after 15s');
+      //   } catch (e) {
+      //     await browser.takeScreenshot();
+      //     expect1.fail(0, 1, `Caught an exception at waitForPageLoad :: ${e}`);
+      //   }
+      // }
+      
+    
 
 }
 export default new sap();

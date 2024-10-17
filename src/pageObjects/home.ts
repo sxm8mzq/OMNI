@@ -47,11 +47,16 @@ class Home {
       await browser.url(process.env.QA_APP_URL);
       await browser.maximizeWindow();
       await $('//*[text() = "OK"]').click();
-      await browser.pause(3000);
-      await $('//*[text() = "Change Store"]').click();
-      environment = "QA";
-      return environment;
-    }
+     // await browser.pause(3000);
+      const changeStore=await $('//*[text() = "Change Store"]').isDisplayed();
+      if(changeStore===true)
+        {
+          await $('//*[text() = "Change Store"]').click();
+         
+        }
+         environment = "QA";
+          return environment;
+  }
     if (process.env.Env.toUpperCase() === "DEV") {
       await browser.url(process.env.DEV_APP_URL);
       await browser.maximizeWindow();
