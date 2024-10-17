@@ -103,6 +103,7 @@ export const QASAPLOGIN = {
  billingDateTxt: "//*[@title='Billing Date']",
  billingDatebtn: "//*[@id='ls-inputfieldhelpbutton']",
  CalenderContinue: "//*[@title='Continue (Enter)']",
+ odbPGISuccesstxt:"//div[contains(@title,'successful')]",
  saveBtn: "//*[@title='Save (Ctrl+S)']",
  companyCode: "//*[@title='Company Code']",
  displayHeaderDetails: "//*[@title='Display header details']",
@@ -131,6 +132,14 @@ export const QASAPLOGIN = {
   migoPO:"//*[(@title='Purchase Order')]",
   migoSite:"//*[(@title='Ordering Site')]",
   gr101:"//tbody[1]/tr[2]/td[1]/div/div/table/tbody/tr[1]/td[2]/div/span/span[contains(text(),'101')]",
+  deliveryCode: "//*[@title='Delivery']",
+  bkButton:"//*[contains(@title,'Back (F3)')]",
+  deliverychkbx: "//div[@ct='ALC' and @role='checkbox']",
+  postGoodsIssueOnOBDPage: "//*[@title='Post Goods Issue (F8)']",
+  GICOMStockDoc: "(//table/tbody/tr/td[2]/div/span/span[contains(@text,'')])[5]",
+  jobStatus: "/html/body/table/tbody/tr/td/div/form/div/div[4]/table/tbody/tr[1]/td[1]/div/div[162]",
+  journalStatus: "//span[@role='button' and @tabindex='0' and text()='Cleared']",
+  appliancePODoc: "(//table/tbody/tr/td[2]/div/span/span[contains(@text,'')])[2]",
+  JobNametext: "//*[@title='Background job name']",
+ };
 
-
-};

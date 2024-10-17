@@ -19,13 +19,14 @@ import bd87Page from '../pageObjects/bd87Page.js';
 import {QASAPLOGIN } from '../pageRepository/pageFactory.js'
 import { waitForElement } from "../pageObjects/page.js";
 import { waitUntil } from 'webdriverio/build/commands/browser.js';
-let    ODBNum;
+let obdNum ="";
 let  idocnum="";
 let  POnum ="";
 let odbNumExtracted="";
 let GI="";
 let  flag=0;
 let dintNum="";
+let jobName="";
 
 Given(/^the user launches the url$/, async () => {
   await home.launchOneUrl();
@@ -425,51 +426,6 @@ let done2=false;
 }
 
   await expect($(QASAPLOGIN.authCardApprovedTxt)).toBeDisplayed();
-
-  //await waitForElement (await $(QASAPLOGIN.authSuccessTick));
-  //await waitForElement (await $(QASAPLOGIN.authSuccClose));
-  //await $(QASAPLOGIN.authSuccClose).click();
-
-  // for(let i=0;i<8;i++){
-  //   let shouldBreak1=false;
-    
-    // // bh.jsClick(" ",QAFIORILOGINPF.sucmsg);
-    
-    // var current = new Date();
-    // let min =current.getMinutes();
-    // console.log("Awaiting for the payload to generate: "+i+" "+min);
-    
-
-  //   if (await $(`//button[contains(@title,'Close')]`).isDisplayed()) {
-  //     shouldBreak1 = true;
-  //     await $(`//button[contains(@title,'Close')]`).click();
-  //     break;
-  //   }
-  //   else 
-  //   {
-  //     console.log("Not able to find the close btn");
-  //   }
-    
-  // }
-
-  // await $(`//button[contains(@title,'Close')]`).click();
-  // await browser.pause(60000);
-  // console.log("Clicked close mark");
-  // await browser.pause(60000);
-  // let shouldBreak= false;
-  // for(let i=0;i<8;i++){
-    
-  //   // // bh.jsClick(" ",QAFIORILOGINPF.sucmsg);
-    
-  //   // var current = new Date();
-  //   // let min =current.getMinutes();
-  //   // console.log("Awaiting for the payload to generate: "+i+" "+min);
-    
-  //   await browser.pause(10000);
-
-
-    
-  //}
  
   });
   
@@ -531,31 +487,6 @@ Then (/^the user process the IDOC number to generate PO with Tcode(.*)$/ , async
       await sap.keyboardActionsF8('F8'); 
       await browser.pause(5000);
       console.log("presssed f8");
-    //   let DP=await sap.isNotVisibleByEle('check direct process btn',QASAPLOGIN.bd87DirectProcessBtn);   
-    //   console.log(DP);
-    //     if ($(QASAPLOGIN.bd87DirectProcessBtn).isDisplayed)
-    //     {
-    //       await sap.clicktheBtnXpath(QASAPLOGIN.bd87DirectProcessBtn);
-    //       await browser.pause(4000);
-    //       console.log("Clicked on process button!");
-
-    //     }
-    //   //if ( (await $(QASAPLOGIN.bd87MoreMenuOption)).isDisplayed())
-    // if(DP===false)
-    // {
-    //   //let sp= sap.isNotVisibleByEle('check direct process btn',QASAPLOGIN.bd87DirectProcessBtn);
-    //  // console.log(sp);
-    //   // if( sap.isNotVisibleByEle('check direct process btn',QASAPLOGIN.bd87DirectProcessBtn))   
-    //   // {
-    //   await browser.pause(2000);
-    //   console.log("Moving to Menu options..");
-    //   await sap.clicktheBtnXpath(QASAPLOGIN.bd87MoreMenuOption);
-    //   await browser.pause(2000); 
-    //   await sap.clicktheBtnXpath(QASAPLOGIN.bd87MoreMenuProcessOption);
-    //   await browser.pause(2000);
-    //   console.log("Clicked on process button!");
-    //   }
-
       await browser.pause(5000);
       let idocStatuNew= await $(QASAPLOGIN.bd87Successtxt).getText();
       await browser.pause(2000);
@@ -620,7 +551,7 @@ Then(/^the user execute delivery creation$/, async () => {
   await browser.pause(4000);
   console.log("after clicking execute btn..");
  await browser.pause(10000);
-}),
+});
 Then(/^the user check the delivery creation(.*)$/, async (Tcode) => {
   await sap.enterTextInTextBox(QASAPLOGIN.txtTcode,Tcode); 
   await sap.keyboardActions('Enter');
@@ -770,7 +701,6 @@ Then(/^the user verify GI created inside PO (.*)$/ , async(Tcode) =>{
         await (await $(QASAPLOGIN.va03PODisplyDoc)).click();
         console.log("display Document is clicked!");
         await browser.pause(6000);
-
        (await $(QASAPLOGIN.GIgenerated)).waitForDisplayed({ timeout: 60000 });
        GI=await $(QASAPLOGIN.GIgenerated).getText();
        console.log(GI);
@@ -821,7 +751,7 @@ Then(/^the user clicks on post goods issue to generate GI(.*)$/ , async(Tcode) =
  
             (await $(QASAPLOGIN.postGoodsIssue)).click();
             console.log("post goods issue btn clicked");
-            await browser.pause(2000);
+            await browser.pause(5000);
 
 });
 
@@ -917,7 +847,7 @@ Then(/^the user enter Goods Receipt (.*)$/, async(Tcode)=> {
   // console.log("back button is clicked !");
       // ODBNum= await $(QASAPLOGIN.va03OBDNum).getText();
       // await browser.pause(3000);
-      // odbNumExtracted=sap.extractPOnum(ODBNum);
+       //odbNumExtracted=sap.extractPOnum(ODBNum);
       // console.log(odbNumExtracted);
     //   let title = await sap.getAttribute("get title",QASAPLOGIN.zescOutStatus2,"title");
     //  console.log(title);
@@ -1060,48 +990,87 @@ Then(/^the user enter Goods Receipt (.*)$/, async(Tcode)=> {
       await (await $(QASAPLOGIN.rsnastExecuteBtn)).click();
       await browser.pause(6000);
       console.log("Execute Button is clicked!");
+      let done=false;
 
+      while(!done){
+        console.log(done);
+        console.log("Waiting for tick mark");
+        if(await $(QASAPLOGIN.rsnastSuccessPopupContinueBtn).isDisplayed()){
+          await browser.pause(500);
+          await $(QASAPLOGIN.rsnastSuccessPopupContinueBtn).click();
+        done=true;
+        console.log(done);
+        console.log("Continue button from RSNAST is clicked!!")
+        }else
+        await browser.pause(5000);
+    }
 
      // await waitForElement(await $(QASAPLOGIN.rsnastSuccessPopupContinueBtn));
      
-      await $(QASAPLOGIN.rsnastLoading1).waitForExist({timeout:60000,reverse: true });
-      console.log("First wait for exist");
-           // await $(QASAPLOGIN.rsnastSuccessPopupContinueBtn).waitForDisplayed({ timeout: 120000 });
-      await $(QASAPLOGIN.rsnastSuccessPopupContinueBtn).click(); 
-      //await browser.pause(6000);
-      console.log("Continue Button clicked in RSNAST POP UP!");
-      //await browser.pause(8000);
+      // await $(QASAPLOGIN.rsnastLoading1).waitForExist({timeout:60000,reverse: true });
+      // console.log("First wait for exist");
+      //      // await $(QASAPLOGIN.rsnastSuccessPopupContinueBtn).waitForDisplayed({ timeout: 120000 });
+      // await $(QASAPLOGIN.rsnastSuccessPopupContinueBtn).click(); 
+      // //await browser.pause(6000);
+      // console.log("Continue Button clicked in RSNAST POP UP!");
+      // //await browser.pause(8000);
 
-      await $(QASAPLOGIN.rsnastLoading2).waitForExist({ reverse: true });
+      //await $(QASAPLOGIN.rsnastLoading2).waitForExist({ reverse: true });
       await $(QASAPLOGIN.rsnastSuccMsg).waitForDisplayed({ timeout: 60000 });
       //await expect($(QASAPLOGIN.rsnastSuccMsg)).toBeDisplayed();
       console.log("rsnast succ msg-odb msg");
-      await browser.pause(16000);
+      await browser.pause(5000);
       // let rsnastSuccmsg=await $(QASAPLOGIN.rsnastSuccMsg).getText();
       // //await browser.pause(6000);
       // console.log(rsnastSuccmsg);
       
       //await browser.pause(2000);
-      await $(QASAPLOGIN.authSuccClose).waitForDisplayed({ timeout: 60000 });
-      await $(QASAPLOGIN.authSuccClose).click(); 
-      await browser.pause(6000)
-      await $(QASAPLOGIN.rsnastSuccMsg).waitForDisplayed({ reverse: true })
-      console.log("Close 2 Button clicked in RSNAST POP UP!");
+      let done2=false;
+      while(!done2){
+        console.log(done2);
+        console.log("Waiting second clsoe button in RSNAST..");
+        if(await $(QASAPLOGIN.authSuccClose).isDisplayed()){
+          await browser.pause(500);
+          await $(QASAPLOGIN.authSuccClose).click();
+          console.log("Close 2 Button clicked in RSNAST POP UP!");
+          done2=true;
+        console.log(done2);
+        }else
+        await browser.pause(5000);
+    }
+      // await $(QASAPLOGIN.authSuccClose).waitForDisplayed({ timeout: 60000 });
+      // await $(QASAPLOGIN.authSuccClose).click(); 
+      // await browser.pause(6000)
+      // await $(QASAPLOGIN.rsnastSuccMsg).waitForDisplayed({ reverse: true })
+      // console.log("Close 2 Button clicked in RSNAST POP UP!");
       //await browser.pause(2000);
 
 
       await $(QASAPLOGIN.rsnastInfoScreen).waitForDisplayed({ timeout: 60000 });
       console.log("Info screen displayed");
 
-     
-   
 
-      await $(QASAPLOGIN.authSuccClose).waitForDisplayed({ timeout: 90000 });
-      await browser.pause(6000)
-      await $(QASAPLOGIN.authSuccClose).click();
-      // await browser.pause(8000);
-      await browser.pause(1000)
-      await $(QASAPLOGIN.rsnastInfoScreen).waitForDisplayed({ reverse: true })
+      let done3=false;
+      while(!done3){
+        console.log(done3);
+        console.log("Waiting last close button ..");
+        if(await $(QASAPLOGIN.authSuccClose).isDisplayed()){
+          await browser.pause(500);
+          await $(QASAPLOGIN.authSuccClose).click();
+          console.log("Close 3 Button clicked in RSNAST POP UP!");
+          done3=true;
+        console.log(done3);
+        }else
+        await browser.pause(5000);
+    }
+    
+
+      // await $(QASAPLOGIN.authSuccClose).waitForDisplayed({ timeout: 90000 });
+      // await browser.pause(6000)
+      // await $(QASAPLOGIN.authSuccClose).click();
+      // // await browser.pause(8000);
+       await browser.pause(2000);
+      // //await $(QASAPLOGIN.rsnastInfoScreen).waitForDisplayed({ reverse: true })
       console.log("Last Continue Button clicked in RSNAST POP UP!");
       
       // while (!secondCtnBtn && (Date.now() - startTime) < MAX_WAIT_TIME) {
@@ -1164,30 +1133,60 @@ Then(/^the user enter Goods Receipt (.*)$/, async(Tcode)=> {
        // await waitForElement (await $(QASAPLOGIN.va03ODB));
         if (await $(QASAPLOGIN.va03ODB).isDisplayed())
         {
-          let ob= await (await $(QASAPLOGIN.va03ODB)).getText();
-          console.log("ODB is created!",ob );
+          obdNum= await (await $(QASAPLOGIN.va03ODB)).getText();
+          console.log("ODB is created!",obdNum);
+          await browser.pause(2000);
+          (await $(QASAPLOGIN.obdDocument)).doubleClick();
+          obdNum=await $(QASAPLOGIN.va03PONUM).getText();
+          console.log(obdNum);
           await browser.pause(2000);
 
         }
         else{
           console.log("ODB is not created!");
         }
+        await browser.pause(2000);
   
   });
 
-  Then(/^the user do the MIGO$/, async () => {
+    Then(/^the user do the MIGO$/, async () => {
     //Enter PO number below to be taken from another program.Right now using order no as dont have code for it
-    await (await $(QASAPLOGIN.va03DisplayDocPONum)).click();
-    console.log("POnumber is clicked");
-    (await $(QASAPLOGIN.va03PODisplyDoc)).waitForDisplayed({ timeout: 60000 });
-    await browser.pause(2000);
-    await (await $(QASAPLOGIN.va03PODisplyDoc)).click();
-    console.log("PO Document is opened!");
-    await browser.pause(6000);
+    
+      await $(QASAPLOGIN.txtTcode).waitForDisplayed({ timeout: 60000 });
+        await sap.enterTextInTextBox(QASAPLOGIN.txtTcode,'/nva03'); 
+        await sap.keyboardActions('Enter');
+        await browser.pause(2000);
+        const orderNum=await sap.getOrderNumber();
+        //await sapLogin.getOrderNumber();
+        await $(QASAPLOGIN.va03OrderNumtxtBox).clearValue();
+          await sap.enterTextInTextBox(QASAPLOGIN.va03OrderNumtxtBox,orderNum);
+        await sap.keyboardActions('Enter');
+        await browser.pause(5000);
+        // await sap.clicktheBtnXpath(QASAPLOGIN.va03ExecuteBtn2);
+        console.log("VA03 order opened");
+        await browser.pause(8000);
+
+        await sap.clicktheBtnXpath(QASAPLOGIN.va03WebsiteOrderTxt);
+        console.log("Website order Text is clicked now");
+        await browser.pause(5000);
+        await $(QASAPLOGIN.va03DisplayDocumentBtn).click();
+        //await $(`//div[contains(@title,'Display Document Flow (F5)')]`).click();
+        
+        //await sap.clicktheBtnXpath(QASAPLOGIN.va03DisplayDocumentBtn);
+        await browser.pause(6000);
+        console.log("Display document flow is opened");
+        await browser.pause(5000);
+      await (await $(QASAPLOGIN.va03DisplayDocPONum)).click();
+      console.log("POnumber is clicked");
+      (await $(QASAPLOGIN.va03PODisplyDoc)).waitForDisplayed({ timeout: 60000 });
+      await browser.pause(2000);
+      await (await $(QASAPLOGIN.va03PODisplyDoc)).click();
+      console.log("PO Document is opened!");
+      await browser.pause(6000);
    
-    if ( expect(QASAPLOGIN.purOrdHistTab).toBeDisplayed()){
-         console.log("Purchase order history tab available");
-         await sap.clicktheBtnXpath(QASAPLOGIN.purOrdHistTab);
+    // //if ( expect(QASAPLOGIN.purOrdHistTab).toBeDisplayed()){
+    //      console.log("Purchase order history tab available");
+    //      await sap.clicktheBtnXpath(QASAPLOGIN.purOrdHistTab);
        
         if ((await $(QASAPLOGIN.gr101)).isDisplayed)
            {
@@ -1238,10 +1237,10 @@ Then(/^the user enter Goods Receipt (.*)$/, async(Tcode)=> {
        
          };
         }
-    else {
-              console.log("Purchase order history tab not available");
-        }
-  }
+    // else {
+    //           console.log("Purchase order history tab not available");
+    //     }
+ // }
   );
 Then(/^the user removes Billing Block$/, async () => {
   //Enter Delivery number below to be taken from another program.Right now using order no as dont have code for it
@@ -1295,20 +1294,247 @@ Then(/^the user removes Billing Block$/, async () => {
 
   // Release PGI
  
-  Then(/^user go to OBD PGI for releasing the delivery (.*)$/, async(Tcode) =>{
+  Then(/^the user go to OBD PGI for releasing the delivery (.*)$/, async(Tcode) =>{
+    await browser.pause(2000);
     const orderNum=await sap.getOrderNumber();
     await sap.enterTextInTextBox(QASAPLOGIN.txtTcode,Tcode);
     console.log("tcode entered");
     await sap.keyboardActions('Enter');
     await browser.pause(2000);
-    await $(`//input[@title='ABAP Program Name']`).addValue('WS_MONITOR_OUTB_DEL_GDSI');
+    await $(QASAPLOGIN.txtProgram).clearValue();
+    await browser.pause(2000);
+    await sap.enterTextInTextBox(QASAPLOGIN.txtProgram,'WS_MONITOR_OUTB_DEL_GDSI');
+   // await $(`//input[@title='ABAP Program Name']`).addValue('WS_MONITOR_OUTB_DEL_GDSI');
     //await sap.enterProgramName(QASAPLOGIN.sa38ProgramtxtBox,'RV60SBAT');
-    console.log("prog name entered");
+    //console.log("prog name entered");
     await sap.keyboardActions('Enter');
+    await sap.clicktheBtnXpath(QASAPLOGIN.sa38ExecuteBtn);  
+    await browser.pause(4000);
+    console.log("WS_MONITOR_OUTB_DEL_GDSI executed ");
+    await sap.enterTextInTextBox(QASAPLOGIN.deliveryCode,obdNum);
+  // await sap.enterTextInTextBox(QASAPLOGIN.deliveryCode,'0991244731')
+  
+    console.log("obdNum entered "+obdNum );
+    await browser.pause(2000);
+    await sap.keyboardActions('Enter');
+    await browser.pause(2000);
     await sap.clicktheBtnXpath(QASAPLOGIN.sa38ExecuteBtn);
-    console.log("Releasing Program executed ");  
+    await browser.pause(5000);
+    console.log("prog executed ");
+    let done=false;
+    while(!done){
+      console.log(done);
+      console.log("Delivery check box");
+      if(await $(QASAPLOGIN.deliverychkbx).isDisplayed()){
+        await browser.pause(500);
+        await $(QASAPLOGIN.deliverychkbx).click();
+        console.log("deliverychkbx checkbox clicked");
+      done=true;
+      console.log(done);
+      }else
+      await browser.pause(5000);
+  }
+  if(await $(QASAPLOGIN.postGoodsIssueOnOBDPage).isDisplayed()){
+    (await $(QASAPLOGIN.postGoodsIssueOnOBDPage)).click();
+      console.log("post goods issue btn clicked on prog page");
+      await browser.pause(5000);
+      (await $(QASAPLOGIN.CalenderContinue)).click();
+      console.log("continue btn clicked in ODB Post Goods issue");
+      await browser.pause(6000);
+      if (await $(QASAPLOGIN.odbPGISuccesstxt).isDisplayed())
+      {
+        console.log("ODB PGI is success");
+      }
+  }
+
+  // let done2=false;
+  //   while(!done2){
+  //     console.log(done2);
+  //     console.log("Waiting for success text");
+  //     if(await $(QASAPLOGIN.odbPGISuccesstxt).isDisplayed()){
+  //       await browser.pause(500);
+  //       console.log("ODB PGI is success");
+  //       done2=true;
+  //     console.log(done2);
+  //     }else
+  //     await browser.pause(5000);
+  // }
+});
+
+  Then(/^the user go to va03 to verify GI status (.*)$/, async(Tcode) =>{
+    await browser.pause(2000);
+     const orderNum=await sap.getOrderNumber();
+     console.log(orderNum);  
+     await browser.pause(2000);
+     await sap.enterTextInTextBox(QASAPLOGIN.txtTcode,Tcode);
+     await browser.pause(2000);
+     await sap.keyboardActions('Enter');
+     (await $(QASAPLOGIN.va03OrderNumtxtBox)).clearValue();      
+     await sap.enterTextInTextBox(QASAPLOGIN.va03OrderNumtxtBox,orderNum);
+     await sap.keyboardActions('Enter');
+     console.log("order entered");  
+      await browser.pause(6000);
+     await waitForElement (await $(QASAPLOGIN.va03DisplayDocumentBtn));
+     await sap.clicktheBtnXpath(QASAPLOGIN.va03DisplayDocumentBtn);
+     console.log("disply Doc btn clicked");
+
+     //verify GIcom stock created
+
+     await browser.pause(6000);
+      const GIStockDoc=await $(QASAPLOGIN.GICOMStockDoc).getText();
+      await browser.pause(2000);
+      console.log(GIStockDoc);
+      if (GIStockDoc.includes('GI COM Stock Item'))
+        {
+           console.log('GI COM Stock Item generated "${GI COM Stock Item}"');
+        }
+      else
+      {
+       console.log("GI COM Stock Item not generated");
+      }
+      console.log(" completed ");
+      await browser.pause(2000);
    
   });
+  Then(/^the user removes Billing Block (.*)$/, async(Tcode)=> {
+    await browser.pause(2000);
+    const orderNum=await sap.getOrderNumber();
+    await sap.enterTextInTextBox(QASAPLOGIN.txtTcode,Tcode);
+    console.log("tcode entered");
+    await sap.keyboardActions('Enter');
+    await browser.pause(2000);
+    (await $(QASAPLOGIN.txtProgram)).clearValue();
+    await sap.enterTextInTextBox(QASAPLOGIN.txtProgram,'YDSDE_ENHD231_GI_TRIGGER');
+    await browser.pause(2000);
+    await sap.keyboardActions('Enter');
+    console.log("Entered program name in Billing block");
+    //await waitForElement (await $(QASAPLOGIN.execute));
+    await browser.pause(2000);
+    await sap.clicktheBtnXpath(QASAPLOGIN.execute);
+    console.log("execute clicked");
+    (await $(QASAPLOGIN.bbDeliveryType)).clearValue();
+    await sap.enterTextInTextBox(QASAPLOGIN.bbDeliveryType,"ZLF");
+    await browser.pause(4000);
+    console.log("zlf entered");
+    await sap.enterTextInTextBox(QASAPLOGIN.bbDeliveryNo,obdNum);
+  // await sap.enterTextInTextBox(QASAPLOGIN.bbDeliveryNo,'0991244731');
+ 
+    await browser.pause(5000);
+    console.log("obd entered");
+    await sap.clicktheBtnXpath(QASAPLOGIN.bbCheckbox);
+    await browser.pause(2000);
+    await sap.clicktheBtnXpath(QASAPLOGIN.authExecuteBtn1);
+    console.log("execution completed");
+    await browser.pause(2000);
+     
+    });
+    Then(/^the user verify billing block removed (.*)$/, async(Tcode)=> {
+      await browser.pause(2000);
+        await sap.enterTextInTextBox(QASAPLOGIN.txtTcode,Tcode);
+        await sap.keyboardActions('Enter');
+        await browser.pause(2000);
+        const orderNum=await sap.getOrderNumber();
+        //await sapLogin.getOrderNumber();
+        (await $(QASAPLOGIN.va03OrderNumtxtBox)).clearValue();  
+        await sap.enterTextInTextBox(QASAPLOGIN.va03OrderNumtxtBox,orderNum);
+        console.log("order entered");
+        await browser.pause(4000);
+        await sap.clicktheBtnXpath(QASAPLOGIN.va03ExecuteBtn2);
+        console.log("Continue btn clicked");
+        await browser.pause(2000);
+      // await sap.clicktheBtnXpath(QASAPLOGIN.va03ExecuteBtn3);
+      //  await expect($(QASAPLOGIN.va03z3plCheck)).toBeDisplayed()
+        console.log("VA03 order opened");
+        await browser.pause(3000);
+        (await $(QASAPLOGIN.bbItemdoubleClick)).doubleClick();
+        await browser.pause(2000);
+        console.log("bbItemdoubleClick clicked");
+        await sap.clicktheBtnXpath(QASAPLOGIN.bbBillingPlan);
+        await browser.pause(2000);
+        console.log("billing plan opened");
+        const bbBlock = await $(QASAPLOGIN.bbBlock).getText();
+        await browser.pause(2000);
+        if (bbBlock!="02")
+          {
+       console.log("Billing block removed");
+        }
+        else
+        {
+    console.log("Billing block not removed");
+        }
+      await $(QASAPLOGIN.va03backBtn).click();
+   await browser.pause(4000);
+    });
+
+  Then(/^the user process F2 Invoice (.*)$/, async(Tcode) =>{
+       await browser.pause(2000);
+       const orderNum=await sap.getOrderNumber();
+      await sap.enterTextInTextBox(QASAPLOGIN.txtTcode,Tcode);
+      await sap.keyboardActions('Enter');
+      await browser.pause(2000);
+    //  await $(`//input[@title='ABAP Program Name']`).addValue('RV60SBAT');
+      await $(QASAPLOGIN.txtProgram).clearValue();
+      await sap.enterTextInTextBox(QASAPLOGIN.txtProgram,'RV60SBAT');
+      //await sap.enterProgramName(QASAPLOGIN.sa38ProgramtxtBox,'RV60SBAT');
+      console.log("prog name entered");
+      await sap.keyboardActions('Enter');
+      await sap.clicktheBtnXpath(QASAPLOGIN.sa38ExecuteBtn);
+      console.log("prog executed ");
+      await sap.enterTextInTextBox(QASAPLOGIN.salesOrg,'1019');
+      console.log("sales org entered");
+      await sap.keyboardActions('Enter');
+      await sap.enterTextInTextBox(QASAPLOGIN.sdDocument,orderNum);
+      console.log("order no entered");
+      await sap.keyboardActions('Enter');
+      await browser.pause(2000);
+      (await $(QASAPLOGIN.salesOrderchkBx)).click();
+      console.log("salesOrderchkBx checked");
+      await browser.pause(2000);
+      (await $(QASAPLOGIN.deliverieschkBx)).click();
+      console.log("deliverieschkBx unchecked");
+      await browser.pause(2000);
+      await sap.clicktheBtnXpath(QASAPLOGIN.sa38ExecuteBtn);
+      console.log("Executed");
+ 
+      jobName=await $(QASAPLOGIN.jobName).getText();
+      await console.log(jobName);
+      await browser.pause(2000);
+    });
+    Then(/^the user goto sa37 to verify job scheduled release (.*)$/, async(Tcode) =>{
+      await browser.pause(2000);
+      const orderNum=await sap.getOrderNumber();
+
+      await sap.enterTextInTextBox(QASAPLOGIN.txtTcode,Tcode);
+      await sap.keyboardActions('Enter');
+      await browser.pause(2000);
+    //  await $(`//input[@title='ABAP Program Name']`).addValue('RV60SBAT');
+     (await $(QASAPLOGIN.txtProgram)).clearValue();
+      await sap.enterTextInTextBox(QASAPLOGIN.txtProgram,'RV60SBAT');
+      //await sap.enterProgramName(QASAPLOGIN.sa38ProgramtxtBox,'RV60SBAT');
+      console.log("prog name entered");
+      await sap.keyboardActions('Enter');
+      await sap.clicktheBtnXpath(QASAPLOGIN.sa38ExecuteBtn);
+      console.log("prog executed ");
+      await sap.enterTextInTextBox(QASAPLOGIN.salesOrg,'1019');
+      console.log("sales org entered");
+      await sap.keyboardActions('Enter');
+      await sap.enterTextInTextBox(QASAPLOGIN.sdDocument,orderNum);
+      console.log("order no entered");
+      await sap.keyboardActions('Enter');
+      await browser.pause(2000);
+      (await $(QASAPLOGIN.salesOrderchkBx)).click();
+      console.log("salesOrderchkBx checked");
+      await browser.pause(2000);
+      (await $(QASAPLOGIN.deliverieschkBx)).click();
+      console.log("deliverieschkBx unchecked");
+      await browser.pause(2000);
+      await sap.clicktheBtnXpath(QASAPLOGIN.sa38ExecuteBtn);
+      console.log("Executed");
+ 
+      jobName=await $(QASAPLOGIN.jobName).getText();
+      await console.log(jobName);
+      await browser.pause(2000);
+    });
 
   Then(/^user go to va03 to check status for OBD and GI COM stock (.*)$/ , async(Tcode) =>{
     await browser.pause(5000);
@@ -1410,106 +1636,214 @@ Then(/^the user removes Billing Block$/, async () => {
    
 });
  
-  //step 26 sm37 steps these are manual step no need to execute
-  Then(/^the user goto sa37 to veiry job scheduled release (.*)$/, async(Tcode) =>{
-    const orderNum=await sap.getOrderNumber();
-    //need to save job name and use it again in sm37
-    await sap.enterTextInTextBox(QASAPLOGIN.txtTcode,Tcode);
-    await sap.keyboardActions('Enter');
-    console.log("tcode entered ");
-    await browser.pause(2000);
-    await $(`//*[@title='Background job name']`).addValue('INVOICE_240930_062933_01_VCQS7AP');
-   // await sap.enterProgramName(QASAPLOGIN.jobName,'INVOICE_240930_062933_01_VCQS7AP');
-    await sap.keyboardActions('Enter');
-    console.log("job name entered");
-    await browser.pause(2000);
-    (await $(QASAPLOGIN.schedChkBx)).click();
-    console.log("schedChkBx checked");
-    await sap.clicktheBtnXpath(QASAPLOGIN.salesDocExecuteBtn);
-    //need to check step 26 steps here
-  });
-
-  //Invoice is created but in open state need to change status as complete
-  Then(/^user goto invoice document to complete (.*)$/ , async(Tcode) =>{
-    await sap.enterTextInTextBox(QASAPLOGIN.txtTcode,Tcode);
+    //step 26 sm37 steps these are manual step no need to execute
+    Then(/^the user goto sa37 to veiry job scheduled release (.*)$/, async(Tcode) =>{
+      const orderNum=await sap.getOrderNumber();
+      //need to save job name and use it again in sm37
+      await sap.enterTextInTextBox(QASAPLOGIN.txtTcode,Tcode);
       await sap.keyboardActions('Enter');
-     const orderNum=await sap.getOrderNumber();
-     //await sapLogin.getOrderNumber();
+      console.log("tcode entered ");
+      await browser.pause(2000);
+      await $(`//*[@title='Background job name']`).addValue('INVOICE_240930_062933_01_VCQS7AP');
+    // await sap.enterProgramName(QASAPLOGIN.jobName,'INVOICE_240930_062933_01_VCQS7AP');
+      await sap.keyboardActions('Enter');
+      console.log("job name entered");
+      await browser.pause(2000);
+      (await $(QASAPLOGIN.schedChkBx)).click();
+      console.log("schedChkBx checked");
+      await sap.clicktheBtnXpath(QASAPLOGIN.salesDocExecuteBtn);
+      //need to check step 26 steps here
+    });
+
+    //Invoice is created but in open state need to change status as complete
+    Then(/^user goto invoice document to complete (.*)$/ , async(Tcode) =>{
+      await sap.enterTextInTextBox(QASAPLOGIN.txtTcode,Tcode);
+        await sap.keyboardActions('Enter');
+      const orderNum=await sap.getOrderNumber();
+      //await sapLogin.getOrderNumber();
+        (await $(QASAPLOGIN.va03OrderNumtxtBox)).clearValue();
+        await sap.enterTextInTextBox(QASAPLOGIN.va03OrderNumtxtBox,orderNum);
+        await sap.keyboardActions('Enter');
+        console.log("order entered");
+        (await $(QASAPLOGIN.va03ExecuteBtn2)).click();
+        console.log("clicked on continue btn");
+      (await $(QASAPLOGIN.va03ExecuteBtn2)).waitForDisplayed({ timeout: 60000 });
+      await waitForElement (await $(QASAPLOGIN.va03DisplayDocumentBtn));
+      await sap.clicktheBtnXpath(QASAPLOGIN.va03DisplayDocumentBtn);
+      console.log("DPR");
+      (await $(QASAPLOGIN.invoiceDoc)).click();
+      await sap.sleep(5000);
+      console.log("invoice clicked");
+      await browser.pause(2000);
+      (await $(QASAPLOGIN.displayDocumentBtn)).click();      
+      console.log("displayDocumentBtn clicked");
+      await browser.pause(2000);
+      (await $(QASAPLOGIN.changeBtn)).click();
+      console.log("change btn clicked");
+      await browser.pause(2000);
+      await sap.enterTextInTextBox(QASAPLOGIN.companyCode,'1019');
+      console.log("company code entered");
+      await browser.pause(2000);
+      (await $(QASAPLOGIN.va03ExecuteBtn2)).click();
+      console.log("clicked on continue btn");
+      //await sap.clicktheBtnXpath(QASAPLOGIN.va03DisplayDocumentBtn);
+      //*[@title='Display header details']
+      await browser.pause(5000);
+      (await $(QASAPLOGIN.displayHeaderDetails)).click();
+      console.log("clicked on header details btn");
+      //select date as todays date here
+      await browser.pause(2000);
+      (await $(QASAPLOGIN.billingDateTxt)).click();
+      console.log("clicked on billingDatetxt");
+      (await $(QASAPLOGIN.billingDatebtn)).click();
+      console.log("clicked on billingDatebtn");
+      await browser.pause(5000);
+
+      let currentDate: string;
+
+        const formatDate = (date: Date): string => {
+        const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed
+        const day = String(date.getDate()).padStart(2, '0');
+        const year = date.getFullYear();
+        return `${month}/${day}/${year}`;
+        };
+        const date = new Date();
+        currentDate = formatDate(date); // Format as MM/DD/YYYY
+        console.log(`Current Date: ${currentDate}`);
+
+      (await $(QASAPLOGIN.billingDateTxt)).clearValue();
+      await sap.enterTextInTextBox(QASAPLOGIN.billingDateTxt,currentDate);
+      console.log("current date entered");
+    
+      (await $(QASAPLOGIN.currentDatePicker)).click();
+      await browser.pause(5000);
+      console.log("clicked on current date");
+      //write code to select current date from calender
+      //click on calender continue button
+      (await $(QASAPLOGIN.CalenderContinue)).click();
+      await browser.pause(5000);
+
+      (await $(QASAPLOGIN.saveBtn)).click();
+      //verify that journal entry is created in feature file using va03 again
+      await sap.enterTextInTextBox(QASAPLOGIN.txtTcode,'/nVA03');
+      await sap.keyboardActions('Enter');
+      //await sapLogin.getOrderNumber();
       (await $(QASAPLOGIN.va03OrderNumtxtBox)).clearValue();
       await sap.enterTextInTextBox(QASAPLOGIN.va03OrderNumtxtBox,orderNum);
       await sap.keyboardActions('Enter');
       console.log("order entered");
       (await $(QASAPLOGIN.va03ExecuteBtn2)).click();
       console.log("clicked on continue btn");
-     (await $(QASAPLOGIN.va03ExecuteBtn2)).waitForDisplayed({ timeout: 60000 });
-     await waitForElement (await $(QASAPLOGIN.va03DisplayDocumentBtn));
-     await sap.clicktheBtnXpath(QASAPLOGIN.va03DisplayDocumentBtn);
-     console.log("DPR");
-     (await $(QASAPLOGIN.invoiceDoc)).click();
-     await sap.sleep(5000);
-     console.log("invoice clicked");
-     await browser.pause(2000);
-     (await $(QASAPLOGIN.displayDocumentBtn)).click();      
-     console.log("displayDocumentBtn clicked");
-     await browser.pause(2000);
-     (await $(QASAPLOGIN.changeBtn)).click();
-     console.log("change btn clicked");
-     await browser.pause(2000);
-     await sap.enterTextInTextBox(QASAPLOGIN.companyCode,'1019');
-     console.log("company code entered");
-     await browser.pause(2000);
-     (await $(QASAPLOGIN.va03ExecuteBtn2)).click();
-     console.log("clicked on continue btn");
-     //await sap.clicktheBtnXpath(QASAPLOGIN.va03DisplayDocumentBtn);
-     //*[@title='Display header details']
-     await browser.pause(5000);
-     (await $(QASAPLOGIN.displayHeaderDetails)).click();
-     console.log("clicked on header details btn");
-     //select date as todays date here
-     await browser.pause(2000);
-     (await $(QASAPLOGIN.billingDateTxt)).click();
-     console.log("clicked on billingDatetxt");
-     (await $(QASAPLOGIN.billingDatebtn)).click();
-     console.log("clicked on billingDatebtn");
-     await browser.pause(5000);
+      (await $(QASAPLOGIN.va03ExecuteBtn2)).waitForDisplayed({ timeout: 60000 });
+      await waitForElement (await $(QASAPLOGIN.va03DisplayDocumentBtn));
+      await sap.clicktheBtnXpath(QASAPLOGIN.va03DisplayDocumentBtn);
+      console.log("verify Journal entry created");
+      });
 
-     let currentDate: string;
 
-  const formatDate = (date: Date): string => {
-  const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed
-  const day = String(date.getDate()).padStart(2, '0');
-  const year = date.getFullYear();
-  return `${month}/${day}/${year}`;
-  };
-  const date = new Date();
-  currentDate = formatDate(date); // Format as MM/DD/YYYY
-  console.log(`Current Date: ${currentDate}`);
+      Then(/^the user verify Invoice doc created and complete the status (.*)$/ , async(Tcode) =>{
+        await browser.pause(4000);
+          await sap.enterTextInTextBox(QASAPLOGIN.txtTcode,Tcode);
+            await sap.keyboardActions('Enter');
+              const orderNum=await sap.getOrderNumber();
+            //await sapLogin.getOrderNumber();
+    (await $(QASAPLOGIN.va03OrderNumtxtBox)).clearValue();
+    await sap.enterTextInTextBox (QASAPLOGIN.va03OrderNumtxtBox,orderNum);
+      await sap.keyboardActions('Enter');
+      //await sap.clicktheBtnXpath(QASAPLOGIN.va03ExecuteBtn2);
+        console.log("VA03 order opened");
+        (await $(QASAPLOGIN.va03ExecuteBtn2)).waitForDisplayed({ timeout: 60000 });
+      await waitForElement (await $(QASAPLOGIN.va03DisplayDocumentBtn));
+      await sap.clicktheBtnXpath(QASAPLOGIN.va03DisplayDocumentBtn);
+    console.log("Document flow is opened!");
+    await browser.pause(2000);
+    let done=false;
+    while(!done){
+      console.log(done);
+      console.log("Waiting for invoice");
+        if(await $(QASAPLOGIN.invoiceDoc).isDisplayed()){
+          await browser.pause(500);
+        (await $(QASAPLOGIN.invoiceDoc)).click();
+          await browser.pause(500);
+        console.log("invoice clicked");
+          await browser.pause(2000);
+          await ( $(QASAPLOGIN.va03PODisplyDoc)).click();    
+        console.log("displayDocumentBtn clicked");
+          await browser.pause(6000);
+          (await $(QASAPLOGIN.changeBtn)).click();
+          console.log("change btn clicked");
+          await browser.pause(6000);
+        await sap.enterTextInTextBox(QASAPLOGIN.companyCode,'1019');
+        console.log("company code entered");
+        await browser.pause(3000);
+        await sap.clicktheBtnXpath(QASAPLOGIN.va03ExecuteBtn2);
+        console.log("clicked on continue btn");
+        await browser.pause(6000);
+        (await $(QASAPLOGIN.displayHeaderDetails)).click();
+        console.log("clicked on header details btn");
+          //select date as todays date here
+            await browser.pause(3000);
+            (await $(QASAPLOGIN.billingDateTxt)).click();
+            console.log("clicked on billingDatetxt");
+            let currentDate: string;
+            const formatDate = (date: Date): string => {
+              const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed
+                const day = String(date.getDate()).padStart(2, '0');
+              const year = date.getFullYear();
+        return `${month}/${day}/${year}`;
+      };
+      const date = new Date();
+    currentDate = formatDate(date); // Format as MM/DD/YYYY
+      console.log(`Current Date: ${currentDate}`);
+    await browser.pause(3000);
+      await (await $(QASAPLOGIN.billingDateTxt)).clearValue(); // Added await
+    await sap.enterTextInTextBox(QASAPLOGIN.billingDateTxt, currentDate);
+    console.log("Current date entered");
+    await browser.pause(6000);
+    await (await $(QASAPLOGIN.billingDatebtn)).click(); // Added await
+    console.log("Calendar opened");
+    await browser.pause(6000);
+    await (await $(QASAPLOGIN.CalenderContinue)).click(); // Added await
+      console.log("Calendar continue button clicked");
+    await browser.pause(6000);
+    await (await $(QASAPLOGIN.saveBtn)).click();
+    console.log("save btn clicked");
+    await browser.pause(4000);
+      }
 
-    (await $(QASAPLOGIN.billingDateTxt)).clearValue();
-    await sap.enterTextInTextBox(QASAPLOGIN.billingDateTxt,currentDate);
-    console.log("current date entered");
-   
-     (await $(QASAPLOGIN.currentDatePicker)).click();
-     await browser.pause(5000);
-     console.log("clicked on current date");
-     //write code to select current date from calender
-     //click on calender continue button
-     (await $(QASAPLOGIN.CalenderContinue)).click();
-     await browser.pause(5000);
+      else
+      {await browser.pause(5000);}  
+    }
+      });
 
-     (await $(QASAPLOGIN.saveBtn)).click();
-     //verify that journal entry is created in feature file using va03 again
-     await sap.enterTextInTextBox(QASAPLOGIN.txtTcode,Tcode);
-     await sap.keyboardActions('Enter');
-    //await sapLogin.getOrderNumber();
-     (await $(QASAPLOGIN.va03OrderNumtxtBox)).clearValue();
-     await sap.enterTextInTextBox(QASAPLOGIN.va03OrderNumtxtBox,orderNum);
-     await sap.keyboardActions('Enter');
-     console.log("order entered");
-     (await $(QASAPLOGIN.va03ExecuteBtn2)).click();
-     console.log("clicked on continue btn");
-    (await $(QASAPLOGIN.va03ExecuteBtn2)).waitForDisplayed({ timeout: 60000 });
-    await waitForElement (await $(QASAPLOGIN.va03DisplayDocumentBtn));
-    await sap.clicktheBtnXpath(QASAPLOGIN.va03DisplayDocumentBtn);
-    console.log("verify Journal entry created");
-     });
+
+
+
+    Then(/^the user verify journal entry creation (.*)$/ , async(Tcode) =>{
+      await browser.pause(4000);
+    //verify that journal entry is created in feature file using va03 again
+                  
+    await sap.enterTextInTextBox(QASAPLOGIN.txtTcode,Tcode);
+    await sap.keyboardActions('Enter');
+    await browser.pause(3000);
+    const orderNum=await sap.getOrderNumber();
+    (await $(QASAPLOGIN.va03OrderNumtxtBox)).clearValue();
+    await sap.enterTextInTextBox(QASAPLOGIN.va03OrderNumtxtBox,orderNum);
+      await sap.keyboardActions('Enter');
+        console.log("order entered");
+      await browser.pause(3000);
+      await waitForElement (await $(QASAPLOGIN.va03DisplayDocumentBtn));
+      await sap.clicktheBtnXpath(QASAPLOGIN.va03DisplayDocumentBtn);
+      console.log("verify Journal entry created");
+      await browser.pause(6000);
+        let journalStatus= await (await $(QASAPLOGIN.journalStatus)).getText();
+      if (journalStatus === "cleared")
+        {
+          console.log("journalStatus is cleared!",journalStatus );
+        }
+          else
+          {
+        console.log("journalStatus is not cleared!",journalStatus );
+      } 
+                                                                        
+    });
