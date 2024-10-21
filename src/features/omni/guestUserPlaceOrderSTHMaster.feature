@@ -10,7 +10,7 @@ Feature: Place Order With Master Card STH
     # Then the user clicks on the webelement with html tag "title" as "Search"
     # Then the user waits for webelement "hdca-store-list-item__column-store" with html attribute "class" to be visible
     # Then the user click on "Select"
-    #Then the user enters text sku in textbox with placeholder "What can we help you find?"
+    # Then the user enters text sku in textbox with placeholder "What can we help you find?"
     # Then the user enters text "<sku>" in textbox with placeholder "What can we help you find?"
     # Then the user clicks on the webelement with html tag "class" as "acl-action-button"
     # Then the user waits for webelement "hdca-product__description" with html attribute "class" to be visible
@@ -43,47 +43,45 @@ Feature: Place Order With Master Card STH
     # Then the user waits for webelement "acl-container acl-container--theme-dark acl-p--small" with html attribute "class" to be visible
     # Then the user validates if " Your order was successful. " text is visible
     # Then the user validates if the webelement with html attribute "class" as "acl-col--12 acl-text-size--x-large" has text "Order Number"
-
+    #  Then the user save created order number in json file
       ####Integration#
-            #         # Authorization 
-            #   Then the user check the order details with Tcode /nva03
-            #   Then the user do the authorization
+        #            ##### Authorization 
+            Then the user check the order details with Tcode /nva03
+            Then the user do the authorization
             #              # PO Creation 
-            # Then the user generate IDOC for creating PO
-            #  Then the user process the IDOC number to generate PO with Tcode /nBD87
-            #  Then the user checks the PO with Tcode /nva03
+            Then the user generate IDOC for creating PO
+             Then the user process the IDOC number to generate PO with Tcode /nBD87
+             Then the user checks the PO with Tcode /nva03
 
-            #         # Delivery Creation (Dint Delivery)
-            # Then the user execute delivery creation
-            #  Then the user check the delivery creation /nva03
-            #        # Picking (POGI)Purchase order goods issue
-            # Then the user enter picked qty and mark the Picking /nva03
-            # Then the user clicks on post goods issue to generate GI /nva03
+        # #             # Delivery Creation (Dint Delivery)
+            Then the user execute delivery creation
+             Then the user check the delivery creation /nva03
+        #           ###### Picking (POGI)Purchase order goods issue
+            Then the user enter picked qty and mark the Picking /nva03
+            Then the user clicks on post goods issue to generate GI /nva03
             Then the user verify GI created inside PO /nva03
 
-              #   ----------------Goods Receipt 
+        #         ###----------------Goods Receipt 
               Then the user enter Goods Receipt /nva03
-               Then the user process with RSNSAT
+                Then the user process with RSNSAT
            
              Then the user check the Outbound Delivery /nva03
              Then the user do the MIGO
 
-        #  -----------------Release PGI-------------------
+        # #  -----------------Release PGI-------------------
            Then the user go to OBD PGI for releasing the delivery /nsa38
            Then the user go to va03 to verify GI status /nva03
-             #  Then user go to va03 to check status for OBD and GI COM stock /nva03
+
          
-        #  ---------billing block removal------------------
+          #########---------billing block removal------------------
              Then the user removes Billing Block /nsa38
              Then the user verify billing block removed /nva03
-
         #   ----------------F2 Invoice Steps-------------------
-          Then the user process F2 Invoice /nsa38
-          Then the user goto sa37 to verify job scheduled release /nsm37
-        #  Then the user wait for 15 min to verify Invoice is generated
-         Then the user verify Invoice doc created and complete the status /nva03
-         Then the user verify journal entry creation /nva03
+            Then the user process F2 Invoice
+            Then the user goto sa37 to verify job scheduled release /nsm37
+            Then the user verify Invoice doc created and complete the status /nva03
+            Then the user verify journal entry creation /nva03
 
     Examples:
-      | firstName | lastName    | address       | city        | province | postalCode | phoneNum   | userName | password | sku |
+      | firstName | lastName    | address       | city        | province | postalCode | phone   | userName | password | sku |
       | Address   | WebdriverIO | 621 Rue Habel | Scarborough | Ontario  | M1R 4E6    | 4700148224 | SXM8MZQ  |xxxx | 1000686028 |

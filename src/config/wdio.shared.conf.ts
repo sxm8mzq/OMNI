@@ -49,6 +49,11 @@ export const config = {
       {
         jsonFolder: `${process.cwd()}/src/reports/cucumber-results/json`,
         language: 'en',
+        coloredLogs: true,
+        screenshotOnReject: true,
+        screenshotPath: `${process.cwd()}/src/reports/cucumber-results/screenshots`,
+        disableWebdriverStepsReporting: true,
+        disableWebdriverScreenshotsReporting: false,
       },
     ],
     [
@@ -67,7 +72,7 @@ export const config = {
     ['allure', {
       outputDir: `${process.cwd()}/src/reports/allure-results`,
       disableWebdriverStepsReporting: true,
-      disableWebdriverScreenshotsReporting: true,
+      disableWebdriverScreenshotsReporting: false,
     }],
   ],
   cucumberOpts: {

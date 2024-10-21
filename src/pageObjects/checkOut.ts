@@ -270,6 +270,39 @@ class Opc {
     }
   }
 
+  async paymentMethodQS(card) {
+    //await this.getSlackDetails();
+if(card!==null){
+      switch (card) {
+        case 'Visa':
+          await $('//*[contains(text(),\'Card Number\')]/following::input[1]').addValue('4012000033330026');
+          await $('//*[contains(@name,\'expiry-month\')]').selectByVisibleText('10');
+          await $('//*[contains(@name,\'expiry-year\')]').selectByVisibleText('28');
+          await $('//*[contains(text(),\'CVV\')]/following::input[1]').addValue('123');
+          break;
+        case 'Mastercard':
+          await $('//*[contains(text(),\'Card Number\')]/following::input[1]').addValue('5424180279791732');
+          await $('//*[contains(@name,\'expiry-month\')]').selectByVisibleText('10');
+          await $('//*[contains(@name,\'expiry-year\')]').selectByVisibleText('28');
+          await $('//*[contains(text(),\'CVV\')]/following::input[1]').addValue('123');
+          break;
+        case 'Amex':
+          await $('//*[contains(text(),\'Card Number\')]/following::input[1]').addValue('373235387881015');
+          await $('//*[contains(@name,\'expiry-month\')]').selectByVisibleText('10');
+          await $('//*[contains(@name,\'expiry-year\')]').selectByVisibleText('28');
+          await $('//*[contains(text(),\'CID\')]/following::input[1]').addValue('1234');
+          break;
+        case 'Hdcc':
+          await $('//*[contains(text(),\'Card Number\')]/following::input[1]').addValue('6035294430363981');
+          await $('//*[contains(text(),\'CVV\')]/following::input[1]').addValue('123');
+          break;
+        default:
+          console.error('This payment method is not available');
+          break;
+      }
+    }
+  }
+
   async paymentMethodFrench(card) {
     //await this.getSlackDetails();
     mcycleToggle = 'on';

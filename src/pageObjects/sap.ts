@@ -376,8 +376,14 @@ class sap {
       //     expect1.fail(0, 1, `Caught an exception at waitForPageLoad :: ${e}`);
       //   }
       // }
-      
-    
+      async pageScrollTillBottomPage () {
+        try {
+          await browser.execute('window.scrollTo(0,document.body.scrollHeight)');
+        } catch (e) {
+          await browser.takeScreenshot();
+         // expect.fail(0, 1, `page scroll till bottom is not working:: ${e}`);
+        }
+      }
 
 }
 export default new sap();

@@ -5,6 +5,7 @@ export const QASAPLOGIN = {
   txtSAPPaswdds7: "//input[@id='password']",
   txtSAPUserIdqs7: "//input[@id='sap-user']",
   txtSAPPaswdqs7: "//input[@id='sap-password']",
+  caOrderNumber: "//div[@id='order-number']",
   signInqs7: "//div[@id='LOGON_BUTTON']",
   va03OrderNumtxtBox: "(//form//table/tbody/tr/td[1]/input)[1]",
   va03ExecuteBtn3:"//table/tbody/tr/td/div/form/div/div[5]//span[2]/div",
@@ -64,6 +65,11 @@ export const QASAPLOGIN = {
   va03CollapseBtnItemOverview:"//div[contains(@title,'Collapse Items Ctrl+F6')]",
   va03PickTabItem10Checkbx:"((//table)//tbody/tr[1]/td[1]/div)[18]",
   replinishDelMenu:"//div[contains(@title,'Menu')]",
+  releaseMenuJob: "(//table/tbody/tr[contains(@title,'Job')])[1]",
+  releaseMenuReleaseScheduled: "(//table/tbody/tr[contains(@title,'Released -> Scheduled')])[1]",
+  releasebtn: "//div[contains(@title, 'Release job (Ctrl+Shift+F10)')]",
+  immediateReleasebtn: "//*[contains(@lsdata,'Immediate')]",
+  releaseSave: "//*[contains(@lsdata,'Save')]",
   replinishDelMenuExtras:"//table/tbody/tr[contains(@title,'Extras')]",
   replinishDelDeliveryOuput:"//table/tbody/tr[contains(@title,'Delivery Output')]",
   replinishHeader:"//table//tbody/tr/td/div/div/div[1]/div[2]/span[10]//div//table/tbody//tr[contains(@title,'Header')]",
@@ -111,7 +117,7 @@ export const QASAPLOGIN = {
  jobNameInvoice: "//*[@title='Job name']",
  JobInvoiceName: "//div[@role='text' and contains(@style, 'top:81px')]",
  authOrdertype:"//*[@title='Sales Document Type']",
-
+  JobName:"//div[contains(text(),'INVOICE')]",
  //authExecuteBtn2:"//*[contains(@class,'lsButton lsButton--base urNoUserSelect urBtnRadius lsButton--useintoolbar lsButton--active lsButton--focusable lsButton--up lsButton--design-emphasized')]",
 
  PurchaseOrderDoc: "/html/body/table/tbody/tr/td/div/form/div/div[4]/div/div[1]/div/table/tbody/tr[3]/td/div/div/div/div/div[2]/div/div/table/tbody[1]/tr[2]/td[1]/div/div[2]/table/tbody/tr[2]/td/table/tbody/tr/td[3]/div/table/tbody/tr/td[2]/div/span/span",
@@ -125,10 +131,13 @@ export const QASAPLOGIN = {
  salesDocExecuteBtn: "//*[@class='lsButton lsButton--base urNoUserSelect urBtnRadius lsButton--useintoolbar lsButton--active lsButton--focusable lsButton--up lsButton--behaviour-toggle lsButton--design-standard']",
  sa38ExecuteBtn: "//*[@title='Execute (F8)']",
  bbItemdoubleClick:"//table/tbody/tr[1]/td[2]/div/span/span[1]",
+ bbItemdoubleClick2:"//table/tbody/tr[1]/td[2]/div/span/span[2]",
+ va03NextItem:"//div[contains(@title,'Next Item')]",
  rsnastSuccMsg:"//div[contains(@title,'Message text')]",
  rsnastInfoScreen:"//span[contains(@id,'SAPMSDYP10_1-header-title-txt')]",
   bbBillingPlan:"//div/*[contains(text(),'Billing plan')]",
-  bbBlock:"//table/tbody/tr[1]/td[6]/div/span/span[1]",
+  bbBlock:"//table/tbody/tr[1]/td[6]/div/span/span",
+  bbBlock2:"//table/tbody/tr[2]/td[6]/div/span/span",
   migoPO:"//*[(@title='Purchase Order')]",
   migoSite:"//*[(@title='Ordering Site')]",
   gr101:"//tbody[1]/tr[2]/td[1]/div/div/table/tbody/tr[1]/td[2]/div/span/span[contains(text(),'101')]",
@@ -141,5 +150,7 @@ export const QASAPLOGIN = {
   journalStatus: "//span[@role='button' and @tabindex='0' and text()='Cleared']",
   appliancePODoc: "(//table/tbody/tr/td[2]/div/span/span[contains(@text,'')])[2]",
   JobNametext: "//*[@title='Background job name']",
+  checkbxClicked: "//span[@class='lsAbapListCheckBox lsAbapListCheckBox--hoverable']",
+
  };
 
