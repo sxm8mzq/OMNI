@@ -6,6 +6,8 @@ import { Key } from "webdriverio";
 import fs from 'fs';
 import { waitForElement } from "../pageObjects/page.js";
 import {expect1, assert } from 'chai';
+import Mousetrap from 'mousetrap';
+
 
 class sap {
   async launchSAPUrl() {
@@ -107,6 +109,9 @@ class sap {
   
         }
       }
+      
+
+
 
       async getPONumber(){
         let jsonData = [];
@@ -129,7 +134,11 @@ class sap {
         //console.log(order);
          }
        
-      
+         async extractNumberFromString (stringValue) {
+          const numberValue = await Number(stringValue.replace(/[^0-9.]+/g, ""));
+          return numberValue;
+        }
+        
   async displayDocumentFlow()
   {
   
@@ -384,6 +393,14 @@ class sap {
          // expect.fail(0, 1, `page scroll till bottom is not working:: ${e}`);
         }
       }
+      async keyboardCTRLF2()
+      {
+      Mousetrap.bind('ctrl+f2', () => {
+        // Your custom functionality here
+        console.log('Ctrl+F2 pressed!');
+      });
+    }
+  
 
 }
 export default new sap();

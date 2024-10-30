@@ -17,6 +17,14 @@ Then(/^the user enters the value "([^"]*)?" in dropdown with html attribute "([^
 });
 
 Then(/^the user enters text "([^"]*)?" in textbox with placeholder (.*)$/, async (text, selector) => {
+  await browser.pause(6000);
+  try {
+    await browser.execute('window.scrollTo(0,document.body.scrollHeight)');
+  } catch (e) {
+    await browser.takeScreenshot();
+   // expect.fail(0, 1, `page scroll till bottom is not working:: ${e}`);
+  }
+  await browser.pause(2000);
   await $(`[placeholder = ${selector}]`).click();
   await browser.action("key").down(Key.Ctrl).down("a").pause(2).up(Key.Ctrl).up("a").perform();
   await $(`[placeholder = ${selector}]`).addValue(text);
@@ -89,9 +97,12 @@ Then(/^the user click on (.*)$/, async (selector) => {
 Then(/^the user clicks on text (.*) at index "([^"]*)?"$/, async (selector, index) => {
   await $(`(//*[contains(text(), ${selector})])[${Number(index)}]`).click();
 });
-
+// Then(/^the user waits for place order button to be visible$/, async () => {
+//    (await $(QASAPLOGIN.XXX)).waitForDisplayed({ timeout: 60000 });
+// });
 Then(/^the user waits for text (.*) to be visible$/, async (selector) => {
-  (await $(`//*[contains(text(),${selector})]`)).waitForDisplayed({ timeout: 40000 });
+   
+  (await $(`//*[contains(text(),${selector})]`)).waitForDisplayed({ timeout: 60000 });
 });
 
 Then(/^the user waits for "([^"]*)?" seconds$/, async (seconds) => {

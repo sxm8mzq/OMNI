@@ -281,6 +281,7 @@ if(card!==null){
           await $('//*[contains(text(),\'CVV\')]/following::input[1]').addValue('123');
           break;
         case 'Mastercard':
+          await browser.pause(3000);
           await $('//*[contains(text(),\'Card Number\')]/following::input[1]').addValue('5424180279791732');
           await $('//*[contains(@name,\'expiry-month\')]').selectByVisibleText('10');
           await $('//*[contains(@name,\'expiry-year\')]').selectByVisibleText('28');
