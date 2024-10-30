@@ -17,6 +17,7 @@ export const QASAPLOGIN = {
   authCardApprovedTxt:
     "//table//tr//tbody//div[contains(text(),'Card Approved')]",
   bd87IdoctxtBox: "(//input[contains(@title,'IDoc Number')])[1]",
+  bd87idocStatustxt:"(//input[contains(@title,'Status of IDoc')])[1]",
   bd87ExecuteBtn: "//div[@title='Execute (F8)']",
   bd87QS7txt: "(//table/tbody[1]//span/span)[43]",
   bd87IDCOReadyToProcesstxt:
@@ -47,36 +48,27 @@ export const QASAPLOGIN = {
   authSuccessMsg: "//*[contains(@lsdata,'successfully')]",
   authSuccessTick: "//*[contains(@lsdata,'Continue (Enter)')]",
   authSuccClose: "//button[contains(@title,'Close')]",
-  authExecuteBtn4:
-    "//table/tbody/tr/td/div/form/div/div[5]/div/div/div[1]/span[2]/div",
+  authExecuteBtn4:"//table/tbody/tr/td/div/form/div/div[5]/div/div/div[1]/span[2]/div",
   idocnum: "//table/tbody/tr/td/div/form/div/div[5]/div/div/div[1]/div/span[3]",
   //authExecuteBtn2:"//*[contains(@class,'lsButton lsButton--base urNoUserSelect urBtnRadius lsButton--useintoolbar lsButton--active lsButton--focusable lsButton--up lsButton--design-emphasized')]",
   poSalesDocNo: "//*[@title='Sales and Distribution Document Number']",
   authPageTxtBox: "//input[@name='InputField']",
-  GIgenerated:
-    "//*[contains(text(),'GI')]//parent::span/parent::div/parent::td//parent::tr//td[1]",
-  va03DisplayDocPONum:
-    "(//table/tbody/tr/td[2]/div/span/span[contains(@text,'')])[1]",
-  va03PONUM:
-    "//table/tbody/tr[3]/td/div/div/table/tbody[1]/tr[2]/td[2]/div/div/table/tbody/tr/td[1]/div/span",
-  va03POQty:
-    "//table/tbody/tr[3]/td/div/div/table/tbody[1]/tr[2]/td[2]/div/div/table/tbody/tr/td[5]/div/span",
-  va03POArticle:
-    "//table/tbody/tr[3]/td/div/div/table/tbody[1]/tr[2]/td[2]/div/div/table/tbody/tr/td[10]/div/span",
-  va03PODesc:
-    "//table/tbody/tr[3]/td/div/div/table/tbody[1]/tr[2]/td[2]/div/div/table/tbody/tr/td[11]/div/span",
+  GIgenerated:"//*[contains(text(),'GI')]//parent::span/parent::div/parent::td//parent::tr//td[1]",
+  va03DisplayDocPONum:"(//table/tbody/tr/td[2]/div/span/span[contains(@text,'')])[1]",
+  //va03PONUM:"//table/tbody/tr[3]/td/div/div/table/tbody[1]/tr[2]/td[2]/div/div/table/tbody/tr/td[1]/div/span",
+  va03PONUM:"(//span[contains(text(),'Number of Preceding Document')]//ancestor::table[3]//table)[16]//tbody/tr/td[1]/div/span/span",
+  va03ODBNUM:"((//span[contains(text(),'Number of Preceding Document')])//ancestor::table[3]//table)[14]//tbody/tr/td[1]/div/span/span",
+  va03POQty: "//table/tbody/tr[3]/td/div/div/table/tbody[1]/tr[2]/td[2]/div/div/table/tbody/tr/td[5]/div/span",
+  va03POArticle:"//table/tbody/tr[3]/td/div/div/table/tbody[1]/tr[2]/td[2]/div/div/table/tbody/tr/td[10]/div/span",
+  va03PODesc:"//table/tbody/tr[3]/td/div/div/table/tbody[1]/tr[2]/td[2]/div/div/table/tbody/tr/td[11]/div/span",
   va03PODisplyDoc: "//div[contains(@title,'Display')]",
-  va03DIntNum:
-    "(//table/tbody[1]/tr[2]/td[1]/div/div/table/tbody/tr[1]/td[3]//span/span[contains(@name,'InputField')])[2]",
+  va03DIntNum:"(//table/tbody[1]/tr[2]/td[1]/div/div/table/tbody/tr[1]/td[3]//span/span[contains(@name,'InputField')])[2]",
   //va03DIntNum:"(//table/tbody[1]/tr[2]/td[1]/div/div/table/tbody/tr[1]/td[3]//span/span[contains(@text,'')])[2]"
-  va03arrow:
-    "//table/tbody/tr/td/div/form/div/div[4]/div/div[1]/div/div[4]/div/div[2]/div/div/div/div[2]/div/div/table/tbody/tr[1]/td/table/tbody/tr/td[3]/span[1]",
-  va03ItemDetailsExpand:
-    "//div[contains(@title,'Expand Item Details Ctrl+F4')]",
+  va03arrow:"//table/tbody/tr/td/div/form/div/div[4]/div/div[1]/div/div[4]/div/div[2]/div/div/div/div[2]/div/div/table/tbody/tr[1]/td/table/tbody/tr/td[3]/span[1]",
+  va03ItemDetailsExpand:"//div[contains(@title,'Expand Item Details Ctrl+F4')]",
   //va03PohistoryTab:"//div[8]/div[contains(@class,'lsTabStrip--item-title')]",
   va03PohistoryTab: "(//div[8]/div[contains(@text,'')])[1]",
-  va03PickTab:
-    "//table/tbody/tr/td/div/form//table/tbody/tr[1]/td/table/tbody/tr/td[2]/div/div[2]",
+  va03PickTab:"//table/tbody/tr/td/div/form//table/tbody/tr[1]/td/table/tbody/tr/td[2]/div/div[2]",
   //va03PickTabItem10Checkbx:"((//table)//tbody/tr[1]/td[1]/div/div)[6]",
   va03ChangeMode: "//div[contains(@title,'Display <-> Change (Ctrl+F1)')]",
   va03DelQty: "(//table/tbody/tr[1]/td[2]/div/span/span)[2]",
@@ -178,7 +170,7 @@ export const QASAPLOGIN = {
   bbBillingPlan: "//div/*[contains(text(),'Billing plan')]",
   bbBlock: "//table/tbody/tr[1]/td[6]/div/span/span",
   bbBlock2: "//table/tbody/tr[2]/td[6]/div/span/span",
-  migoPO: "(//*[(@title='Purchase Order')])[1]",
+  migoPO: "(//input[(@title='Purchase Order')])[1]",
   migoSite: "//*[(@title='Ordering Site')]",
   migoCloseHeaderDataBtn: "//div[contains(@title,'Close Header Data')]",
   migoItemOkCheckBx:"//span[@name='CheckBox' and @title='Item is Adopted in Document']",
@@ -187,7 +179,7 @@ export const QASAPLOGIN = {
   gr101Mvmt:"//span[text()='101']",
   purchaseOrderNumber: "//*[@title='Purchasing Document Number']",
   migoPostBtn:"//div[@title='Post (Ctrl+S)']",
-  migoSucctxt:"//span[contains(@title,'Article document ')]",
+  migoSucctxt:"//span[contains(@class,'lsMessageBar__') and contains(text(),'Article document')]",
   deliveryCode: "//*[@title='Delivery']",
   bkButton: "//*[contains(@title,'Back (F3)')]",
   deliverychkbx: "//div[@ct='ALC' and @role='checkbox']",
@@ -200,13 +192,12 @@ export const QASAPLOGIN = {
   appliancePODoc:
     "(//table/tbody/tr/td[2]/div/span/span[contains(@text,'')])[2]",
   JobNametext: "//*[@title='Background job name']",
-  checkbxClicked:
-    "//span[@class='lsAbapListCheckBox lsAbapListCheckBox--hoverable']",
+  migoLine:"(//span[contains(text(),'ine')])[4]",
+  checkbxClicked:"//span[@class='lsAbapListCheckBox lsAbapListCheckBox--hoverable']",
   we19ExistingIdcTxtbx: "//input[contains(@title,'IDoc number')]",
   we19CreateBtn: "//div[contains(@title,'Create... (F8)')]",
   we19E1EDL20txt: "//div[contains(text(),'E1EDL20')]",
-  we19ExpandSubtree:
-    "//div[contains(@title,'Expand Subtree (Ctrl+Shift+F11)')]",
+  we19ExpandSubtree:"//div[contains(@title,'Expand Subtree (Ctrl+Shift+F11)')]",
   we19PONum: "//div[contains(text(),'E1EDL41')]//following-sibling::div[2]",
   we191E1EDL24SHPST:
     "//div[contains(text(),'Y1EDL24SHPST')]//following-sibling::div[contains(text(),'1ZA68W')]",
