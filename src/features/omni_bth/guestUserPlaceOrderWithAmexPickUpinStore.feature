@@ -43,41 +43,43 @@ Feature: Verify Place Order with AmexCard Pick Up in Store Sec
     # Then the user save created order number in json file
     ####Integration#
     #            ##### Authorization
-    # Then the user launches the SAP url and login to SAP
-    # Then the user check the ZBTH order details with Tcode /nva03
-    # Then the user do the authorization
-    #              # PO Creation
-    # Then the user generate IDOC for creating PO
-    # Then the user process the IDOC number to generate PO with Tcode /nBD87
-    # Then the user checks the PO with Tcode /nva03
+  #  Then the user launches the SAP url and login to SAP
+    Then the user check the ZBTH order details with Tcode /nva03
+    Then the user do the authorization for BTH order
+                 #PO Creation
+    Then the user generate IDOC for creating PO
+    Then the user process the IDOC number to generate PO with Tcode /nBD87
+      Then the user checks the PO with Tcode /nva03
 
-    # #             # Delivery Creation (Dint Delivery)
-    # Then the user execute delivery creation
-    # Then the user check the delivery creation /nva03
-    #           ###### Picking (POGI)Purchase order goods issue
-    # Then the user enter picked qty and mark the Picking /nva03
-    # Then the user clicks on post goods issue to generate GI /nva03
-    # Then the user verify GI created inside PO /nva03
+    # # #             # Delivery Creation (Dint Delivery)
+    Then the user execute delivery creation
+    Then the user check the delivery creation /nva03
+              ###### Picking (POGI)Purchase order goods issue
+    Then the user enter picked qty and mark the Picking /nva03
+    Then the user clicks on post goods issue to generate GI /nva03
+    Then the user verify GI created inside PO /nva03
 
-    # #         ###----------------Goods Receipt
-    # Then the user enter Goods Receipt /nva03
-    # Then the user process with RSNSAT
+            #----------------Goods Receipt
+    Then the user enter Goods Receipt /nva03
+    Then the user process the ZESC Output for BTH order with RSNAST
 
-    # Then the user check the Outbound Delivery /nva03
-    Then the user do the MIGO
+    Then the user check the Outbound Delivery /nva03
+    Then the user do the MIGO for BTH Order
+      #######Then the user do the MIGO
 
-    # #  -----------------Release PGI-------------------
+    ########## -----------------Release PGI-------------------
     Then the user go to OBD PGI for releasing the delivery /nsa38
     Then the user go to va03 to verify GI status /nva03
 
 
-    #########---------billing block removal------------------
-    Then the user removes Billing Block /nsa38
+    ######---------billing block removal------------------
+    Then the user remove Billing Block for BTH order
     Then the user verify billing block removed /nva03
-    # ##  ----------------F2 Invoice Steps-------------------
+    ##  ----------------F2 Invoice Steps-------------------
     Then the user process F2 Invoice
     Then the user goto sa37 to verify job scheduled release /nsm37
-    Then the user verify Invoice doc created and complete the status /nva03
+    Then the user verify that the invoice is created /nva03
+    Then the user the process the invoice /nva03
     Then the user verify journal entry creation /nva03
 
     Examples:

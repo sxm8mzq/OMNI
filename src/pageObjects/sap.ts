@@ -7,6 +7,8 @@ import fs from 'fs';
 import { waitForElement } from "../pageObjects/page.js";
 import {expect1, assert } from 'chai';
 import Mousetrap from 'mousetrap';
+let SAPuserName = '';
+let SAPPWD = '';
 
 
 class sap {
@@ -73,7 +75,30 @@ class sap {
     (await ($(`${selector}`))).click();
     await browser.pause(2000);
  
+  }
+  async readUserNameAndPwd(){
+    let jsonData = [];
+    try {
+      const fileContents = fs.readFileSync('./src/resources/data/sapCred.json', 'utf8');
+      jsonData = JSON.parse(fileContents);
+    } catch (error) {
+      //console.error('Error reading JSON file:', error);
     }
+    const CCDetails = [];
+    const valueSet1 = fs.readFileSync('./src/resources/data/sapCred.json', 'utf8');
+    const a = valueSet1.split('\n');      
+    for (let i = 0; i < a.length; i++) {
+      CCDetails.push(a[i]);
+    }
+    
+    const SAPuserName = CCDetails[0];
+    const SAPPWD = CCDetails[1];
+    // console.log(SAPuserName); 
+    // console.log(SAPPWD); 
+    await this.enterTextInTextBox(QASAPLOGIN.txtSAPUserIdqs7, SAPuserName);
+    await this.enterTextInTextBox(QASAPLOGIN.txtSAPPaswdqs7, SAPPWD);
+  }
+  
     async getOrderNumber(){
       let jsonData = [];
       try {
@@ -400,6 +425,13 @@ class sap {
         console.log('Ctrl+F2 pressed!');
       });
     }
+
+    async createDynamicElement (ElementName, replaceString) {
+      // eslint-disable-next-line prefer-const
+      let webElement = await ElementName.replace(/[$]/g, replaceString);
+      return webElement;
+    }
+  
   
 
 }

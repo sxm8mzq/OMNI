@@ -49,8 +49,8 @@ Feature: Place Order With Master Card STH
     ####Integration#
     #            ##### Authorization
     # Then the user launches the SAP url and login to SAP
-    # Then the user check the order details with Tcode /nva03
-    # Then the user do the authorization
+    Then the user check the order details with Tcode /nva03
+    Then the user do the authorization for STH order
     #              # PO Creation
     Then the user generate IDOC for creating PO
     Then the user process the IDOC number to generate PO with Tcode /nBD87
@@ -66,7 +66,7 @@ Feature: Place Order With Master Card STH
 
     # #         ###----------------Goods Receipt
     Then the user enter Goods Receipt /nva03
-    Then the user process with RSNSAT
+    Then the user process with RSNAST
 
     Then the user check the Outbound Delivery /nva03
     Then the user do the MIGO
@@ -82,7 +82,8 @@ Feature: Place Order With Master Card STH
     # ##  ----------------F2 Invoice Steps-------------------
     Then the user process F2 Invoice
     Then the user goto sa37 to verify job scheduled release /nsm37
-    Then the user verify Invoice doc created and complete the status /nva03
+    Then the user verify that the invoice is created /nva03
+    Then the user the process the invoice /nva03
     Then the user verify journal entry creation /nva03
 
     Examples:

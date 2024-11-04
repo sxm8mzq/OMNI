@@ -14,10 +14,9 @@ export const QASAPLOGIN = {
   va03z3plCheck: "(//*[text()= 'Z3PL'])[1]",
   //authCardApprovedTxt:"(//table/tbody/tr[1]/td[1]/div/div[contains(@text,'')])[11]",
   //authCardApprovedTxt:"//table//tr[1]/td[1]/div/div[9]",
-  authCardApprovedTxt:
-    "//table//tr//tbody//div[contains(text(),'Card Approved')]",
+  authCardApprovedTxt:"//table//tr//tbody//div[contains(text(),'Card Approved')]",
   bd87IdoctxtBox: "(//input[contains(@title,'IDoc Number')])[1]",
-  bd87idocStatustxt:"(//input[contains(@title,'Status of IDoc')])[1]",
+  bd87idocStatustxt:"//span[contains(text(),'Selection Options for IDoc')]",
   bd87ExecuteBtn: "//div[@title='Execute (F8)']",
   bd87QS7txt: "(//table/tbody[1]//span/span)[43]",
   bd87IDCOReadyToProcesstxt:
@@ -88,6 +87,7 @@ export const QASAPLOGIN = {
   releasebtn: "//div[contains(@title, 'Release job (Ctrl+Shift+F10)')]",
   immediateReleasebtn: "//*[contains(@lsdata,'Immediate')]",
   releaseSave: "//*[contains(@lsdata,'Save')]",
+  sm37JobRefresh:"//div[@title='Refresh (F8)']",
   replinishDelMenuExtras: "//table/tbody/tr[contains(@title,'Extras')]",
   replinishDelDeliveryOuput:
     "//table/tbody/tr[contains(@title,'Delivery Output')]",
@@ -131,8 +131,8 @@ export const QASAPLOGIN = {
   deliverieschkBx: "//*[@aria-label='Deliveries']",
   jobName: "//*[@title='Background job name']",
   schedChkBx: "//*[@aria-label='Sched.']",
-  invoiceDoc:
-    "/html/body/table/tbody/tr/td/div/form/div/div[4]/div/div[1]/div/table/tbody/tr[3]/td/div/div/div/div/div[2]/div/div/table/tbody[1]/tr[2]/td[1]/div/div[2]/table/tbody/tr[7]/td/table/tbody/tr/td[3]/div/table/tbody/tr/td[2]/div/span/span",
+  //invoiceDoc:"/html/body/table/tbody/tr/td/div/form/div/div[4]/div/div[1]/div/table/tbody/tr[3]/td/div/div/div/div/div[2]/div/div/table/tbody[1]/tr[2]/td[1]/div/div[2]/table/tbody/tr[7]/td/table/tbody/tr/td[3]/div/table/tbody/tr/td[2]/div/span/span",
+  invoiceDoc:"//span[contains(text(),'Invoice')]",
   changeBtn: "//*[@title='Change (Ctrl+F11)']",
   billingDateTxt: "//*[@title='Billing Date']",
   billingDatebtn: "//*[@id='ls-inputfieldhelpbutton']",
@@ -185,8 +185,10 @@ export const QASAPLOGIN = {
   deliverychkbx: "//div[@ct='ALC' and @role='checkbox']",
   postGoodsIssueOnOBDPage: "//*[@title='Post Goods Issue (F8)']",
   //GICOMStockDoc: "(//table/tbody/tr/td[2]/div/span/span[contains(@text,'')])[5]",
-  jobStatus:
-    "/html/body/table/tbody/tr/td/div/form/div/div[4]/table/tbody/tr[1]/td[1]/div/div[162]",
+  //jobStatus: "(//div[contains(text(),'INVOICE_')])[1]//following-sibling::div[6]",
+  jobStatus :"//table/tbody/tr[1]/td[1]/div/div[124]",
+  //jobStatus:"//table/tbody/tr[1]/td[1]/div/div[contains(@class,'lsAbapList__item urColorPositiveIntensified lsSemanticColor--text urColorTxtStandard lsSemanticColor--background lsAbapListText--text') and @role='text']",
+  //jobStatus:"/html/body/table/tbody/tr/td/div/form/div/div[4]/table/tbody/tr[1]/td[1]/div/div[162]",
   journalStatus:
     "//span[@role='button' and @tabindex='0' and text()='Cleared']",
   appliancePODoc:

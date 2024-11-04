@@ -50,35 +50,36 @@ Feature: Guest User Place Order With Master Card STH
             #-------------------- Auth ---------------------
                #Then the user launches the SAP url and login to SAP
                 Then the user check the zvds order details with Tcode /nva03    
-                Then the user do the authorization
+                Then the user do the authorization for STH order
  
         # #     # -----------------PO Creation------------------
-             Then the user generate IDOC for creating PO
-             Then the user process the IDOC number to generate PO with Tcode /nBD87
-              Then the user checks the ZVDS PO with Tcode /nva03
+                Then the user generate IDOC for creating PO
+                Then the user process the IDOC number to generate PO with Tcode /nBD87
+                Then the user checks the ZVDS PO with Tcode /nva03
              
-     #    # #     # # # # # # ----------------- Delivery Creation---------
-             Then the user go to generate IDOC number /nWE19
+        # #     # # # # # # ----------------- Delivery Creation---------
+                Then the user go to generate IDOC number /nWE19
  
      #        # # # # -----------------Picking /Goods Receipt-------------------
-             Then the user process the ZVDS IDOC number to generate PO /nBD87
-             Then the user go to verify GR /nva03
-             Then the user go to verify Outbound Delivery /nva03
+                Then the user process the ZVDS IDOC number to generate PO /nBD87
+                Then the user go to verify GR /nva03
+                Then the user check the Outbound Delivery /nva03
+               ##### Then the user go to verify Outbound Delivery /nva03
  
      # #     -----------------Release PGI-------------------
-           Then the user go to ZVDS OBD PGI for releasing the delivery /nsa38
-           Then the user go to va03 to verify GD goods issue status /nva03
+                Then the user go to ZVDS OBD PGI for releasing the delivery /nsa38
+                Then the user go to va03 to verify GD goods issue status /nva03
                        
         #  ---------billing block removal------------------
-             Then the user removes Billing Block /nsa38
-             Then the user verify billing block removed /nva03
+                Then the user removes Billing Block /nsa38
+                Then the user verify billing block removed /nva03
  
         # #   # ----------------F2 Invoice Steps-------------------
-         Then the user process F2 Invoice /nsa38
-         Then the user goto sa37 to verify job scheduled release /nsm37
-         Then the user verify Invoice doc created and complete the status /nva03
-         Then the user verify journal entry creation /nva03
- 
+                Then the user process F2 Invoice
+                Then the user goto sa37 to verify job scheduled release /nsm37
+                Then the user verify that the invoice is created /nva03
+                Then the user the process the invoice /nva03
+                Then the user verify journal entry creation /nva03
     Examples:
       | firstName | lastName    | address       | city        | province | postalCode | phone   | userName | password | sku |
       | Address   | WebdriverIO | 621 Rue Habel | Scarborough | Ontario  | M1R 4E6    | 8944783456 | xxxxx  |xxxx | 1000686028 |
