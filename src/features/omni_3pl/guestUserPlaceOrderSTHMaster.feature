@@ -1,7 +1,7 @@
 Feature: Place Order With Master Card STH
 
   Background: User launches url
-    #  Given the user launches the url
+      # Given the user launches the url
     Given the user launches the SAP url and login to SAP
 
   @e2e
@@ -39,8 +39,8 @@ Feature: Place Order With Master Card STH
     # Then the user switches to the parent frame
     # Then the user enters billing details for "Mastercard" card
     # Then the user click on "Continue"
-   ######### #Then the user waits for text "Place Order " to be visible
-    # Then the user waits for place order button to be visible
+    # Then the user waits for text "Place Order " to be visible
+    # ####Then the user waits for place order button to be visible
     #  Then the user clicks on text "Place Order" at index "2"
     # Then the user waits for webelement "acl-container acl-container--theme-dark acl-p--small" with html attribute "class" to be visible
     # Then the user validates if " Your order was successful. " text is visible
@@ -48,15 +48,15 @@ Feature: Place Order With Master Card STH
     # Then the user save created order number in json file
     ####Integration#
     #            ##### Authorization
-    # Then the user launches the SAP url and login to SAP
+    Then the user launches the SAP url and login to SAP
     Then the user check the order details with Tcode /nva03
     Then the user do the authorization for STH order
     #              # PO Creation
     Then the user generate IDOC for creating PO
     Then the user process the IDOC number to generate PO with Tcode /nBD87
-    Then the user checks the PO with Tcode /nva03
+     Then the user checks the PO with Tcode /nva03
 
-    # #             # Delivery Creation (Dint Delivery)
+    # # #             # Delivery Creation (Dint Delivery)
     Then the user execute delivery creation
     Then the user check the delivery creation /nva03
     #           ###### Picking (POGI)Purchase order goods issue

@@ -1,12 +1,12 @@
 Feature: Guest User Place Order With Master Card STH
  
   Background: User launches url
-          #    Given the user launches the url
+            #  Given the user launches the url
               Given the user launches the SAP url and login to SAP
  
   @e2e
     Scenario Outline: User should able to place order with master card sth
-#     Then the user enters text "7001" in textbox with placeholder "Postal Code, City, or Store Number"
+#       Then the user enters text "7001" in textbox with placeholder "Postal Code, City, or Store Number"
 #     Then the user clicks on the webelement with html tag "title" as "Search"
 #     Then the user waits for webelement "hdca-store-list-item__column-store" with html attribute "class" to be visible
 #     Then the user click on "Select"
@@ -47,27 +47,28 @@ Feature: Guest User Place Order With Master Card STH
 #      Then the user save created order number in json file
 #       # Integration#
            
-            #-------------------- Auth ---------------------
-               #Then the user launches the SAP url and login to SAP
+             # #     # # # # # # ----------------- Auth ---------------------
+              ## Then the user launches the SAP url and login to SAP
                 Then the user check the zvds order details with Tcode /nva03    
                 Then the user do the authorization for STH order
  
-        # #     # -----------------PO Creation------------------
+        #     # -----------------PO Creation------------------
                 Then the user generate IDOC for creating PO
                 Then the user process the IDOC number to generate PO with Tcode /nBD87
-                Then the user checks the ZVDS PO with Tcode /nva03
+                Then the user checks the PO with Tcode /nva03
              
         # #     # # # # # # ----------------- Delivery Creation---------
                 Then the user go to generate IDOC number /nWE19
+                Then the user process the IDOC number to generate OBD /nBD87
  
      #        # # # # -----------------Picking /Goods Receipt-------------------
-                Then the user process the ZVDS IDOC number to generate PO /nBD87
+                
                 Then the user go to verify GR /nva03
                 Then the user check the Outbound Delivery /nva03
                ##### Then the user go to verify Outbound Delivery /nva03
  
      # #     -----------------Release PGI-------------------
-                Then the user go to ZVDS OBD PGI for releasing the delivery /nsa38
+                Then the user do the OBD PGI for releasing the delivery for VDS Order /nsa38
                 Then the user go to va03 to verify GD goods issue status /nva03
                        
         #  ---------billing block removal------------------

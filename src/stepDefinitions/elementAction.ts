@@ -122,7 +122,9 @@ Then(/^the user waits until the spinner is no longer visible$/, async () => {
 });
 
 Then(/^the user switches to the frame (.*)$/, async (frameName) => {
+  await browser.pause(6000);
   await waitForElement(await $(`//orange-pay-component`));
+  await $(`iframe[name*=${frameName}]`).scrollIntoView({ block: "center" });
   await browser.switchToFrame(await $(`iframe[name*=${frameName}]`));
 });
 

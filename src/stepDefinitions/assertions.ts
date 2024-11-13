@@ -6,6 +6,7 @@ import { browser, $, $$, expect } from '@wdio/globals';
 import 'dotenv/config';
 
 Then(/^the user validates if (.*) text is visible$/, async (selector) => {
+  await browser.pause(4000);
   await expect($(`//*[text()= ${selector}]`)).toBeDisplayed();
 });
 
@@ -66,6 +67,7 @@ Then(/^the user validates if text for (.*) contains "([^"]*)?"$/, async (selecto
 });
 
 Then(/^the user validates if the webelement with html attribute "([^"]*)?" as (.*) has text "([^"]*)?"$/, async (htmlTag, selector, text) => {
+  await browser.pause(5000);
   await expect($(`//*[contains(@${htmlTag}, ${selector})]`)).toHaveTextContaining(text);
 });
 

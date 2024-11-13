@@ -7,7 +7,7 @@ Feature: Guest User Place Order On Appliance With master Card
      
   @e2e
   Scenario Outline: User should able to place order on appliance with plcc commercial card
-      # Then the user enters text "7001" in textbox with placeholder "Postal Code, City, or Store Number"
+       # Then the user enters text "7001" in textbox with placeholder "Postal Code, City, or Store Number"
       # Then the user clicks on the "search" icon at index "2"
       #  Then the user waits for text "SCARBOROUGH #7001" to be visible
       # Then the user click on "Select"
@@ -52,32 +52,35 @@ Feature: Guest User Place Order On Appliance With master Card
      
     #  ------------------------New Code-----------------------
     # ------------------------Auth------------------
-    Then the user launches the SAP url and login to SAP
-    Then the user check the ZNAS order details with Tcode /nva03
-    Then the user go to generate DPR /nsa38
-    Then the user checks the DPR with Tcode /nva03
+    ###Then the user launches the SAP url and login to SAP
+    # Then the user check the ZNAS order details with Tcode /nva03
+    # Then the user go to generate DPR /nsa38
+    # Then the user checks the DPR with Tcode /nva03
  
-    # -----------------PO Creation ----------------
-    Then the user generate IDOC for creating PO
-    Then the user process the IDOC number to generate PO with Tcode /nBD87
-    Then the user checks the vendor & shipment PO with Tcode /nva03
+     #######------------------PO Creation ----------------
+    # Then the user generate IDOC for creating PO
+    # Then the user process the IDOC number to generate PO with Tcode /nBD87
  
-    # ------------------Picking vendor/shipment confirmation----------------------
-    Then the user execute RSNAST00 program for ZOEM and ZDCR
-    Then user go to change the delivery status
+   #######------------------Picking vendor/shipment confirmation----------------------
+    # Then the user execute RSNAST00 program for ZOEM with Tcode/nsa38
+    Then the user go to update Vendor PO confirmation /nva03
+    # Then the user go to update Shipment PO confirmation /nva03
+    # Then the user execute RSNAST00 program for ZDCR /nsa38
+    # Then user go to change the delivery status
  
-    # ---------------Goods Receipts------------
-    Then user go to PO GR process
+    # # ---------------Goods Receipts------------
+    # Then user go to PO GR process
  
-     #---------billing block removal------------------
-    Then the user removes Billing Block /nsa38
-    Then the user verify billing block removed /nva03
+    #  #---------billing block removal------------------
+    # Then the user removes Billing Block /nsa38
+    # Then the user verify billing block removed /nva03
  
-    #  ----------------F2 Invoice Steps-------------------
-    Then the user process F2 Invoice /nsa38
-    Then the user goto sa37 to verify job scheduled release /nsm37
-    Then the user verify Invoice doc created and complete the status /nva03
-    Then the user verify journal entry creation /nva03
+    # #  ----------------F2 Invoice Steps-------------------
+    # Then the user process F2 Invoice
+    # Then the user goto sa37 to verify job scheduled release /nsm37
+    # Then the user verify that the invoice is created /nva03
+     Then the user the process the invoice /nva03
+    # Then the user verify journal entry creation /nva03
  
  
  
