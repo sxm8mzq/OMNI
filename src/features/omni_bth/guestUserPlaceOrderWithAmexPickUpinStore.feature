@@ -43,7 +43,7 @@ Feature: Verify Place Order with AmexCard Pick Up in Store Sec
     # Then the user save created order number in json file
     ####Integration#
     #            ##### Authorization
-    Then the user launches the SAP url and login to SAP
+    # ##Then the user launches the SAP url and login to SAP
     Then the user check the ZBTH order details with Tcode /nva03
     Then the user do the authorization for BOSS order
                  #PO Creation
@@ -76,11 +76,11 @@ Feature: Verify Place Order with AmexCard Pick Up in Store Sec
     Then the user remove Billing Block for BTH order
     Then the user verify billing block removed /nva03
     ##  ----------------F2 Invoice Steps-------------------
-    Then the user process F2 Invoice
-    Then the user goto sa37 to verify job scheduled release /nsm37
-    Then the user verify that the invoice is created /nva03
-    Then the user the process the invoice /nva03
-    Then the user verify journal entry creation /nva03
+      Then the user process F2 Invoice Updated
+      Then the user goto sa37 to verify job invoice job status /nsm37
+      Then the user verify that the invoice is created /nva03
+      ##  Then the user the process the invoice /nva03
+      Then the user verify journal entry creation /nva03
 
     Examples:
       | firstName | lastName   | altFirstName | altLastName | phonenumber | email             |

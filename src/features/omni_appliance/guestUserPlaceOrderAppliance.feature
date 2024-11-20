@@ -50,38 +50,38 @@ Feature: Guest User Place Order On Appliance With master Card
       # Then the user validates if " APPLIANCE DELIVERY: " text is visible
  
      
-    #  ------------------------New Code-----------------------
     # ------------------------Auth------------------
-    ###Then the user launches the SAP url and login to SAP
-    # Then the user check the ZNAS order details with Tcode /nva03
-    # Then the user go to generate DPR /nsa38
-    # Then the user checks the DPR with Tcode /nva03
- 
-     #######------------------PO Creation ----------------
-    # Then the user generate IDOC for creating PO
-    # Then the user process the IDOC number to generate PO with Tcode /nBD87
- 
-   #######------------------Picking vendor/shipment confirmation----------------------
-    # Then the user execute RSNAST00 program for ZOEM with Tcode/nsa38
+    # Then the user launches the SAP url and login to SAP
+    Then the user check the ZNAS order details with Tcode /nva03
+    Then the user go to generate DPR
+    # Then the user checks the DPR /nva03
+
+    # -----------------PO Creation ----------------
+    Then the user generate IDOC for creating PO
+    Then the user process the IDOC number to generate PO with Tcode /nBD87
+    Then the user checks the Appliance PO with Tcode /nva03
+
+    # # ------------------Picking vendor/shipment confirmation----------------------
+    Then the user execute RSNAST00 program for ZOEM /nsa38
     Then the user go to update Vendor PO confirmation /nva03
-    # Then the user go to update Shipment PO confirmation /nva03
-    # Then the user execute RSNAST00 program for ZDCR /nsa38
-    # Then user go to change the delivery status
- 
-    # # ---------------Goods Receipts------------
-    # Then user go to PO GR process
- 
-    #  #---------billing block removal------------------
-    # Then the user removes Billing Block /nsa38
-    # Then the user verify billing block removed /nva03
- 
-    # #  ----------------F2 Invoice Steps-------------------
-    # Then the user process F2 Invoice
-    # Then the user goto sa37 to verify job scheduled release /nsm37
-    # Then the user verify that the invoice is created /nva03
-     Then the user the process the invoice /nva03
-    # Then the user verify journal entry creation /nva03
- 
+    Then the user go to update Shipment PO confirmation /nva03
+    Then the user execute RSNAST00 program for ZDCR /nsa38
+    Then the user go to change the delivery status /nsa38
+    Then check SAP table for POD completion /nse16n
+
+    # # # ---------------Goods Receipts------------
+    Then the user go to PO GR process /nsa38
+
+    #---------billing block removal------------------
+    Then the user removes billing block for appliance /nsa38
+    Then the user verify billing block removed /nva03
+
+    # # # # # #  ----------------F2 Invoice Steps-------------------
+    Then the user process F2 Invoice Updated
+    Then the user goto sa37 to verify job invoice job status /nsm37
+    Then the user verify that the invoice is created /nva03
+      ##  Then the user the process the invoice /nva03
+    Then the user verify journal entry creation /nva03
  
  
    Examples:

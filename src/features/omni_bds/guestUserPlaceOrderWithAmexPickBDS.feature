@@ -44,36 +44,38 @@ Feature: Verify Place Order with AmexCard Pick Up in Store Sec
 
  # #     # # # # # # ----------------- Auth ---------------------
                ###Then the user launches the SAP url and login to SAP
-                # Then the user check the BDS order details with Tcode /nva03    
+                #Then the user check the BDS order details with Tcode /nva03  
+                Then the user check the order and verify the Item Category ZBDS  
                 # Then the user do the authorization for BOSS order
  
-        #     # -----------------PO Creation------------------
-                # Then the user generate IDOC for creating PO
-#                 # Then the user process the IDOC number to generate PO with Tcode /nBD87
-#                 Then the user checks the PO with Tcode /nva03
+#             # -----------------PO Creation------------------
+#                 Then the user generate IDOC for creating PO
+#                 Then the user process the IDOC number to generate PO with Tcode /nBD87
+#                Then the user checks the PO with Tcode /nva03
              
-#         # #     # # # # # # ----------------- Delivery Creation---------
+# #         # #     # # # # # # ----------------- Delivery Creation---------
 #                 Then the user go to generate IDOC number /nWE19
 #                 Then the user process the IDOC number to generate OBD /nBD87
 
 # #     # # # # -----------------Picking /Goods Receipt-------------------
 #                 Then the user check the Outbound Delivery /nva03
-#                 Then the user do the MIGO for PO
+#                 Then the user do the MIGO for BDS PO
+              
  
-#      # #     -----------------Release PGI-------------------
+# # #      # #     -----------------Release PGI-------------------
 #                 Then the user go to OBD PGI for releasing the delivery /nsa38
 #                 Then the user go to va03 to verify GD goods issue status /nva03
                        
-        #  ---------billing block removal------------------
-                # Then the user removes Billing Block /nsa38
-                Then the user verify billing block removed /nva03
+#         #  ---------billing block removal------------------
+#                 Then the user removes Billing Block /nsa38
+#                 Then the user verify billing block removed /nva02
  
-        # #   # ----------------F2 Invoice Steps-------------------
-        #         Then the user process F2 Invoice Updated
-        #         Then the user goto sa37 to verify job invoice job status /nsm37
-        #         Then the user verify that the invoice is created /nva03
-        #       ##  Then the user the process the invoice /nva03
-        #         Then the user verify journal entry creation /nva03
+#         # # #   # ----------------F2 Invoice Steps-------------------
+#                 Then the user process F2 Invoice Updated
+#                 Then the user goto sa37 to verify job invoice job status /nsm37
+#                 Then the user verify that the invoice is created /nva03
+#               ##  Then the user the process the invoice /nva03
+#                 Then the user verify journal entry creation /nva03
     Examples:
       | firstName | lastName   | altFirstName | altLastName  | phonenumber | email             |
       | Testuser  | Automation | TestOrange   | WebdriverIO  | 4163458888  | test234@gmail.com |

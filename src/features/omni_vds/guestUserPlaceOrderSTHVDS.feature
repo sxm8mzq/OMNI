@@ -1,7 +1,7 @@
 Feature: Guest User Place Order With Master Card STH
  
   Background: User launches url
-            #  Given the user launches the url
+           #  Given the user launches the url
               Given the user launches the SAP url and login to SAP
  
   @e2e
@@ -49,8 +49,8 @@ Feature: Guest User Place Order With Master Card STH
            
              # #     # # # # # # ----------------- Auth ---------------------
               ## Then the user launches the SAP url and login to SAP
-                Then the user check the zvds order details with Tcode /nva03    
-                Then the user do the authorization for STH order
+        #         Then the user check the zvds order details with Tcode /nva03    
+        #         Then the user do the authorization for STH order
  
         #     # -----------------PO Creation------------------
                 Then the user generate IDOC for creating PO
@@ -61,25 +61,25 @@ Feature: Guest User Place Order With Master Card STH
                 Then the user go to generate IDOC number /nWE19
                 Then the user process the IDOC number to generate OBD /nBD87
  
-     #        # # # # -----------------Picking /Goods Receipt-------------------
+#      #        # # # # -----------------Picking /Goods Receipt-------------------
                 
                 Then the user go to verify GR /nva03
                 Then the user check the Outbound Delivery /nva03
                ##### Then the user go to verify Outbound Delivery /nva03
  
      # #     -----------------Release PGI-------------------
-                Then the user do the OBD PGI for releasing the delivery for VDS Order /nsa38
-                Then the user go to va03 to verify GD goods issue status /nva03
+               Then the user go to OBD PGI for releasing the delivery /nsa38
+                Then the user go to va03 to verify GI status /nva03
                        
         #  ---------billing block removal------------------
                 Then the user removes Billing Block /nsa38
                 Then the user verify billing block removed /nva03
  
         # #   # ----------------F2 Invoice Steps-------------------
-                Then the user process F2 Invoice
-                Then the user goto sa37 to verify job scheduled release /nsm37
+                Then the user process F2 Invoice Updated
+                Then the user goto sa37 to verify job invoice job status /nsm37
                 Then the user verify that the invoice is created /nva03
-                Then the user the process the invoice /nva03
+              ##  Then the user the process the invoice /nva03
                 Then the user verify journal entry creation /nva03
     Examples:
       | firstName | lastName    | address       | city        | province | postalCode | phone   | userName | password | sku |

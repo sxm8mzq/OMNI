@@ -431,9 +431,137 @@ class sap {
       let webElement = await ElementName.replace(/[$]/g, replaceString);
       return webElement;
     }
-  
-  
+  async removeBillingBlock(obdNum) { 
+    await browser.pause(2000);
+  const orderNum = await this.getOrderNumber();
+  await this.enterTextInTextBox(QASAPLOGIN.txtTcode, '/nSA38');
+  await this.keyboardActions("Enter");
+  await browser.pause(2000);
+  (await $(QASAPLOGIN.va03OrderNumtxtBox)).waitForDisplayed({ timeout: 60000 });
+  (await $(QASAPLOGIN.txtProgram)).clearValue();
+  await this.enterTextInTextBox(QASAPLOGIN.txtProgram,"YDSDE_ENHD231_GI_TRIGGER");
+  await browser.pause(2000);
+  await this.keyboardActions("Enter");
+  console.log("Entered program name in Billing block");
+  //await waitForElement (await $(QASAPLOGIN.execute));
+  await browser.pause(2000);
+  await this.clicktheBtnXpath(QASAPLOGIN.execute);
+  console.log("execute clicked");
+  (await $(QASAPLOGIN.bbDeliveryType)).clearValue();
+  // await this.enterTextInTextBox(QASAPLOGIN.bbDeliveryType, "ZLF");
+  await browser.pause(4000);
+  console.log("zlf entered");
+  await this.enterTextInTextBox(QASAPLOGIN.bbDeliveryNo, obdNum);
+  await browser.pause(5000);
+  console.log("obd entered");
+  await this.clicktheBtnXpath(QASAPLOGIN.bbCheckbox);
+  await browser.pause(2000);
+  await this.clicktheBtnXpath(QASAPLOGIN.authExecuteBtn1);
+  console.log("execution completed");
+  await browser.pause(5000);
 
+  let done = false;
+  while (!done) {
+    console.log(done);
+    console.log("Waiting for billing block to remove");
+    if (await $(QASAPLOGIN.billingBlkUsertxt).isDisplayed()) {
+      await browser.pause(500);
+      console.log("billing block removed!");
+      done = true;
+      console.log(done);
+    } else {
+      console.log("billing block not removed !");
+      await browser.pause(1000);
+    }
+  }
+  }
+  async createODBForBOPIS() { 
+
+    (await $(QASAPLOGIN.replinishDelMenu)).waitForDisplayed({ timeout: 60000 });
+    await browser.pause(2000);
+    await $(QASAPLOGIN.replinishDelMenu).click();
+    console.log("Menu is clicked now ");
+    await browser.pause(1000);
+    (await $(QASAPLOGIN.va03BopisODBCreationSDOption)).waitForDisplayed({ timeout: 60000 });
+    await browser.pause(2000);
+    await $(QASAPLOGIN.va03BopisODBCreationSDOption).click();
+    console.log("Sales Document option is clicked now ");
+    await browser.pause(1000);
+    (await $(QASAPLOGIN.va03BopisODBDeliveryOption)).waitForDisplayed({ timeout: 60000 });
+    await browser.pause(2000);
+    await $(QASAPLOGIN.va03BopisODBDeliveryOption).click();
+    console.log("Deliver option is clicked now ");
+    await browser.pause(1000);
+    let done = false;
+  while (!done) {
+    console.log(done);
+    console.log("Waiting for BOPIS Delivery creation");
+    if (await $(QASAPLOGIN.va03BopisODBDeliverySuccTxt).isDisplayed()) {
+      await browser.pause(500);
+      console.log("BOPIS delivery created now!");
+      done = true;
+      console.log(done);
+    } else {
+      await browser.pause(1000);
+      console.log("Still waiting for BOPIS Delivery creation!");
+    }
+  } 
+    
+  }
+
+  async runMultiSourcingProgram(itemCategory) {
+    const orderNum = await this.getOrderNumber();
+    await this.enterTextInTextBox(QASAPLOGIN.txtTcode, "/nsa38");
+    await this.keyboardActions("Enter");
+    console.log("Before entering program name");
+    await browser.pause(2000);
+    await this.enterTextInTextBox(QASAPLOGIN.txtProgram, "YDSD_MULTI_SOURCE_INVT_RESERV");
+    await waitForElement(await $(QASAPLOGIN.execute));
+    await $(QASAPLOGIN.execute).click();
+    await browser.pause(4000);
+    await this.enterTextInTextBox(QASAPLOGIN.multiSourcingSDNum, orderNum);
+    await browser.pause(5000);
+    await this.clicktheBtnXpath(QASAPLOGIN.authExecuteBtn1);
+    await browser.pause(4000);
+    console.log("Clicked Execute btn");
+    await browser.pause(1000);
+    let done2 = false;
+
+    while (!done2) {
+      console.log(done2);
+      console.log("Waiting Multi Sourcing program completion..");
+      if (await $(QASAPLOGIN.multiSourcingPrgmSuccTxt).isDisplayed()) {
+        await browser.pause(500);
+        console.log("Multi Sourcing Completed.");
+        done2 = true;
+        console.log(done2);
+      } else await browser.pause(5000);
+    }
+    await browser.pause(2000)
+    await this.enterTextInTextBox(QASAPLOGIN.txtTcode, '/nVA03');
+    await this.keyboardActions("Enter");
+    await ($(QASAPLOGIN.va03OrderNumtxtBox)).waitForDisplayed({ timeout: 60000 });
+    await $(QASAPLOGIN.va03OrderNumtxtBox).clearValue();
+    await browser.pause(2000);
+    await this.enterTextInTextBox(QASAPLOGIN.va03OrderNumtxtBox, orderNum);
+    await this.keyboardActions("Enter");
+    await browser.pause(2000);
+    //await sap.clicktheBtnXpath(QASAPLOGIN.va03ExecuteBtn3);
+    //await expect($(QASAPLOGIN.va03zBDSCheck)).toBeDisplayed();
+    await expect($(QASAPLOGIN.va03Itemcate)).toBeDisplayed()
+    let itemcate = await (await ($(QASAPLOGIN.va03Itemcate))).getText();
+    console.log(itemcate);
+    if (itemcate === itemCategory) {
+      console.log("VA03 order opened and item category is verified");
+    }
+    else {
+      console.log("Still item category is not changed..!")
+      
+    }
+  }
+
+
+  
 }
 export default new sap();
                                                                                                                                                                                
