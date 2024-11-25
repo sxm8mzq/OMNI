@@ -31,7 +31,8 @@ Then(/^the user enters text "([^"]*)?" in textbox with placeholder (.*)$/, async
 });
 
 Then(/^the user enters text "([^"]*)?" in the textbox (.*)$/, async (text, selector) => {
-  await $(`//*[contains(text(),${selector})]/following::input[1]`).click();
+  //await $(`//*[contains(text(),${selector})]/following::input[1]`).click();
+  await $(`(//*[contains(text(),${selector})]/following::input[1])[1]`).click();
   await browser.action("key").down(Key.Ctrl).down("a").pause(2).up(Key.Ctrl).up("a").perform();
   await $(`//*[contains(text(),${selector})]/following::input[1]`).addValue(text);
 });
@@ -91,6 +92,8 @@ Then(/^the user clicks on checkbox (.*) at index "([^"]*)?"$/, async (selector, 
 });
 
 Then(/^the user click on (.*)$/, async (selector) => {
+  await browser.pause(1000);
+  (await $(`//*[text() = ${selector}]`)).waitForDisplayed({ timeout: 60000 });
   await $(`//*[text() = ${selector}]`).click();
 });
 
@@ -110,6 +113,7 @@ Then(/^the user waits for "([^"]*)?" seconds$/, async (seconds) => {
 });
 
 Then(/^the user waits for webelement (.*) with html attribute "([^"]*)?" to be visible$/, async (selector, attribute) => {
+  await browser.pause(3000);
   await waitForElement(await $(`//*[contains(@${attribute},${selector})]`));
 });
 

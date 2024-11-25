@@ -134,7 +134,20 @@ class sap {
   
         }
       }
-      
+      async keyboardAction9765(_action) {
+        try {
+          await browser.action("key").down(Key.Numpad9).perform();
+          // await browser.keys(action);
+          await browser.action("key").down(Key.Numpad7).perform();
+          // await browser.keys(action);
+          await browser.action("key").down(Key.Numpad6).perform();
+          // await browser.keys(action);
+          await browser.action("key").down(Key.Numpad5).perform();
+          // await browser.keys(action);
+        } catch (e) {
+  
+        }
+      }
 
 
 
@@ -449,8 +462,8 @@ class sap {
   console.log("execute clicked");
   (await $(QASAPLOGIN.bbDeliveryType)).clearValue();
   // await this.enterTextInTextBox(QASAPLOGIN.bbDeliveryType, "ZLF");
-  await browser.pause(4000);
-  console.log("zlf entered");
+  // await browser.pause(4000);
+  // console.log("zlf entered");
   await this.enterTextInTextBox(QASAPLOGIN.bbDeliveryNo, obdNum);
   await browser.pause(5000);
   console.log("obd entered");
@@ -560,6 +573,24 @@ class sap {
     }
   }
 
+  async getwindowHandles () {
+    try {
+      const windowHandles = await browser.getWindowHandles();
+      console.log(windowHandles);
+      return windowHandles;
+    } catch (e) {
+      await browser.takeScreenshot();
+     //expect.fail(0, 1, `Element is not visible :: ${e}`);
+    }
+  }
+  async switchToParent () {
+    try {
+      await browser.switchToParentFrame();
+    } catch (e) {
+      await browser.takeScreenshot();
+     // expect.fail(0, 1, `switch frame exception :: no action required :: ${e}`);
+    }
+  }
 
   
 }

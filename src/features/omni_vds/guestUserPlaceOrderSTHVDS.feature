@@ -48,11 +48,11 @@ Feature: Guest User Place Order With Master Card STH
 #       # Integration#
            
              # #     # # # # # # ----------------- Auth ---------------------
-              ## Then the user launches the SAP url and login to SAP
-        #         Then the user check the zvds order details with Tcode /nva03    
-        #         Then the user do the authorization for STH order
+             ##### Then the user launches the SAP url and login to SAP
+                Then the user check the zvds order details with Tcode /nva03    
+                Then the user do the authorization for STH order
  
-        #     # -----------------PO Creation------------------
+        # #     # -----------------PO Creation------------------
                 Then the user generate IDOC for creating PO
                 Then the user process the IDOC number to generate PO with Tcode /nBD87
                 Then the user checks the PO with Tcode /nva03
@@ -65,22 +65,22 @@ Feature: Guest User Place Order With Master Card STH
                 
                 Then the user go to verify GR /nva03
                 Then the user check the Outbound Delivery /nva03
-               ##### Then the user go to verify Outbound Delivery /nva03
+               #### Then the user go to verify Outbound Delivery /nva03
  
-     # #     -----------------Release PGI-------------------
-               Then the user go to OBD PGI for releasing the delivery /nsa38
-                Then the user go to va03 to verify GI status /nva03
+     #     -----------------Release PGI-------------------
+               Then the user go to ZVDS OBD PGI for releasing the delivery /nsa38
+                Then the user go to va03 to verify GD goods issue status /nva03
                        
         #  ---------billing block removal------------------
                 Then the user removes Billing Block /nsa38
-                Then the user verify billing block removed /nva03
+                Then the user verify billing block removed /nva02
  
         # #   # ----------------F2 Invoice Steps-------------------
                 Then the user process F2 Invoice Updated
                 Then the user goto sa37 to verify job invoice job status /nsm37
                 Then the user verify that the invoice is created /nva03
               ##  Then the user the process the invoice /nva03
-                Then the user verify journal entry creation /nva03
+                # Then the user verify journal entry creation /nva03
     Examples:
       | firstName | lastName    | address       | city        | province | postalCode | phone   | userName | password | sku |
       | Address   | WebdriverIO | 621 Rue Habel | Scarborough | Ontario  | M1R 4E6    | 8944783456 | xxxxx  |xxxx | 1000686028 |

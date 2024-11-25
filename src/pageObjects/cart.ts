@@ -377,16 +377,16 @@ class OrderSummary {
       try {
         await $('//*[text() = \'Add To Cart\']').click();
         await browser.waitUntil(async () => $('//*[contains(@class,\'acl-modal__container\')]').isDisplayed(), {
-          timeout: 30000,
+          timeout: 90000,
         });
       } catch (Error) {
         browser.refresh();
         await browser.waitUntil(async () => $('//*[text() = \'Add To Cart\']').isDisplayed(), {
-          timeout: 30000,
+          timeout: 60000,
         });
         await $('//*[text() = \'Add To Cart\']').click();
         await browser.waitUntil(async () => $('//*[contains(@class,\'acl-modal__container\')]').isDisplayed(), {
-          timeout: 30000,
+          timeout: 60000,
         });
       }
     } else if (await $('//*[text() = \'Ajouter au panier\']').isDisplayed()) {

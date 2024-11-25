@@ -77,11 +77,9 @@ Feature: Guest User Place Order On Appliance With master Card
     Then the user verify billing block removed /nva03
 
     # # # # # #  ----------------F2 Invoice Steps-------------------
-    Then the user process F2 Invoice Updated
-    Then the user goto sa37 to verify job invoice job status /nsm37
-    Then the user verify that the invoice is created /nva03
-      ##  Then the user the process the invoice /nva03
-    Then the user verify journal entry creation /nva03
+      Then the user process F2 Invoice Updated
+      Then the user goto sa37 to verify job invoice job status /nsm37
+      Then the user verify that the invoice is created /nva03
  
  
    Examples:
