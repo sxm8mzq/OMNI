@@ -41,5 +41,5 @@ Feature: Verify guest user place order parts and service with paypal
     Then the user validates if the webelement with html attribute "class" as "acl-col--12 acl-text-size--x-large" has text "Order Number"
 
     Examples:
-      | email           | password | firstName | lastName |
-      | cabuyer2@thd.ca | 11111111 | John      | Doe      |
+      | firstName | lastName    | address       | city        | province | postalCode | phone | sku        |
+      | Address   | WebdriverIO | 621 Rue Habel | Scarborough | Ontario  | M1R 4E6    | 4700148224 | 1000497098 |

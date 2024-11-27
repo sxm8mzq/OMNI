@@ -380,7 +380,7 @@ class OrderSummary {
           timeout: 90000,
         });
       } catch (Error) {
-        browser.refresh();
+        await browser.refresh();
         await browser.waitUntil(async () => $('//*[text() = \'Add To Cart\']').isDisplayed(), {
           timeout: 60000,
         });
