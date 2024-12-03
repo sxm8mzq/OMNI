@@ -45,7 +45,8 @@ Feature: Verify Place Order with AmexCard Pick Up in Store Sec
  #     # # # # # # ----------------- Auth ---------------------
                ##Then the user launches the SAP url and login to SAP
                 Then the user check the BDS order details with Tcode /nva03  
-               # Then the user check the order and verify the Item Category ZBDS  
+              #  Then the user check the order and verify the Item Category ZBDS
+              #  Then the user check the BDS order details with Tcode  /nva03
                 Then the user do the authorization for BOSS order
  
 #             # -----------------PO Creation------------------
@@ -67,7 +68,7 @@ Feature: Verify Place Order with AmexCard Pick Up in Store Sec
                 Then the user go to va03 to verify GD goods issue status /nva03
                        
         #  ---------billing block removal------------------
-                # Then the user removes Billing Block /nsa38
+                Then the user removes Billing Block /nsa38
                 Then the user verify billing block removed /nva02
  
         # # #   # ----------------F2 Invoice Steps-------------------

@@ -37,6 +37,9 @@ let VendorPOnum;
 let shipmentPOnum;  
 let currentDate = "";
 let odbflag;
+let netValue;
+  let taxValue;
+let result = ""; 
 
 Given(/^the user launches the url$/, async () => {
   await home.launchOneUrl();
@@ -512,7 +515,8 @@ Then(/^the user save created order number in json file$/, async () => {
 //  SAP
 
 Then(/^the user launches the SAP url and login to SAP$/, async () => {
-  await browser.pause(10000);
+  //await browser.pause(10000);
+  await browser.pause(2000);
   console.log("Login to SAP");
   await sap.launchSAPUrl();
   await sap.readUserNameAndPwd();
@@ -820,7 +824,6 @@ Then(/^the user check the delivery creation(.*)$/, async (Tcode) => {
   await sap.enterTextInTextBox(QASAPLOGIN.va03OrderNumtxtBox, orderNum);
   await sap.keyboardActions("Enter");
   await browser.pause(5000);
-  // await sap.clicktheBtnXpath(QASAPLOGIN.va03ExecuteBtn2);
   console.log("VA03 order opened");
   await browser.pause(8000);
 
@@ -842,13 +845,26 @@ Then(/^the user check the delivery creation(.*)$/, async (Tcode) => {
   console.log("PO Document is opened!");
   await browser.pause(6000);
 
-  //  await expect(QASAPLOGIN.purOrdHistTab).toBeDisplayed();
-  //    console.log("Purchase order history tab available");
-  //   await browser.pause(5000);
-    await  $(QASAPLOGIN.purOrdHistTab).click();
-    await browser.pause(5000);
-  //   await  expect ($ (QASAPLOGIN.va03DIntNumForGr)).toBeDisplayed();
-  //     console.log("DINT is created");
+  let fw = await $(QASAPLOGIN.va03ForwardBtn).isClickable();
+  console.log(fw);
+  if (fw) {
+    await browser.pause(2000);
+    (await $(QASAPLOGIN.va03ForwardBtn)).click();
+    await browser.pause(1000);
+    console.log("Forward button is clicked");
+    await browser.pause(1000);
+  }
+  else {
+    let POtab = await $(QASAPLOGIN.purOrdHistTab).isClickable();
+    console.log(POtab);
+    if (POtab) {
+      (await $(QASAPLOGIN.purOrdHistTab)).click();
+      await browser.pause(3000);
+      //await sap.clicktheBtnXpath(QASAPLOGIN.confirmationTab);
+      console.log("purOrdHistTab tab clicked");
+      await browser.pause(2000);
+    }
+  }
   await browser.pause(3000);
   (await $(QASAPLOGIN.va03DIntNumForGr)).waitForDisplayed({ timeout: 60000 });
   const dint = await (await $(QASAPLOGIN.va03DIntNumForGr)).getText();
@@ -866,10 +882,8 @@ Then(/^the user enter picked qty and mark the Picking (.*)$/, async (Tcode) => {
   (await $(QASAPLOGIN.va03OrderNumtxtBox)).clearValue();
   await sap.enterTextInTextBox(QASAPLOGIN.va03OrderNumtxtBox, orderNum);
   await sap.keyboardActions("Enter");
-  //await sap.clicktheBtnXpath(QASAPLOGIN.va03ExecuteBtn2);
   console.log("VA03 order opened");
   await browser.pause(2000);
-  // await sap.clicktheBtnXpath(QASAPLOGIN.va03ExecuteBtn2);
   (await $(QASAPLOGIN.va03ExecuteBtn2)).waitForDisplayed({ timeout: 60000 });
   await waitForElement(await $(QASAPLOGIN.va03DisplayDocumentBtn));
   await sap.clicktheBtnXpath(QASAPLOGIN.va03DisplayDocumentBtn);
@@ -884,16 +898,26 @@ Then(/^the user enter picked qty and mark the Picking (.*)$/, async (Tcode) => {
   await (await $(QASAPLOGIN.va03PODisplyDoc)).click();
   console.log("PO Document is opened!");
   await browser.pause(6000);
-  // (await $(QASAPLOGIN.va03arrow)).waitForDisplayed({ timeout: 60000 });
-  // await (await $(QASAPLOGIN.va03arrow)).click();
-  // await browser.pause(5000);
-  // console.log("arrow!");
-  // (await $(QASAPLOGIN.va03PohistoryTab)).waitForDisplayed({ timeout: 60000 });
-  // await (await $(QASAPLOGIN. va03PohistoryTab)).click();
-  // await browser.pause(3000);
-  // console.log("PO history Clicked!");
-  await  $(QASAPLOGIN.purOrdHistTab).click();
-    await browser.pause(5000);
+  
+  let fw = await $(QASAPLOGIN.va03ForwardBtn).isClickable();
+  console.log(fw);
+  if (fw) {
+    await browser.pause(2000);
+    (await $(QASAPLOGIN.va03ForwardBtn)).click();
+    await browser.pause(1000);
+    console.log("Forward button is clicked");
+  }
+  else {
+    let POtab = await $(QASAPLOGIN.purOrdHistTab).isClickable();
+    console.log(POtab);
+    if (POtab) {
+      (await $(QASAPLOGIN.purOrdHistTab)).click();
+      await browser.pause(2000);
+      //await sap.clicktheBtnXpath(QASAPLOGIN.confirmationTab);
+      console.log("confirmation tab clicked");
+      await browser.pause(2000);
+    }
+  }
   (await $(QASAPLOGIN.va03DIntNumForGr)).waitForDisplayed({ timeout: 60000 });
   await (await $(QASAPLOGIN.va03DIntNumForGr)).click();
   await browser.pause(3000);
@@ -961,8 +985,26 @@ Then(/^the user verify GI created inside PO (.*)$/, async (Tcode) => {
   await (await $(QASAPLOGIN.va03PODisplyDoc)).click();
   console.log("display Document is clicked!");
   await browser.pause(6000);
-  await  $(QASAPLOGIN.purOrdHistTab).click();
-  await browser.pause(5000);
+ 
+  let fw = await $(QASAPLOGIN.va03ForwardBtn).isClickable();
+  console.log(fw);
+  if (fw) {
+    await browser.pause(2000);
+    (await $(QASAPLOGIN.va03ForwardBtn)).click();
+    await browser.pause(1000);
+    console.log("Forward button is clicked");
+  }
+  else {
+    let POtab = await $(QASAPLOGIN.purOrdHistTab).isClickable();
+    console.log(POtab);
+    if (POtab) {
+      (await $(QASAPLOGIN.purOrdHistTab)).click();
+      await browser.pause(2000);
+      //await sap.clicktheBtnXpath(QASAPLOGIN.confirmationTab);
+      console.log("confirmation tab clicked");
+      await browser.pause(2000);
+    }
+  }
   (await $(QASAPLOGIN.GIgenerated)).waitForDisplayed({ timeout: 60000 });
   GI = await $(QASAPLOGIN.GIgenerated).getText();
   console.log(GI);
@@ -999,9 +1041,26 @@ Then(
     await browser.pause(2000);
     await (await $(QASAPLOGIN.va03PODisplyDoc)).click();
     console.log("PO doc is open");
-    await browser.pause(6000);
-    await  $(QASAPLOGIN.purOrdHistTab).click();
-    await browser.pause(5000);
+    
+  let fw = await $(QASAPLOGIN.va03ForwardBtn).isClickable();
+  console.log(fw);
+  if (fw) {
+    await browser.pause(2000);
+    (await $(QASAPLOGIN.va03ForwardBtn)).click();
+    await browser.pause(1000);
+    console.log("Forward button is clicked");
+  }
+  else {
+    let POtab = await $(QASAPLOGIN.purOrdHistTab).isClickable();
+    console.log(POtab);
+    if (POtab) {
+      (await $(QASAPLOGIN.purOrdHistTab)).click();
+      await browser.pause(2000);
+      //await sap.clicktheBtnXpath(QASAPLOGIN.confirmationTab);
+      console.log("confirmation tab clicked");
+      await browser.pause(2000);
+    }
+  }
     (await $(QASAPLOGIN.va03DIntNumForGr)).waitForDisplayed({ timeout: 60000 });
     await (await $(QASAPLOGIN.va03DIntNumForGr)).click();
     await browser.pause(3000);
@@ -1032,9 +1091,7 @@ Then(/^the user enter Goods Receipt (.*)$/, async (Tcode) => {
   (await $(QASAPLOGIN.va03OrderNumtxtBox)).clearValue();
   await sap.enterTextInTextBox(QASAPLOGIN.va03OrderNumtxtBox, orderNum);
   await sap.keyboardActions("Enter");
-  //await sap.clicktheBtnXpath(QASAPLOGIN.va03ExecuteBtn2);
   console.log("VA03 order opened");
-  (await $(QASAPLOGIN.va03ExecuteBtn2)).waitForDisplayed({ timeout: 60000 });
   await waitForElement(await $(QASAPLOGIN.va03DisplayDocumentBtn));
   await sap.clicktheBtnXpath(QASAPLOGIN.va03DisplayDocumentBtn);
   console.log("Document flow is opened!");
@@ -1277,7 +1334,6 @@ Then(/^the user check the Outbound Delivery(.*)$/, async (Tcode) => {
   await sap.enterTextInTextBox(QASAPLOGIN.va03OrderNumtxtBox, orderNum);
   await sap.keyboardActions("Enter");
   await browser.pause(5000);
-  // await sap.clicktheBtnXpath(QASAPLOGIN.va03ExecuteBtn2);
   console.log("VA03 order opened");
   await browser.pause(8000);
 
@@ -1299,6 +1355,7 @@ Then(/^the user check the Outbound Delivery(.*)$/, async (Tcode) => {
     console.log("ODB is created!", obdNum);
     await browser.pause(2000);
     (await $(QASAPLOGIN.obdDocument)).doubleClick();
+    await browser.pause(2000);
     obdNum = await $(QASAPLOGIN.va03ODBNUM).getText();
     console.log(obdNum);
     await browser.pause(2000);
@@ -1321,7 +1378,6 @@ Then(/^the user do the MIGO$/,async () => {
     await sap.enterTextInTextBox(QASAPLOGIN.va03OrderNumtxtBox, orderNum);
     await sap.keyboardActions("Enter");
     await browser.pause(5000);
-    // await sap.clicktheBtnXpath(QASAPLOGIN.va03ExecuteBtn2);
     console.log("VA03 order opened");
     await browser.pause(8000);
 
@@ -1364,7 +1420,6 @@ Then(/^the user do the MIGO$/,async () => {
     await sap.enterTextInTextBox(QASAPLOGIN.va03OrderNumtxtBox, orderNum);
     await sap.keyboardActions("Enter");
     await browser.pause(5000);
-    // await sap.clicktheBtnXpath(QASAPLOGIN.va03ExecuteBtn2);
     console.log("VA03 order opened");
     await browser.pause(8000);
 
@@ -1501,36 +1556,48 @@ Then(/^the user go to OBD PGI for releasing the delivery (.*)$/, async (Tcode) =
     (await $(QASAPLOGIN.postGoodsIssueOnOBDPage)).click();
     console.log("post goods issue btn clicked on prog page");
     await browser.pause(3000);
-    (await $(QASAPLOGIN.CalenderContinue)).click();
+    await $(QASAPLOGIN.CalenderContinue).click();
     console.log("continue btn clicked");
-  await browser.pause(2000);
+  await browser.pause(4000);
+    let done1= false;
+      while(!done1){
+        console.log(done1);
+        console.log("Waiting for invoiceSuccTxt btn");
+        if(await $(QASAPLOGIN.invoiceSuccTxt).isDisplayed()){
+          await browser.pause(500);       
+          console.log("Invoice created successfully..!");  
+        done1=true;
+        console.log(done1);
+        }else
+        await browser.pause(5000);
+      }
   
-  let done2 = false;
-    while (!done2) {
-      console.log(done2);
-      console.log("Waiting msg");
-      if (await $(QASAPLOGIN.va03ExecuteBtn2).isDisplayed()) {
-        (await $(QASAPLOGIN.va03ExecuteBtn2)).click();
-        await browser.pause(500);
-        console.log("clicked..");
-        done2 = true;
-        console.log(done2);
-      } else await browser.pause(5000);
-    }
+  // let done2 = false;
+  //   while (!done2) {
+  //     console.log(done2);
+  //     console.log("Waiting msg");
+  //     if (await $(QASAPLOGIN.va03ExecuteBtn2).isDisplayed()) {
+  //       (await $(QASAPLOGIN.va03ExecuteBtn2)).click();
+  //       await browser.pause(500);
+  //       console.log("clicked..");
+  //       done2 = true;
+  //       console.log(done2);
+  //     } else await browser.pause(5000);
+  //   }
 
 
-    let done = false;
-    while (!done) {
-      console.log(done);
-      console.log("Waiting for success text");
-      if (await $(QASAPLOGIN.invoiceSuccTxt).isDisplayed()) {
-        await browser.pause(500);
-        console.log("Invoice created successfully..!");
-        done = true;
-        console.log(done);
-      } else await browser.pause(5000);
-    }
-  }
+  //   let done = false;
+  //   while (!done) {
+  //     console.log(done);
+  //     console.log("Waiting for success text");
+  //     if (await $(QASAPLOGIN.invoiceSuccTxt).isDisplayed()) {
+  //       await browser.pause(500);
+  //       console.log("Invoice created successfully..!");
+  //       done = true;
+  //       console.log(done);
+  //     } else await browser.pause(5000);
+  //   }
+}
 );
 
 Then(/^the user go to va03 to verify GI status (.*)$/, async (Tcode) => {
@@ -1554,7 +1621,7 @@ Then(/^the user go to va03 to verify GI status (.*)$/, async (Tcode) => {
   //verify GIcom stock created
 
   await browser.pause(6000);
-  await waitForElement(await $(QASAPLOGIN.GICOMStockDoc));
+  await $(QASAPLOGIN.GICOMStockDoc).waitForDisplayed({ timeout: 60000 });;
   const GIStockDoc = await $(QASAPLOGIN.GICOMStockDoc).getText();
   await browser.pause(2000);
   console.log(GIStockDoc);
@@ -1582,7 +1649,6 @@ Then(/^the user verify billing block removed(.*)$/, async (Tcode) => {
   await sap.enterTextInTextBox(QASAPLOGIN.va03OrderNumtxtBox, orderNum);
   await sap.keyboardActions("Enter");
   await browser.pause(2000);
-  // await sap.clicktheBtnXpath(QASAPLOGIN.va03ExecuteBtn2);
   console.log("VA03 order opened");
   await browser.pause(2000);
   // await expect($(QASAPLOGIN.va03z3plCheck)).toBeDisplayed()
@@ -2069,7 +2135,9 @@ Then(/^the user verify that the invoice is created(.*)$/, async (Tcode) => {
       } else {
         console.log("journalStatus is not cleared!", journalStatus);
       }
-  
+      fs.truncate('./src/resources/data/SAP.json', 0, function () { 
+        console.log('File Content Deleted from the JSON file where the order number is saved'); 
+      });
         // for (let i=0;i<=7;i++)
         // {
         // let done=false;                
@@ -2405,11 +2473,8 @@ Then(/^the user checks the PO with Tcode(.*)$/, async (Tcode) => {
   await sap.enterTextInTextBox(QASAPLOGIN.va03OrderNumtxtBox, orderNum);
   await sap.keyboardActions("Enter");
   await browser.pause(3000);
-  //await sap.clicktheBtnXpath(QASAPLOGIN.va03ExecuteBtn2);
   console.log("VA03 order opened");
   //  await sap.sleep(6000);
-  // await sap.clicktheBtnXpath(QASAPLOGIN.va03ExecuteBtn2);
-  (await $(QASAPLOGIN.va03ExecuteBtn2)).waitForDisplayed({ timeout: 60000 });
   await waitForElement(await $(QASAPLOGIN.va03DisplayDocumentBtn));
   await sap.clicktheBtnXpath(QASAPLOGIN.va03DisplayDocumentBtn);
   console.log("Display document flow is opened");
@@ -2975,32 +3040,33 @@ Then(/^the user check the ZNAS order details with Tcode (.*)$/ , async(Tcode) =>
     await sap.enterTextInTextBox(QASAPLOGIN.rsnastZESCOutputType,'ZOEM');
     await browser.pause(2000);
     console.log("output type ZOEM entered");
+    await browser.pause(2000)
     //await sap.keyboardActions('Enter');
-    // await $(QASAPLOGIN.authExecuteBtn2).click();
-    await sap.keyboardActionsF8("F8");
-   // await sap.clicktheBtnXpath(QASAPLOGIN.authExecuteBtn2);
-    console.log("Clicked Execute btn");
-    await browser.pause(4000);
-    let done=false;                
-  while(!done){
-  console.log(done);
-  console.log("Waiting for first pop up");
-  if(await $(QASAPLOGIN.va03ExecuteBtn2).isDisplayed())
-  {
-    await $(QASAPLOGIN.va03ExecuteBtn2).click();
-      await browser.pause(500);
-      console.log("First btn clicked!");
-      done=true;
-      console.log(done);
-    }
-  else
-    {
-    console.log("waiting for first pop up !");
-    await browser.pause(3000);
-    }       
-  }
-    await browser.pause(2000);
-//  let done2=false;                
+//    await $(QASAPLOGIN.authExecuteBtn2).click();
+//     ///await sap.keyboardActionsF8("F8");
+//    // await sap.clicktheBtnXpath(QASAPLOGIN.authExecuteBtn2);
+//     console.log("Clicked Execute btn");
+//     await browser.pause(4000);
+//     let done=false;
+//   while(!done){
+//   console.log(done);
+//   console.log("Waiting for first pop up");
+//   if(await $(QASAPLOGIN.va03ExecuteBtn2).isDisplayed())
+//   {
+//     await $(QASAPLOGIN.va03ExecuteBtn2).click();
+//       await browser.pause(500);
+//       console.log("First btn clicked!");
+//       done=true;
+//       console.log(done);
+//     }
+//   else
+//     {
+//     console.log("waiting for first pop up !");
+//     await browser.pause(3000);
+//     }
+//   }
+//     await browser.pause(2000);
+//  let done2=false;
 //   while(!done2){
 //   console.log(done2);
 //   console.log("Waiting for second pop up");
@@ -3016,8 +3082,19 @@ Then(/^the user check the ZNAS order details with Tcode (.*)$/ , async(Tcode) =>
 //     {
 //     console.log("waiting for second pop up !");
 //     await browser.pause(3000);
-//     }       
-//   }
+//     }
+    //   }
+    await sap.keyboardActions('Enter');
+        await sap.clicktheBtnXpath(QASAPLOGIN.authExecuteBtn2);
+        console.log("sa38 RSNAST00 Execute");
+        await browser.pause(4000);
+        (await $(QASAPLOGIN.va03ExecuteBtn2)).waitForDisplayed({ timeout: 60000 });
+        await sap.clicktheBtnXpath(QASAPLOGIN.va03ExecuteBtn2);
+        console.log("Tick mark button clicked");
+        await browser.pause(4000);
+        (await $(QASAPLOGIN.va03ExecuteBtn2)).waitForDisplayed({ timeout: 60000 });
+        await sap.clicktheBtnXpath(QASAPLOGIN.va03ExecuteBtn2);
+        console.log("continue button clicked");   
 }); 
 Then(/^the user go to change the delivery status(.*)$/, async(Tcode)=> {
   const orderNum = await sap.getOrderNumber();
@@ -3256,15 +3333,20 @@ Then(/^the user go to update Vendor PO confirmation(.*)$/, async (Tcode) => {
     console.log("Forward button is clicked");
   }
   else {
+    console.log("No need of forward button click");
+  }
+
     let CT = await $(QASAPLOGIN.confirmationTab).isClickable();
     console.log(CT);
-    if (CT) {
-      (await $(QASAPLOGIN.confirmationTab)).click();
-      await browser.pause(2000);
-      //await sap.clicktheBtnXpath(QASAPLOGIN.confirmationTab);
-      console.log("confirmation tab clicked");
-      await browser.pause(2000);
-    }
+  if (CT) {
+    (await $(QASAPLOGIN.confirmationTab)).click();
+    await browser.pause(2000);
+    //await sap.clicktheBtnXpath(QASAPLOGIN.confirmationTab);
+    console.log("confirmation tab clicked");
+    await browser.pause(2000);
+  }
+  else { 
+    console.log("Confirmation tab is clicked already");
   }
   //(await $(QASAPLOGIN.confirmationTab)).waitForDisplayed({ timeout: 60000 });
 
@@ -3273,10 +3355,14 @@ Then(/^the user go to update Vendor PO confirmation(.*)$/, async (Tcode) => {
   await sap.clicktheBtnXpath(QASAPLOGIN.va03PODisplyDoc);
   console.log("display change btn clicked");
   await browser.pause(2000);
+  // await sap.clicktheBtnXpath(QASAPLOGIN.confirmationCCTab);
+  // await sap.enterTextInTextBox(QASAPLOGIN.confirmationCCTabValue,"CF");
+  // await browser.pause(2000);
+  // console.log("CF entered")
   await sap.clicktheBtnXpath(QASAPLOGIN.confirmationCCTab);
   await sap.enterTextInTextBox(QASAPLOGIN.confirmationCCTabValue,"CF");
   await browser.pause(2000);
-  console.log("CF entered")
+  console.log("CF entered");
   await sap.clicktheBtnXpath(QASAPLOGIN.confirmationDcolmn);
   await sap.enterTextInTextBox(QASAPLOGIN.confirmationDcolmnValue,"D");
   await browser.pause(2000);
@@ -3301,38 +3387,38 @@ Then(/^the user go to update Vendor PO confirmation(.*)$/, async (Tcode) => {
   await  $(QASAPLOGIN.confirmationDelivDatecolmnValue).setValue(currentDate);
   await browser.pause(4000);
   console.log("Delivery date entered");
-        // await $(QASAPLOGIN.confirmationQty).click();
-        // await browser.pause(1000);
-        // console.log("qty xpath clicked")
-        // await sap.enterTextInTextBox(QASAPLOGIN.confirmationqtyValue,"1");
-        // await browser.pause(2000);
-        // console.log("qty 1 entered")
-        // await browser.pause(4000);
-        // await browser.pause(2000);
-        // await sap.clicktheBtnXpath(QASAPLOGIN.confirmationCCTab);
-        // await browser.pause(2000);
-        // await sap.keyboardActions('Enter');
-        // await browser.pause(2000);
-        // (await $(QASAPLOGIN.poConfiramtionmsg1)).waitForDisplayed({ timeout: 60000 });
-        // if((await $(QASAPLOGIN.poConfiramtionmsg1)).isDisplayed)
-        //   {
-        //   console.log("confirmation msg 1 displayed");
-        //   await browser.pause(2000);
-        //   await sap.keyboardActions('Enter');
-        //   await browser.pause(4000);
-        //   (await $(QASAPLOGIN.poConfiramtionmsg2)).waitForDisplayed({ timeout: 60000 });
-        //     if((await $(QASAPLOGIN.poConfiramtionmsg2)).isDisplayed)
-        //       {
-        //         console.log("confirmation msg 2 displayed");
-        //         await browser.pause(2000);
-        //         await sap.keyboardActions('Enter');
-        //         await browser.pause(2000);
-        //       }
-        //    }
-        // await browser.pause(2000);
-        // await  $(QASAPLOGIN.saveBtn).click(); 
-        // console.log("save btn clicked");
-        // await browser.pause(4000);
+        await $(QASAPLOGIN.confirmationQty).click();
+        await browser.pause(1000);
+        console.log("qty xpath clicked")
+        await sap.enterTextInTextBox(QASAPLOGIN.confirmationqtyValue,"1");
+        await browser.pause(2000);
+        console.log("qty 1 entered")
+        await browser.pause(4000);
+        await browser.pause(2000);
+        //await sap.clicktheBtnXpath(QASAPLOGIN.confirmationCCTab);
+        await browser.pause(2000);
+        await sap.keyboardActions('Enter');
+        await browser.pause(2000);
+        (await $(QASAPLOGIN.poConfiramtionmsg1)).waitForDisplayed({ timeout: 60000 });
+        if((await $(QASAPLOGIN.poConfiramtionmsg1)).isDisplayed)
+          {
+          console.log("confirmation msg 1 displayed");
+          await browser.pause(2000);
+          await sap.keyboardActions('Enter');
+          await browser.pause(4000);
+          (await $(QASAPLOGIN.poConfiramtionmsg2)).waitForDisplayed({ timeout: 60000 });
+            if((await $(QASAPLOGIN.poConfiramtionmsg2)).isDisplayed)
+              {
+                console.log("confirmation msg 2 displayed");
+                await browser.pause(2000);
+                await sap.keyboardActions('Enter');
+                await browser.pause(2000);
+              }
+           }
+        await browser.pause(2000);
+        await  $(QASAPLOGIN.saveBtn).click(); 
+        console.log("save btn clicked");
+        await browser.pause(4000);
         // if((await $(QASAPLOGIN.ConfirmationPopup)).isDisplayed)
         //   {
         //     console.log("confirmation msg popup displayed");
@@ -3345,7 +3431,7 @@ Then(/^the user go to update Vendor PO confirmation(.*)$/, async (Tcode) => {
         //     console.log("confirmation msg popup not displayed");
         //   }
        
-        // await browser.pause(4000);
+        await browser.pause(4000);
 });
 
 Then(/^the user go to update Shipment PO confirmation(.*)$/, async (Tcode) => {
@@ -3408,6 +3494,8 @@ Then(/^the user execute RSNAST00 program for ZDCR(.*)$/, async(Tcode)=> {
   await sap.enterTextInTextBox(QASAPLOGIN.txtTcode,Tcode);
   await sap.keyboardActions('Enter');
   await browser.pause(2000);
+  (await $(QASAPLOGIN.txtProgram)).clearValue();
+  await browser.pause(2000);
   await sap.enterTextInTextBox(QASAPLOGIN.txtProgram,'RSNAST00');
   //await browser.pause(2000);
   await sap.keyboardActions('Enter');
@@ -3429,40 +3517,40 @@ Then(/^the user execute RSNAST00 program for ZDCR(.*)$/, async(Tcode)=> {
   console.log("output type ZDCR entered");
   await sap.keyboardActions('Enter');
   await browser.pause(2000);
-  await sap.keyboardActionsF8("F8");
+ await sap.keyboardActionsF8("F8");
   // await sap.clicktheBtnXpath(QASAPLOGIN.authExecuteBtn2);
-  console.log("execute button clicked ");
-  await browser.pause(4000);
+//   console.log("execute button clicked ");
+  await browser.pause(6000);
 
-  let done = false;
+  // let done = false;
 
-    while (!done) {
-      console.log(done);
-      console.log("Waiting for first tick mark ");
-      if (await $(QASAPLOGIN.va03ExecuteBtn2).isDisplayed()) {
-       await $(QASAPLOGIN.va03ExecuteBtn2).click();
-        await browser.pause(500);
-        console.log("First pop up clicked");
-        done = true;
-        console.log(done);
-      } else await browser.pause(5000);
-  }
-  await browser.pause(2000);
-  // let done2 = false;
-
-  //   while (!done2) {
-  //     console.log(done2);
-  //     console.log("Waiting for second tick mark ");
+  //   while (!done) {
+  //     console.log(done);
+  //     console.log("Waiting for first tick mark ");
   //     if (await $(QASAPLOGIN.va03ExecuteBtn2).isDisplayed()) {
   //      await $(QASAPLOGIN.va03ExecuteBtn2).click();
   //       await browser.pause(500);
-  //       console.log("second pop up clicked");
+  //       console.log("First pop up clicked");
   //       done = true;
-  //       console.log(done2);
+  //       console.log(done);
   //     } else await browser.pause(5000);
-  //   }
- 
-});
+  // }
+  // await browser.pause(1000);
+  // await $(QASAPLOGIN.rsnastInfoScreen).waitForDisplayed({ timeout: 60000 });
+  // console.log("Info screen displayed");
+  
+
+  await browser.pause(6000);
+        (await $(QASAPLOGIN.va03ExecuteBtn2)).waitForDisplayed({ timeout: 60000 });
+        await sap.clicktheBtnXpath(QASAPLOGIN.va03ExecuteBtn2);
+        console.log("Tick mark button clicked");
+        await browser.pause(6000);
+        (await $(QASAPLOGIN.va03ExecuteBtn2)).waitForDisplayed({ timeout: 60000 });
+        await sap.clicktheBtnXpath(QASAPLOGIN.va03ExecuteBtn2);
+        console.log("continue button clicked");
+        await browser.pause(6000);
+ });
+
  
 Then(/^user go to change the delivery status$/, async () => {
   const orderNum = await sap.getOrderNumber();
@@ -3571,9 +3659,9 @@ Then(/^the user do the authorization for BOSS order$/, async () => {
   await browser.pause(5000);
   await sap.clicktheBtnXpath(QASAPLOGIN.authExecuteBtn1);
   await browser.pause(4000);
+ // await sap.keyboardActionsF8("F8");
   console.log("Clicked Execute btn");
   await browser.pause(9000);
-
   // First, check for Card Approved text
   let isCardApproved = await $(QASAPLOGIN.authCardApprovedTxt).isDisplayed();
   console.log(isCardApproved);
@@ -3600,6 +3688,9 @@ Then(/^the user do the authorization for BOSS order$/, async () => {
       if (await $(QASAPLOGIN.authCardApprovedTxt).isDisplayed()) {
         await browser.pause(500);
         console.log("Pass");
+        let apporvedtxt = await $(QASAPLOGIN.authCardApprrovedGetTxt).getText();
+        console.log(apporvedtxt);
+        expect(apporvedtxt).toBe("Card Approved");
         done2 = true;
         console.log(done2);
       } else await browser.pause(5000);
@@ -3609,14 +3700,82 @@ Then(/^the user do the authorization for BOSS order$/, async () => {
   // Final check for Card Approved text
   // await expect(isCardApproved).toBe(true);
   else {
-    let apporvedtxt = await (await $(QASAPLOGIN.authCardApprovedTxt)).getText();
-    console.log(isCardApproved);
+    let apporvedtxt = await $(QASAPLOGIN.authCardApprrovedGetTxt).getText();
     console.log(apporvedtxt);
-    if (isCardApproved) {
-      console.log("Card Approved text is now displayed");
-    } else {
-      console.log("Card Approved text still not displayed");
+  //  expect(apporvedtxt).toBe("Card Approved");
+  //   if (apporvedtxt===) {
+  //     console.log("Card Approved text is now displayed");
+  //   } else {
+  //     console.log("Card Approved text still not displayed");
+  //   }
+  }
+});
+Then(/^the user do the authorization for BOPIS order$/, async () => {
+  console.log("inside auth program");
+  const orderNum = await sap.getOrderNumber();
+  console.log(orderNum);
+  await sap.enterTextInTextBox(QASAPLOGIN.txtTcode, "/nsa38");
+  await sap.keyboardActions("Enter");
+  console.log("Before entering program name");
+  await browser.pause(2000);
+  await sap.enterTextInTextBox(QASAPLOGIN.txtProgram,'YDCOM_BATCH_FULL_AUTH_NEW');
+  await browser.pause(2000);
+  await waitForElement(await $(QASAPLOGIN.execute));
+  await $(QASAPLOGIN.execute).click();
+  await browser.pause(4000);
+  await sap.enterTextInTextBox(QASAPLOGIN.authOrderno, orderNum);
+  await browser.pause(5000);
+  await sap.clicktheBtnXpath(QASAPLOGIN.authExecuteBtn1);
+  await browser.pause(4000);
+ // await sap.keyboardActionsF8("F8");
+  console.log("Clicked Execute btn");
+  await browser.pause(9000);
+  // First, check for Card Approved text
+  let isCardApproved = await $(QASAPLOGIN.authCardApprovedTxt).isDisplayed();
+  console.log(isCardApproved);
+
+  if (!isCardApproved) {
+    console.log("Card Approved text not found, checking for tick mark...");
+    // let done = false;
+
+    // while (!done) {
+    //   console.log(done);
+    //   console.log("Waiting for tick mark");
+    //   if (await $(`//*[contains(@lsdata,'Continue (Enter)')]`).isDisplayed()) {
+    //     await browser.pause(500);
+    //     await $(`//*[contains(@lsdata,'Continue (Enter)')]`).click();
+    //     done = true;
+    //     console.log(done);
+    //   } else await browser.pause(5000);
+    // }
+    let done2 = false;
+
+    while (!done2) {
+      console.log(done2);
+      console.log("Waiting for success txt");
+      if (await $(QASAPLOGIN.authCardApprovedTxt).isDisplayed()) {
+        await browser.pause(500);
+        console.log("Pass");
+        let apporvedtxt = await $(QASAPLOGIN.authCardApprrovedGetTxt).getText();
+        console.log(apporvedtxt);
+        expect(apporvedtxt).toBe("Card Approved");
+        done2 = true;
+        console.log(done2);
+      } else await browser.pause(5000);
     }
+  }
+
+  // Final check for Card Approved text
+  // await expect(isCardApproved).toBe(true);
+  else {
+    let apporvedtxt = await $(QASAPLOGIN.authCardApprrovedGetTxt).getText();
+    console.log(apporvedtxt);
+  //  expect(apporvedtxt).toBe("Card Approved");
+  //   if (apporvedtxt===) {
+  //     console.log("Card Approved text is now displayed");
+  //   } else {
+  //     console.log("Card Approved text still not displayed");
+  //   }
   }
 });
 Then(/^the user do the MIGO for PO$/,async () => {
@@ -3901,11 +4060,15 @@ Then(/^the user check the BDS order details with Tcode (.*)$/,async (Tcode) => {
   await sap.enterTextInTextBox(QASAPLOGIN.txtTcode, Tcode);
   await sap.keyboardActions("Enter");
   const orderNum = await sap.getOrderNumber();
-  //await sapLogin.getOrderNumber();
-  await sap.enterTextInTextBox(QASAPLOGIN.va03OrderNumtxtBox, orderNum);
-  await sap.keyboardActions("Enter");
   //await sap.clicktheBtnXpath(QASAPLOGIN.va03ExecuteBtn3);
   //await expect($(QASAPLOGIN.va03zBDSCheck)).toBeDisplayed();
+
+  (await $(QASAPLOGIN.va03OrderNumtxtBox)).waitForDisplayed({ timeout: 60000 });
+  await browser.pause(3000);
+  await $(QASAPLOGIN.va03OrderNumtxtBox).clearValue();
+  await sap.enterTextInTextBox(QASAPLOGIN.va03OrderNumtxtBox, orderNum);
+  await sap.keyboardActions("Enter");
+  await browser.pause(5000);
   await expect($(QASAPLOGIN.va03Itemcate)).toBeDisplayed()
     console.log("VA03 order opened and item category BDS verified");
 }
@@ -4360,7 +4523,7 @@ Then(/^the user go to picking for bopis (.*)$/, async (Tcode) => {
   // await browser.pause(1000);
   // console.log(d);
   await browser.pause(8000);
-   await $(QASAPLOGIN.stagingLocation).click();
+  await $(QASAPLOGIN.stagingLocation).click();
   console.log("clicked");
   await browser.pause(2000);
  // await $(QASAPLOGIN.stagingLocation).setValue('9765');
@@ -4465,4 +4628,370 @@ Then(/^the user verify picking request and DPR created (.*)$/ , async(Tcode) =>{
         }
       await browser.pause(2000);
     
-      });
+});
+Then(/^the user check the bodfs zlmd order details with Tcode (.*)$/ , async(Tcode) =>{
+  await sap.enterTextInTextBox(QASAPLOGIN.txtTcode,Tcode);
+  await sap.keyboardActions('Enter');
+  const orderNum=await sap.getOrderNumber();
+  console.log(orderNum);
+  //await sapLogin.getOrderNumber();
+  await sap.enterTextInTextBox(QASAPLOGIN.va03OrderNumtxtBox,orderNum);
+  await sap.keyboardActions('Enter');
+  //await sap.clicktheBtnXpath(QASAPLOGIN.va03ExecuteBtn3);
+  await expect($(QASAPLOGIN.va03zLMDCheck)).toBeDisplayed()
+  console.log("VA03 order opened and item category ZLMD verified");
+});
+
+
+Then(/^the user enter do the picking for ZLMD and picking request created (.*)$/, async(Tcode)=> {
+  await sap.enterTextInTextBox(QASAPLOGIN.txtTcode,Tcode); 
+  await sap.keyboardActions('Enter');
+  await browser.pause(2000);
+  const orderNum=await sap.getOrderNumber();
+  //await sapLogin.getOrderNumber();
+  (await $(QASAPLOGIN.va03OrderNumtxtBox)).clearValue();
+    await sap.enterTextInTextBox (QASAPLOGIN.va03OrderNumtxtBox,orderNum);
+   await sap.keyboardActions('Enter');
+   console.log("VA03 order opened");
+  await browser.pause(2000);
+  await waitForElement (await $(QASAPLOGIN.va03DisplayDocumentBtn));
+  await sap.clicktheBtnXpath(QASAPLOGIN.va03DisplayDocumentBtn);
+  console.log("Document flow is opened!");
+  await browser.pause(2000);
+
+  await waitForElement (await $(QASAPLOGIN.va03ODB));
+  await browser.pause(2000);
+  if (await $(QASAPLOGIN.va03ODB).isDisplayed())
+  {
+    console.log("ODB is created!");
+    // obdNum= await (await $(QASAPLOGIN.va03ODB)).getText();
+    // console.log("ODB is created!",obdNum);
+    await browser.pause(1000);
+    (await $(QASAPLOGIN.va03ODB)).doubleClick();
+    await browser.pause(6000);
+    await $(QASAPLOGIN.va03ODB).waitForDisplayed({ timeout: 60000 });
+    obdNum=await $(QASAPLOGIN.va03ODBNUM).getText();
+    console.log(obdNum);
+    await browser.pause(2000);
+  }
+  else{
+    console.log("ODB is not created!");
+  }
+  await browser.pause(2000);
+ (await $(QASAPLOGIN.va03OBDDsplayDoc)).waitForDisplayed({ timeout: 60000 });
+  await sap.clicktheBtnXpath(QASAPLOGIN.va03OBDDsplayDoc);
+  console.log("Document flow is opened!");
+  await browser.pause(2000);
+  (await $(QASAPLOGIN.va03PickTab)).waitForDisplayed({ timeout: 60000 });
+  await browser.pause(3000);
+  await (await $(QASAPLOGIN.va03PickTab)).click();
+  console.log("Picking Clicked!");
+
+  (await $(QASAPLOGIN.va03ChangeMode)).waitForDisplayed({ timeout: 60000 });
+  await browser.pause(3000);
+  await (await $(QASAPLOGIN.va03ChangeMode)).click();
+  console.log("Change mode is enabled!");
+
+  const DelQty=await $(QASAPLOGIN.va03DelQty).getText();
+  console.log(DelQty);
+  console.log("Delivery Qty");
+  await browser.pause(4000);
+  (await $(QASAPLOGIN.va03PickQtyClick)).click();
+  await browser.pause(2000);
+ //await $(QASAPLOGIN.va03PickQty).clearValue();
+  await browser.pause(4000);
+ //await sap.enterTextInTextBox(QASAPLOGIN.va03PickQty,DelQty);
+  (await $(QASAPLOGIN.va03PickQty)).setValue(DelQty);
+  console.log("Added qty");
+  await browser.pause(2000);
+  //await sap.keyboardActions('Enter');
+  await browser.pause(2000);
+  console.log("Updated picked qty..!");
+  await browser.takeScreenshot();
+  (await $(QASAPLOGIN.va03PickSaveBtn)).click();
+  await browser.pause(3000);
+  console.log("Saved");
+
+  await sap.enterTextInTextBox(QASAPLOGIN.txtTcode,Tcode); 
+  await sap.keyboardActions('Enter');
+  await browser.pause(2000);
+  //const orderNum=await sap.getOrderNumber();
+  //await sapLogin.getOrderNumber();
+  (await $(QASAPLOGIN.va03OrderNumtxtBox)).clearValue();
+    await sap.enterTextInTextBox (QASAPLOGIN.va03OrderNumtxtBox,orderNum);
+   await sap.keyboardActions('Enter');
+   //await sap.clicktheBtnXpath(QASAPLOGIN.va03ExecuteBtn2);
+   console.log("VA03 order opened");
+  await browser.pause(2000);
+  // await sap.clicktheBtnXpath(QASAPLOGIN.va03ExecuteBtn2);
+   (await $(QASAPLOGIN.va03ExecuteBtn2)).waitForDisplayed({ timeout: 60000 });
+  await waitForElement (await $(QASAPLOGIN.va03DisplayDocumentBtn));
+  await sap.clicktheBtnXpath(QASAPLOGIN.va03DisplayDocumentBtn);
+  console.log("Document flow is opened!");
+  await browser.pause(2000);
+
+  (await $(QASAPLOGIN.pickingRequest)).waitForDisplayed({ timeout: 60000 });
+      if ((await $(QASAPLOGIN.pickingRequest)).isDisplayed)
+        {
+          console.log("Picking Request is created");
+        }
+        else
+        {
+          console.log("Picking Request is not created");
+        }
+      await browser.pause(6000);
+
+});
+
+Then(/^the user go to store order display Document to get value (.*)$/, async(Tcode)=> {
+  await sap.enterTextInTextBox(QASAPLOGIN.txtTcode,Tcode); 
+  await sap.keyboardActions('Enter');
+  await browser.pause(2000);
+  const orderNum=await sap.getOrderNumber();
+  //await sapLogin.getOrderNumber();
+  (await $(QASAPLOGIN.va03OrderNumtxtBox)).clearValue();
+    await sap.enterTextInTextBox (QASAPLOGIN.va03OrderNumtxtBox,orderNum);
+   await sap.keyboardActions('Enter');
+   //await sap.clicktheBtnXpath(QASAPLOGIN.va03ExecuteBtn2);
+   console.log("VA03 order opened");
+  await browser.pause(2000);
+  // await sap.clicktheBtnXpath(QASAPLOGIN.va03ExecuteBtn2);
+   (await $(QASAPLOGIN.va03ExecuteBtn2)).waitForDisplayed({ timeout: 60000 });
+  await waitForElement (await $(QASAPLOGIN.va03DisplayDocumentBtn));
+  await sap.clicktheBtnXpath(QASAPLOGIN.va03DisplayDocumentBtn);
+  console.log("Document flow is opened!");
+  await browser.pause(2000);
+  await $(QASAPLOGIN.va03StoreOrder).waitForDisplayed({ timeout: 60000 });
+  (await $(QASAPLOGIN.va03StoreOrder)).click();
+  await waitForElement (await $(QASAPLOGIN.va03PODisplyDoc));
+  await sap.clicktheBtnXpath(QASAPLOGIN.va03PODisplyDoc);
+  await browser.pause(2000);
+      (await $(QASAPLOGIN.displayHeaderDetails)).waitForDisplayed({ timeout: 60000 });
+      await browser.pause(2000);
+      (await $(QASAPLOGIN.displayHeaderDetails)).click();
+      console.log("Header details clicked");
+      await browser.pause(4000);
+      (await $(QASAPLOGIN.conditionsTab)).waitForDisplayed({ timeout: 60000 });
+      await sap.clicktheBtnXpath(QASAPLOGIN.conditionsTab);
+      await browser.pause(2000);
+      console.log("conditionsTab opened");
+      await browser.pause(2000);
+
+      (await $(QASAPLOGIN.nettext)).waitForDisplayed({ timeout: 60000 });
+      netValue= await $(QASAPLOGIN.nettext).getText();
+      console.log("Net value is ", netValue);
+      await browser.pause(2000);
+      taxValue= await $(QASAPLOGIN.taxtxt).getText();
+      console.log("Net value is ", taxValue);
+  await browser.pause(2000);
+        let num1 = Number(netValue);
+      let num2 = Number(taxValue);
+      let result = num1 + num2;
+      console.log(result);
+    
+
+
+  // await sap.pageScrollTillBottomPage();
+  // // await $(QASAPLOGIN.netvalue).scrollIntoView({ block: "center" });
+  // await browser.pause(2000);
+  //     (await $(QASAPLOGIN.netvalue)).waitForDisplayed({ timeout: 60000 });
+  //     netValue= await $(QASAPLOGIN.netvalue).getText();
+      console.log("Net value is ", netValue);
+      await browser.pause(2000);
+      // console.log("result value is ", result);
+      // await browser.pause(2000);
+
+});
+Then(/^the user do the authorization for SAP$/, async () => {
+    console.log("inside auth program");
+    const orderNum = await sap.getOrderNumber();
+    console.log(orderNum);
+    await sap.enterTextInTextBox(QASAPLOGIN.txtTcode, "/nsa38");
+    await sap.keyboardActions("Enter");
+    console.log("Before entering program name");
+    await browser.pause(2000);
+    await sap.enterTextInTextBox(QASAPLOGIN.txtProgram,'YDCOM_BATCH_FULL_AUTH_NEW');
+    await browser.pause(2000);
+    await waitForElement(await $(QASAPLOGIN.execute));
+    await $(QASAPLOGIN.execute).click();
+    await browser.pause(4000);
+    await sap.enterTextInTextBox(QASAPLOGIN.authOrderno, orderNum);
+    await browser.pause(5000);
+    await sap.clicktheBtnXpath(QASAPLOGIN.authExecuteBtn1);
+    await browser.pause(4000);
+   // await sap.keyboardActionsF8("F8");
+    console.log("Clicked Execute btn");
+    await browser.pause(9000);
+    // First, check for Card Approved text
+    let isCardApproved = await $(QASAPLOGIN.authCardApprovedTxt).isDisplayed();
+    console.log(isCardApproved);
+  
+    if (!isCardApproved) {
+      console.log("Card Approved text not found, checking for tick mark...");
+      // let done = false;
+  
+      // while (!done) {
+      //   console.log(done);
+      //   console.log("Waiting for tick mark");
+      //   if (await $(`//*[contains(@lsdata,'Continue (Enter)')]`).isDisplayed()) {
+      //     await browser.pause(500);
+      //     await $(`//*[contains(@lsdata,'Continue (Enter)')]`).click();
+      //     done = true;
+      //     console.log(done);
+      //   } else await browser.pause(5000);
+      // }
+      let done2 = false;
+  
+      while (!done2) {
+        console.log(done2);
+        console.log("Waiting for success txt");
+        if (await $(QASAPLOGIN.authCardApprovedTxt).isDisplayed()) {
+          await browser.pause(500);
+          console.log("Pass");
+          let apporvedtxt = await $(QASAPLOGIN.authCardApprrovedGetTxt).getText();
+          console.log(apporvedtxt);
+          expect(apporvedtxt).toBe("Card Approved");
+          done2 = true;
+          console.log(done2);
+        } else await browser.pause(5000);
+      }
+    }
+  
+    // Final check for Card Approved text
+    // await expect(isCardApproved).toBe(true);
+    else {
+      let apporvedtxt = await $(QASAPLOGIN.authCardApprrovedGetTxt).getText();
+      console.log(apporvedtxt);
+    //  expect(apporvedtxt).toBe("Card Approved");
+    //   if (apporvedtxt===) {
+    //     console.log("Card Approved text is now displayed");
+    //   } else {
+    //     console.log("Card Approved text still not displayed");
+    //   }
+    }
+  });
+
+Then(/^the user go to create DPR (.*)$/, async(Tcode) =>{
+  console.log("inside auth program");
+  const orderNum = await sap.getOrderNumber();
+  await sap.enterTextInTextBox(QASAPLOGIN.txtTcode, Tcode);
+  await sap.keyboardActions('Enter');
+  console.log("Before entering program name");
+  await browser.pause(2000);
+  (await $(QASAPLOGIN.functionModule)).clearValue();
+  await sap.enterTextInTextBox(QASAPLOGIN.functionModule, 'Y_DSD_PAYMENT_COCKPIT_ACTION');
+  await waitForElement(await $(QASAPLOGIN.testExecutebtn));
+  await $(QASAPLOGIN.testExecutebtn).click();
+  await browser.pause(4000);
+
+  (await $(QASAPLOGIN.imActionHead)).waitForDisplayed({ timeout: 60000 });
+  await sap.clicktheBtnXpath(QASAPLOGIN.imActionHead);
+  await browser.pause(2000);
+  
+  (await $(QASAPLOGIN.vblnTxt)).waitForDisplayed({ timeout: 60000 });
+  await sap.enterTextInTextBox(QASAPLOGIN.vblnTxt, orderNum);
+  await browser.pause(2000);
+
+  (await $(QASAPLOGIN.payvalue)).waitForDisplayed({ timeout: 60000 });
+  await $(QASAPLOGIN.payvalue).clearValue();
+  await browser.pause(2000);
+  await sap.enterTextInTextBox(QASAPLOGIN.payvalue, '001');
+  await browser.pause(2000);
+
+  // (await $(QASAPLOGIN.payvalue)).waitForDisplayed({ timeout: 60000 });
+  // await sap.enterTextInTextBox(QASAPLOGIN.payvalue, '001');
+  // await browser.pause(2000);
+
+  (await $(QASAPLOGIN.acValue)).waitForDisplayed({ timeout: 60000 });
+  await sap.enterTextInTextBox(QASAPLOGIN.acValue, '08');
+  await browser.pause(2000);
+
+  (await $(QASAPLOGIN.preAuthValue)).waitForDisplayed({ timeout: 60000 });
+  (await $(QASAPLOGIN.preAuthValue)).clearValue();
+  await browser.pause(1000);
+  //await sap.enterTextInTextBox(QASAPLOGIN.preAuthValue, netValue);
+  await sap.enterTextInTextBox(QASAPLOGIN.preAuthValue, "2.95");
+  await browser.pause(2000);
+
+  await  $(QASAPLOGIN.va03backBtn).click();
+  await browser.pause(1000);
+  console.log("back button is clicked !");
+  await browser.pause(4000);
+  
+  (await $(QASAPLOGIN.imActionItem)).waitForDisplayed({ timeout: 60000 });
+  await sap.clicktheBtnXpath(QASAPLOGIN.imActionItem);
+  await browser.pause(2000);
+
+  (await $(QASAPLOGIN.vblnTxt)).waitForDisplayed({ timeout: 60000 });
+  await sap.enterTextInTextBox(QASAPLOGIN.vblnTxt, orderNum);
+  await browser.pause(2000);
+
+    
+  (await $(QASAPLOGIN.posnrvalue)).waitForDisplayed({ timeout: 60000 });
+  (await $(QASAPLOGIN.posnrvalue)).clearValue();
+  await browser.pause(2000);
+  await sap.enterTextInTextBox(QASAPLOGIN.posnrvalue, '000010');
+  await browser.pause(2000);
+
+  // await sap.keyboardActions('Enter');
+
+  
+  // (await $(QASAPLOGIN.newLine)).waitForDisplayed({ timeout: 60000 });
+  // await sap.clicktheBtnXpath(QASAPLOGIN.newLine);
+  // await browser.pause(2000);
+
+  await browser.keys(["Control", "F8"]);
+  await browser.pause(3000);
+
+  (await $(QASAPLOGIN.vblnTxt)).waitForDisplayed({ timeout: 60000 });
+  await sap.enterTextInTextBox(QASAPLOGIN.vblnTxt, orderNum);
+  await browser.pause(2000);
+    
+  (await $(QASAPLOGIN.posnrvalue)).waitForDisplayed({ timeout: 60000 });
+  await sap.enterTextInTextBox(QASAPLOGIN.posnrvalue, '000020');
+  await browser.pause(2000);
+
+  await  $(QASAPLOGIN.va03backBtn).click();
+  await browser.pause(1000);
+  console.log("back button is clicked !");
+  await browser.pause(4000);
+    
+  await $(QASAPLOGIN.execute).waitForDisplayed({ timeout: 60000 });
+  await $(QASAPLOGIN.execute).click();
+  await browser.pause(4000);
+});
+//goto va03 to verify DPR created
+  
+Then(/^the user checks the DPR (.*)$/ , async(Tcode) =>{
+  await browser.pause(2000);
+  const orderNum = await sap.getOrderNumber();
+  await sap.enterTextInTextBox(QASAPLOGIN.txtTcode,Tcode);
+  await sap.keyboardActions('Enter');
+  await browser.pause(2000);
+  (await $(QASAPLOGIN.va03OrderNumtxtBox)).clearValue();
+  await sap.enterTextInTextBox (QASAPLOGIN.va03OrderNumtxtBox,orderNum);
+  await sap.keyboardActions('Enter');
+  console.log("VA03 order opened");
+  await browser.pause(4000);
+  (await $(QASAPLOGIN.va03WebsiteOrderTxt)).waitForDisplayed({ timeout: 60000 });
+  await sap.clicktheBtnXpath(QASAPLOGIN.va03WebsiteOrderTxt);
+  console.log("Website order Text is clicked now");
+  await browser.pause(5000);
+  (await $(QASAPLOGIN.va03DisplayDocumentBtn)).waitForDisplayed({ timeout: 60000 });
+  await waitForElement (await $(QASAPLOGIN.va03DisplayDocumentBtn));
+  await sap.clicktheBtnXpath(QASAPLOGIN.va03DisplayDocumentBtn);
+  console.log("Display document flow is opened");
+  await browser.pause(2000);
+  await waitForElement (await $(QASAPLOGIN.va03DPR));
+  const DPRDoc=await $(QASAPLOGIN.va03DPR).getText();
+  await browser.pause(2000);
+  console.log(DPRDoc);
+  if (DPRDoc.includes('Down Payment Request'))
+    {
+      console.log("DPR created");
+    }
+  else
+    {
+      console.log("DPR not created");
+    }
+});
